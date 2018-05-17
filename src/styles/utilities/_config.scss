@@ -1,0 +1,32 @@
+$base-font-size: 14px;
+$rhythm: 1.5;
+$base-line-height: $rhythm * $base-font-size;
+$type-ratio: 1.618;
+$show-baseline: false !default;
+
+$ease: cubic-bezier(0.45, 0.05, 0.55, 0.95); // ease-in-out-sine
+
+// bootstrap variables
+
+//$enable-rounded: false;
+$blue: #1b66aa;
+$gray-100: #e0e0e0;
+$gray-500: #a7a7a7;
+$secondary: $gray-500;
+$gray-800: #3b4857;
+$yellow: #e6be51;
+$input-border-radius: 0;
+$btn-border-radius: 1rem;
+$card-cap-bg: #e8e8e8;
+$text-muted: #999;
+
+$modal-inner-padding: 0;
+$modal-lg: 1000px;
+$modal-transition: transform .3s $ease;
+$modal-dialog-margin-y-sm-up: 3rem;
+
+$transition-base: all .15s $ease;
+$sidebar-width: 250px !default;
+$sidebar-collapsed-width: $sidebar-width / 5 !default;
+
+$layers: ( navoverlay: 99, header: 98, sidebar: 100 );

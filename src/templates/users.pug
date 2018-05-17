@@ -1,0 +1,215 @@
+extends layout
+
+block content
+  include includes/sidebar
+  .page-container
+    header.header.d-flex.align-items-center.pr-3.text-muted
+      .header-left.d-flex.align-items-center.pl-3
+        button.btn.navbar-toggle.text-muted.rounded-0
+          i.icon-menu.icon-md
+        h3.my-0.mx-3.font-weight-light User Management
+      .header-right.ml-auto.d-flex.align-items-center
+        .dropdown.show
+          a#user-menu.btn.text-muted.dropdown-toggle.d-inline-flex.align-items-center.rounded-0(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            | James Walter
+            i.rounded.icon-user.text-primary.icon-md.ml-2
+          .dropdown-menu(aria-labelledby='user-menu')
+            a.dropdown-item(href='settings.html') My Profile
+            a.dropdown-item(href='#') Log out
+    main.content
+      .container-fluid.container-users.mt-5
+        .table-wrapper
+          .table-header.row.mb-2
+            .col-md-4.col-lg-3.mb-3.mb-md-0
+              .input-group
+                .input-group-prepend
+                  span#search.input-group-text.border-top-0.border-left-0
+                    i.icon-search.icon-md.text-muted
+                input.form-control.border-top-0.border-right-0(type='text' placeholder='Search' aria-label='Search' aria-describedby='search')
+            .col.ml-auto
+              .d-md-flex.align-items-center.justify-content-end
+                .mr-0.mr-sm-3.mb-3.mb-lg-0
+                  .form-group.form-row.mb-0.form-group-wrap
+                    label.col-sm-4.col-form-label.text-muted(for='') Filter by:
+                    .col-sm-8
+                      select.custom-select.form-control
+                        option(selected='') Expiring in 30 days
+                        option(value='1') One
+                        option(value='2') Two
+                        option(value='3') Three
+                div
+                  button.btn.btn-primary.btn-lg.rounded-0.d-inline-flex.align-items-center(type='button' data-toggle='modal' data-target='#modal-createuser')
+                    i.icon-plus.icon-md.mr-3
+                    |                                         CREATE USER
+                  button.btn.btn-secondary.text-white.btn-lg.rounded-0.d-inline-flex.align-items-center
+                    i.icon-export-outline.icon-md.mr-3
+                    |                                         EXPORT
+          .table-body
+            table#users.table.text-muted
+              thead
+                tr
+                  th Username
+                  th User Type
+                  th Company
+                  th Email
+                  th Created
+                  th Expiry
+                  th Status
+                  th Actions
+              tbody
+                tr
+                  td Cassandra
+                  td Media Relations
+                  td Egestas Aliquam Associates
+                  td
+                    span.text-break adipiscing.fringilla.porttitor@nonvestibulum.net
+                  td 24-06-2008
+                  td 28-03-2019
+                  td
+                    label.toggle.is-mini.d-block
+                      input(type='checkbox')
+                      span.handle
+                  td
+                    button.btn.text-muted
+                      i.icon-pencil
+                    button.btn.text-muted
+                      i.icon-bin
+                tr
+                  td Anastasia
+                  td Advertising
+                  td Nisl LLP
+                  td
+                    span.text-break penatibus@fringillamilacinia.ca
+                  td 02-06-2012
+                  td 02-11-2018
+                  td
+                    label.toggle.is-mini.d-block
+                      input(type='checkbox')
+                      span.handle
+                  td
+                    button.btn.text-muted
+                      i.icon-pencil
+                    button.btn.text-muted
+                      i.icon-bin
+                tr
+                  td Gray
+                  td Legal Department
+                  td Morbi Metus Company
+                  td
+                    span.text-break augue@Duis.edu
+                  td 17-11-2011
+                  td 04-07-2018
+                  td
+                    label.toggle.is-mini.d-block
+                      input(type='checkbox')
+                      span.handle
+                  td
+                    button.btn.text-muted
+                      i.icon-pencil
+                    button.btn.text-muted
+                      i.icon-bin
+                tr
+                  td Kameko
+                  td Research and Development
+                  td Nascetur Foundation
+                  td
+                    span.text-break in@velfaucibusid.org
+                  td 27-03-2015
+                  td 10-03-2018
+                  td
+                    label.toggle.is-mini.d-block
+                      input(type='checkbox' checked='')
+                      span.handle
+                  td
+                    button.btn.text-muted
+                      i.icon-pencil
+                    button.btn.text-muted
+                      i.icon-bin
+                tr
+                  td Joseph
+                  td Quality Assurance
+                  td Ipsum Primis In Ltd
+                  td
+                    span.text-break Aliquam@nibhAliquam.edu
+                  td 13-04-2014
+                  td 18-05-2017
+                  td
+                    label.toggle.is-mini.d-block
+                      input(type='checkbox')
+                      span.handle
+                  td
+                    button.btn.text-muted
+                      i.icon-pencil
+                    button.btn.text-muted
+                      i.icon-bin
+                tr
+                  td Illana
+                  td Media Relations
+                  td Eget Limited
+                  td
+                    span.text-break sem.mollis.dui@tortor.co.uk
+                  td 21-12-2017
+                  td 02-05-2018
+                  td
+                    label.toggle.is-mini.d-block
+                      input(type='checkbox')
+                      span.handle
+                  td
+                    button.btn.text-muted
+                      i.icon-pencil
+                    button.btn.text-muted
+                      i.icon-bin
+                tr
+                  td Elaine
+                  td Asset Management
+                  td Luctus Ipsum Leo LLP
+                  td
+                    span.text-break Mauris.nulla@augue.edu
+                  td 30-04-2012
+                  td 14-02-2018
+                  td
+                    label.toggle.is-mini.d-block
+                      input(type='checkbox')
+                      span.handle
+                  td
+                    button.btn.text-muted
+                      i.icon-pencil
+                    button.btn.text-muted
+                      i.icon-bin
+                tr
+                  td Burke
+                  td Advertising
+                  td In Faucibus PC
+                  td
+                    span.text-break dictum.mi.ac@gravidaPraesent.co.uk
+                  td 07-03-2011
+                  td 01-12-2018
+                  td
+                    label.toggle.is-mini.d-block
+                      input(type='checkbox')
+                      span.handle
+                  td
+                    button.btn.text-muted
+                      i.icon-pencil
+                    button.btn.text-muted
+                      i.icon-bin
+                tr
+                  td Cairo
+                  td Accounting
+                  td Gravida Non Consulting
+                  td
+                    span.text-break sed.dictum@ipsumporta.ca
+                  td 23-12-2016
+                  td 18-08-2018
+                  td
+                    label.toggle.is-mini.d-block
+                      input(type='checkbox')
+                      span.handle
+                  td
+                    button.btn.text-muted
+                      i.icon-pencil
+                    button.btn.text-muted
+                      i.icon-bin
+  .overlay
+  include includes/modal
+  script(src='scripts/main.js')

@@ -1,0 +1,129 @@
+#modal-createuser.modal.fade(tabindex='-1' role='dialog' aria-labelledby='createuser' aria-hidden='true')
+  .modal-dialog(role='document').modal-lg
+    .modal-content
+      .modal-header
+        h5#createuser.modal-title Add User
+        button.close.border-0(type='button' data-dismiss='modal' aria-label='Close')
+          | Close
+      .modal-body.py-md-3
+        div.row.px-4
+          div.col-md-8
+            form
+              div.row
+                div.col-md-6
+                  div.form-group
+                    label(for='user-role') Role
+                    select#user-role.custom-select
+                      option(selected='User') User
+                      option(value='1') One
+                      option(value='2') Two
+                      option(value='3') Three
+                div.col-md-6
+                  div.form-group
+                    label(for='user-type') User Type
+                    select#user-type.custom-select
+                      option(selected='' value='Seller') Seller
+                      option(value='Buyer') Buyer
+              div.row
+                div.col-md-6
+                  div.form-group
+                    label(for='user-email') Email
+                    input(type='text' id='user-email').form-control
+                div.col-md-6
+                  div.form-group
+                    label(for='user-password') Password
+                    input(type='password' id='user-password').form-control
+              div.row
+                div.col-md-6
+                  div.form-group
+                    label(for='user-password_confirm') Confirm Password
+                    input(type='password' id='user-password_confirm').form-control
+                div.col-md-6
+                  div.form-group
+                    label(for='user-first_name') First Name
+                    input(type='text' id='user-first_name').form-control
+              div.row
+                div.col-md-6
+                  div.form-group
+                    label(for='user-last_name') Last Name
+                    input(type='text' id='user-last_name').form-control
+                div.col-md-6
+                  div.form-group
+                    label(for='user-contact') Contact Number
+                    input(type='text' id='user-contact').form-control
+              div.row
+                div.col-md-6
+                  div.form-group
+                    label(for='user-company') Company / Organization
+                    input(type='text' id='user-company').form-control
+                div.col-md-6
+                  div.form-group
+                    label(for='user-expiry') Expiry Date
+                    input(type='date' id='user-expiry').form-control
+        div.card
+          div.card-header.text-uppercase.bg-light.text-dark.rounded-0.font-weight-bold Add API
+          div.card-body
+            div.row
+              div.col-md-10
+                div.row
+                  div.col-md-4.border-right
+                    div.card.border-0
+                      div.card-header.text-uppercase.rounded-0.bg-dark.text-white AWS Api
+                      div.card-body.px-0
+                        form
+                          div.form-group
+                            label(for='aws-market') Market Place
+                            select#aws-market.custom-select
+                              option(selected='' value='Seller') Seller
+                              option(value='Buyer') Buyer
+                          div.form-group
+                            label(for='aws-atag') Associate Tag
+                            input(type='text' id='aws-atag').form-control
+                          div.form-group
+                            label(for='aws-key') Access key ID
+                            input(type='text' id='aws-key').form-control
+                          div.form-group
+                            label(for='aws-secret') Secret Access Key
+                            input(type='text' id='aws-secret').form-control
+                  div.col-md-4.border-right
+                    div.card.border-0
+                      div.card-header.text-uppercase.rounded-0.bg-dark.text-white MWS Api
+                      div.card-body.px-0
+                        form
+                          div.form-group
+                            label(for='mws-id') Seller / Merchant ID
+                            input(type='text' id='mws-id').form-control
+                          div.form-group
+                            label(for='mws-key') Associate Tag
+                            input(type='text' id='mws-key').form-control
+                          div.form-group
+                            label(for='mws-secret') Secret Key
+                            input(type='text' id='mws-secret').form-control
+                          div.form-group
+                            label(for='mws-mid') Marketplace ID
+                            input(type='text' id='aws-mid').form-control
+                  div.col-md-4
+                    div.card.border-0
+                      div.card-header.text-uppercase.rounded-0.bg-dark.text-white Advertising Api
+                      div.card-body.px-0
+                        form
+                          div.form-group
+                            label(for='adv-id') Client ID
+                            select#adv-id.custom-select
+                              option(selected='' value='Seller') Seller
+                              option(value='Buyer') Buyer
+                          div.form-group
+                            label(for='adv-scope') Scope
+                            input(type='text' id='adv-scope').form-control
+                          div.form-group
+                            label(for='adv-type') Response Type
+                            input(type='text' id='adv-type').form-control
+                          div.form-group
+                            label(for='adv-url') Redirect URL
+                            input(type='text' id='adv-url').form-control
+                          div.form-group
+                            label(for='adv-state') State
+                            input(type='text' id='adv-state').form-control
+      .modal-footer.py-md-2.border-0.col-md-10.px-4
+        button.btn.btn-primary.btn-lg.rounded-0.text-uppercase.float-right(type='button' data-dismiss='modal') Cancel
+        button.btn.btn-primary.btn-lg.ml-3.rounded-0.text-uppercase.float-right(type='button') Create
