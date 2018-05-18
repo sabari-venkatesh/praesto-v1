@@ -5,51 +5,39 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const isProd = process.env.APP_ENV === 'prod';
 
 let extractStyles = new ExtractTextPlugin({
-  filename: "css/index.css",
+  filename: 'css/index.css',
 });
 
-//let extractHtml = new ExtractTextPlugin('[name].html');
-
-module.exports = {
-  stats: "errors-only",
+const config = {
+  stats: 'errors-only',
   context: path.resolve(__dirname, 'src'),
-  devtool: (isProd ? 'source-map' : 'eval-source-map'),
+  devtool: 'source-map',
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    hotOnly: true,
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    inline: false,
+    index: 'sales.html',
+    open: false,
     port: 8008,
-    watchContentBase: true,
+    watchContentBase: true
   },
   entry: {
-    app: './index.js'
+    //vendor: ['jquery', 'popper.js', 'util', 'vanilla-datatables'],
+    app: './scripts/main.js',
   },
   module: {
-    rules: [
-      // {
-      //   test: /\.html$/,
-      //   use: [{
-      //     loader: 'html-loader',
-      //     options: {
-      //       minimize: true,
-      //       removeComments: false,
-      //       collapseWhitespace: false
-      //     }
-      //   }],
-      // },
-      {
+    rules: [{
         test: /\.pug$/,
         exclude: ['/node_modules/'],
-        //use: ['html-loader', 'pug-html-loader?pretty=true'] // refer html-loader config above
         use: ['pug-loader?pretty=true']
       },
       {
         test: /\.js$/,
-        exclude: ['/node_modules/', './scripts/main.js'],
+        exclude: ['/node_modules/'],
         use: [{
           loader: 'babel-loader',
           options: {
@@ -62,9 +50,12 @@ module.exports = {
         exclude: /node_modules/,
         use: extractStyles.extract({
           use: [{
-            loader: "css-loader"
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
           }, {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               plugins: function() { // post css plugins, can be exported to postcss.config.js
                 return [
@@ -73,10 +64,10 @@ module.exports = {
               }
             }
           }, {
-            loader: "sass-loader"
+            loader: 'sass-loader'
           }],
           // use style-loader in development
-          fallback: "style-loader",
+          fallback: 'style-loader',
           publicPath: '../'
         })
       },
@@ -118,18 +109,13 @@ module.exports = {
     extractStyles,
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
-    }),
-    new webpack.ProvidePlugin({
-      Popper: 'popper.js'
+      jQuery: 'jquery',
+      Util: 'exports-loader?Util!bootstrap/js/dist/util',
+      Popper: ['popper.js', 'default'],
+      DataTable: 'exports-loader?DataTable!vanilla-datatables/dist/vanilla-dataTables.min',
+      HighCharts: 'exports-loader?HighCharts!highcharts/js/highcharts'
     }),
     new CleanWebpackPlugin(['dist']),
-    new CopyWebpackPlugin([
-      {
-        from: './scripts/main.js',
-        to: './scripts/'
-      }
-    ]),
     new HtmlWebpackPlugin({
       title: 'Praesto',
       filename: 'login.html', //Name of file in ./dist/
@@ -145,12 +131,27 @@ module.exports = {
       filename: 'users.html',
       template: 'templates/users.pug',
     }),
+    new HtmlWebpackPlugin({
+      title: 'Praesto Sales',
+      filename: 'sales.html',
+      template: 'templates/sales.pug',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'scripts/commons.js',
+      minChunks: function(module) {
+        // this assumes your vendor imports exist in the node_modules directory
+        return module.context && module.context.includes("node_modules");
+      }
+    }),
     new BrowserSyncPlugin({
       host: 'localhost',
-      port: 3000,
+      //port: 3000,
       proxy: 'http://localhost:8008/',
     }, {
       reload: true
     })
   ]
 }
+
+module.exports = config;

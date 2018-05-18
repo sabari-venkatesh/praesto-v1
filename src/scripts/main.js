@@ -1,5 +1,12 @@
-$(document).ready(() => {
+// import styles
+import '../fonts/index.scss';
+import '../styles/index.scss';
+import 'bootstrap/js/dist/dropdown';
+import 'bootstrap/js/dist/modal';
+import DataTable from 'vanilla-datatables';
+import HighCharts from 'highcharts';
 
+$(document).ready(() => {
   /* declare the functions here */
   var toggleSidebar = () => {
     if ($(window).innerWidth() < 768) {
@@ -33,35 +40,59 @@ $(document).ready(() => {
   $(window).resize(() => {
     toggleSidebar();
   });
-
-  var dataTable = new DataTable("#users", {
-    searchable: false,
-    //fixedHeight: true,
-    fixedColumns: true,
-    columns: [{
-        select: [0, 2, 3, 7],
-        sortable: false
-      },
-      {
-        select: [0, 1, 2, 3, 4, 5, 6, 7],
-        render: function(data, cell, row) {
-          cell.style.width = '12.5%';
-          return data;
-        }
-      }
-    ],
-    perPage: 5,
-    layout: {
-      top: "{search}",
-      bottom: "{select}{pager}"
-    },
-    labels: {
-      placeholder: "Search...",
-      perPage: "Show {select} records",
-      noRows: "No entries to found",
-    }
-  });
-
   /* list the functions to be invoked on page initialization here */
   toggleSidebar();
+
+  if ($('#users').length > 0) {
+    var dataTable = new DataTable("#users", {
+      searchable: false,
+      //fixedHeight: true,
+      fixedColumns: true,
+      columns: [{
+          select: [0, 2, 3, 7],
+          sortable: false
+        },
+        {
+          select: [0, 1, 2, 3, 4, 5, 6, 7],
+          render: function(data, cell, row) {
+            cell.style.width = '12.5%';
+            return data;
+          }
+        }
+      ],
+      perPage: 5,
+      layout: {
+        top: "{search}",
+        bottom: "{select}{pager}"
+      },
+      labels: {
+        placeholder: "Search...",
+        perPage: "Show {select} records",
+        noRows: "No entries to found",
+      }
+    });
+  }
+  HighCharts.chart('container', {
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: 'Fruit Consumption'
+    },
+    xAxis: {
+      categories: ['Apples', 'Bananas', 'Oranges']
+    },
+    yAxis: {
+      title: {
+        text: 'Fruit eaten'
+      }
+    },
+    series: [{
+      name: 'Jane',
+      data: [1, 0, 4]
+    }, {
+      name: 'John',
+      data: [5, 7, 3]
+    }]
+  });
 });
