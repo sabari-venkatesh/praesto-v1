@@ -1,10 +1,11 @@
 doctype html
 html
   head
+    block link
+      -var selected = 'home';
     meta(charset="UTF-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title
       = htmlWebpackPlugin.options.title
-  body
-    //.container.container--main
-      //img(src=require("../images/forgot_bg.jpg"))
+  body(class = htmlWebpackPlugin.options.bodyClass)
     block content

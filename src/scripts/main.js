@@ -1,17 +1,28 @@
 // import styles
+//require('datatables.net-bs4/css/dataTables.bootstrap4.css');
 import '../fonts/index.scss';
 import '../styles/index.scss';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/modal';
-import DataTable from 'vanilla-datatables';
-import HighCharts from 'highcharts';
+import 'bootstrap/js/dist/tab';
+import DataTable from 'datatables.net-bs4';
+import 'datatables.net-fixedcolumns';
+import './charts.js';
 
 $(document).ready(() => {
+
+  /* declare variables here */
+  const headerNav = $('header.has-nav');
+
   /* declare the functions here */
-  var toggleSidebar = () => {
+  const toggleSidebar = () => {
     if ($(window).innerWidth() < 768) {
       $('body').addClass('is-collapsed');
     }
+  };
+
+  const setContentSpacing = () => {
+    $('.content').css('padding-top', headerNav.innerHeight());
   };
 
   /* register events here */
@@ -33,66 +44,101 @@ $(document).ready(() => {
     }
   });
 
+  var toggle = $('.has-text .handle');
+  toggle.text(toggle.attr('data-on'));
+
+  $('.has-text input').change(function() {
+    if (!toggle.prev().is(':checked')) {
+      toggle.text(toggle.attr('data-off'));
+    } else {
+      toggle.text(toggle.attr('data-on'));
+    }
+  });
+
   $('.overlay').click(() => {
     toggleSidebar();
   });
 
+  $(window).scroll(() => {
+    if ($(window).scrollTop() > 50) {
+      headerNav.addClass('is-scrolling');
+    } else {
+      headerNav.removeClass('is-scrolling');
+    }
+  });
+
   $(window).resize(() => {
     toggleSidebar();
+    setContentSpacing();
   });
+
+
   /* list the functions to be invoked on page initialization here */
   toggleSidebar();
+  setContentSpacing();
 
-  if ($('#users').length > 0) {
-    var dataTable = new DataTable("#users", {
-      searchable: false,
-      //fixedHeight: true,
-      fixedColumns: true,
-      columns: [{
-          select: [0, 2, 3, 7],
-          sortable: false
-        },
-        {
-          select: [0, 1, 2, 3, 4, 5, 6, 7],
-          render: function(data, cell, row) {
-            cell.style.width = '12.5%';
-            return data;
-          }
-        }
-      ],
-      perPage: 5,
-      layout: {
-        top: "{search}",
-        bottom: "{select}{pager}"
-      },
-      labels: {
-        placeholder: "Search...",
-        perPage: "Show {select} records",
-        noRows: "No entries to found",
-      }
-    });
-  }
-  HighCharts.chart('container', {
-    chart: {
-      type: 'bar'
+
+  $('#table-users').DataTable({
+    dom: 'rt<"dataTables_bottom"lp>',
+    fixedHeader: true,
+    fixedColumns: {
+      leftColumns: 1
     },
-    title: {
-      text: 'Fruit Consumption'
-    },
-    xAxis: {
-      categories: ['Apples', 'Bananas', 'Oranges']
-    },
-    yAxis: {
-      title: {
-        text: 'Fruit eaten'
-      }
-    },
-    series: [{
-      name: 'Jane',
-      data: [1, 0, 4]
-    }, {
-      name: 'John',
-      data: [5, 7, 3]
-    }]
+    orderCellsTop: true,
+    scrollX: true,
+    scrollCollapse: true,
+    scrollY: 300,
   });
+
+  $('#table-products_trends, #table-conversion_metrics, #table-inventory_trends').DataTable({
+    dom: 'rt<"dataTables_bottom"lp>',
+    fixedHeader: true,
+    fixedColumns: {
+      leftColumns: 1
+    },
+    orderCellsTop: true,
+    scrollX: true,
+    scrollCollapse: true,
+    scrollY: 300,
+  });
+
+  $('#table-customers_trends, #table-customers_trends_new, #table-customers_trends_repeat').DataTable({
+    dom: 'rt<"dataTables_bottom"lp>',
+    fixedHeader: true,
+    fixedColumns: {
+      leftColumns: 1
+    },
+    orderCellsTop: true,
+    scrollX: true,
+    scrollCollapse: true,
+    scrollY: 500,
+  });
+
+  $('#table-sales_geography').DataTable({
+    ajax: './data/sales-demography.json',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+    columns: [{
+        title: 'State',
+        data: 'code'
+      },
+      {
+        title: 'Sales ($)',
+        data: 'value'
+      },
+      {
+        title: 'Units',
+        data: 'units'
+      }
+    ]
+  });
+
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+    //  $($.fn.dataTable.tables(true)).css('width', '100%');
+    $($.fn.dataTable.tables(true)).DataTable().columns.adjust().draw();
+  });
+
+
 });

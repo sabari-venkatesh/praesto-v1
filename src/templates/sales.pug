@@ -1,5 +1,128 @@
 extends layout
+block link
+  -var selected = 'sales';
 block content
-  include includes/sidebar
-  .page-container
-    #container(style='width: 100%; height: 300px')
+  include includes/header
+  main.content.mt-4.container-fluid
+    // Section: Overview
+    .row.justify-content-between.mb-4
+      .col-auto
+        h3.mb-0 Sales Overview
+        small.text-muted Last Updated: 05/10/2018 05:00 AM
+      .col-auto
+        button.btn.btn-primary.rounded-0.d-inline-flex.align-items-center(type='button' title='Download')
+          i.icon-download.icon-md.mr-sm-2
+          span.d-none.d-sm-block Download
+      .w-100.mb-4
+      .col-sm-6.col-lg-4.mb-4
+        .card.border.rounded-0
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white
+            h5.mb-0.text-primary Total Customers
+            i.icon-group.text-warning
+          .card-body.text-center
+            .row
+              .col-4.text-primary.border-right.mb-2.mb-md-0
+                h1.mb-0 650
+                span Customers
+              .col-4.text-muted.border-right.mb-2.mb-md-0
+                h1.mb-0 289
+                span Sales
+              .col-4.text-muted.mb-2.mb-md-0
+                h1.mb-0 1,289
+                span Units
+      .col-sm-6.col-lg-4.mb-4
+        .card.border.rounded-0
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white
+            h5.mb-0.text-primary New Customers
+            i.icon-group.text-warning
+          .card-body.text-center
+            .row
+              .col-4.text-primary.border-right.mb-2.mb-md-0
+                h1.mb-0 650
+                span Customers
+              .col-4.text-muted.border-right.mb-2.mb-md-0
+                h1.mb-0 289
+                span Sales
+              .col-4.text-muted.mb-2.mb-md-0
+                h1.mb-0 1,289
+                span Units
+      .col-sm-6.col-lg-4.mb-4
+        .card.border.rounded-0
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white
+            h5.mb-0.text-primary Repeat Customers
+            i.icon-group.text-warning
+          .card-body.text-center
+            .row
+              .col-4.text-primary.border-right.mb-2.mb-md-0
+                h1.mb-0 650
+                span Customers
+              .col-4.text-muted.border-right.mb-2.mb-md-0
+                h1.mb-0 289
+                span Sales
+              .col-4.text-muted.mb-2.mb-md-0
+                h1.mb-0 1,289
+                span Units
+
+    // Section: Charts
+    .row.mb-4
+      .col-sm-6
+        .border.p-4
+          .btn-group(role='group' aria-label='Sales to Customers Chart')
+            button.btn.btn-secondary.text-white.rounded-0(type='button') Dollars
+            button.btn.rounded-0(type='button') Units
+          #chart-sales_customers
+      .col-sm-6
+        .border.p-4
+          .btn-group(role='group' aria-label='Sales to Amazon')
+            button.btn.btn-secondary.text-white.rounded-0(type='button') Dollars
+            button.btn.rounded-0(type='button') Units
+          #chart-sales_amazon
+
+    // Section: Sales Trends
+    .row.mb-4
+      .col-auto
+        h3.mb-0 Sales Trends
+        small.text-muted Last Updated: 05/10/2018 05:00 AM
+      .col-auto
+        label.toggle.has-text.d-block.text-right
+          input(type='checkbox' checked)
+          span.handle(data-on='Trailing 6 Weeks' data-off='Trailing 6 Months')
+      .w-100.mb-4
+      .col-12
+        ul#tab-sales_trends.nav.nav-tabs(role='tablist')
+          li.nav-item.text-uppercase
+            a#tab-products.nav-link.active(data-toggle='tab' href='#tab-products-body' role='tab' aria-controls='products' aria-selected='true') Products
+          li.nav-item.text-uppercase
+            a#tab-customer.nav-link(data-toggle='tab' href='#tab-customer-body' role='tab' aria-controls='customers' aria-selected='false') Customers
+        #tab-sales_trends-body.tab-content.border.py-4
+          // Section: Products tab
+          #tab-products-body.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='tab-products-body')
+            include includes/sales/trends-products
+          // Section: Customers tab  
+          #tab-customer-body.tab-pane.fade(role='tabpanel' aria-labelledby='tab-customer-body')
+            include includes/sales/trends-customers
+    
+    // Section: Geographic Trends
+    .row.mb-4
+      .col-auto
+        h3.mb-0 Geographic Trends
+        small.text-muted Last Updated: 05/10/2018 05:00 AM
+      .w-100.mb-4
+      .col-12
+        .border.p-4
+          .row
+            .col-md-6
+              .border.py-2
+                #chart-sales_geographic
+            .col-md-6
+              .border.py-2
+                table(id='table-sales_geography' class='table m-0')
+    .row.mb-4
+      .col-auto
+        h3.mb-0 Conversion Metrics
+        small.text-muted Last Updated: 05/10/2018 05:00 AM
+      .w-100.mb-4
+      .col-12
+        .border.py-3
+          include includes/sales/conversion-metrics
+  include includes/footer

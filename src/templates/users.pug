@@ -1,5 +1,4 @@
 extends layout
-
 block content
   include includes/sidebar
   .page-container
@@ -40,12 +39,12 @@ block content
                 div
                   button.btn.btn-primary.btn-lg.rounded-0.d-inline-flex.align-items-center(type='button' data-toggle='modal' data-target='#modal-createuser')
                     i.icon-plus.icon-md.mr-3
-                    |                                         CREATE USER
+                    | CREATE USER
                   button.btn.btn-secondary.text-white.btn-lg.rounded-0.d-inline-flex.align-items-center
                     i.icon-export-outline.icon-md.mr-3
-                    |                                         EXPORT
+                    | EXPORT
           .table-body
-            table#users.table.text-muted
+            table#table-users.table.text-muted
               thead
                 tr
                   th Username

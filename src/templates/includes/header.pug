@@ -1,0 +1,38 @@
+block content
+  header.header.has-nav.text-muted
+    .header-top.container-fluid
+      .row.no-gutters.align-items-center.mb-2
+        .header-left.col-sm-8.col-md-7.col-xl-5
+          .row.align-items-center.no-gutters
+            a(href="#").col-md-auto.text-center
+              img(src=require('../images/logo_praesto.png') width=120)
+            .form-row.border-left.col.mb-0.ml-md-4.pl-2.py-4.py-md-2
+              label.col-3.col-form-label(for="sales-marketplace") Market Place
+              .col-8
+                select.custom-select.form-control
+                  option(selected='') Amazon
+                  option(value='1') Best Buy
+                  option(value='2') Walmart
+        .header-right.col-md-auto.ml-auto
+          .dropdown.show.text-right
+            a#user-menu.btn.text-muted.dropdown-toggle.d-inline-flex.align-items-center.rounded-0(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              | James Walter
+              i.rounded.icon-user.text-primary.icon-md.ml-2
+            .dropdown-menu(aria-labelledby='user-menu')
+              a.dropdown-item(href='settings.html') My Profile
+              a.dropdown-item(href='#') Log out
+    .header-nav.mb-2
+      include ./dashboard_menu
+    .container-fluid
+      .row.align-items-center
+        .col.mb-2.mb-sm-0
+          .input-group
+            .input-group-prepend
+              span#search.input-group-text.px-2.px-md-4
+                i.icon-search.icon-md.text-primary
+            input.form-control.form-control-lg(type='text' placeholder='Search by ASIN, Part #, Model #, SKU' aria-label='Search' aria-describedby='search')
+        .col-sm-auto.mb-2.mb-sm-0.pl-sm-0
+          select.custom-select.form-control.w-auto.mr-2
+            each range in ['Select Date Range', 'Daily', 'Weekly', 'Monthly']
+              option(value=range) #{range}
+          button.btn.btn-primary.rounded-0.mr-2 Apply

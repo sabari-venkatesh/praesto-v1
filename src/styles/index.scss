@@ -21,10 +21,10 @@
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/card";
-/*@import "~bootstrap/scss/breadcrumb";
+/*@import "~bootstrap/scss/breadcrumb";*/
 @import "~bootstrap/scss/pagination";
 @import "~bootstrap/scss/badge";
-@import "~bootstrap/scss/jumbotron";
+/*@import "~bootstrap/scss/jumbotron";
 @import "~bootstrap/scss/alert";
 @import "~bootstrap/scss/progress";
 @import "~bootstrap/scss/media";
@@ -37,6 +37,105 @@
 @import "~bootstrap/scss/utilities";
 /*@import "~bootstrap/scss/print";*/
 // our custom styles here
+
+.badge {
+  font-size: 87.5%;
+  &.badge-secondary {
+    color: $white;
+  }
+  &.is-active {
+    background-color: $primary;
+  }
+}
+
+#table-sales_geography_wrapper tr td:first-child {
+  text-transform: uppercase;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+tr.even td {
+  background-color: #f0f0f0;
+}
+
+b,
+strong {
+  font-weight: 500;
+}
+
+.table {
+  tbody td,
+  thead th {
+    font-weight: 400;
+    vertical-align: middle;
+
+    .dataTables_scroll & {
+      border-right: 1px solid $table-border-color;
+    }
+  }
+
+  thead {
+    tr:first-child {
+      th {
+        border-top: 0;
+      }
+    }
+  }
+
+  tbody td {
+    font-size: 12px;
+    color: $gray-700;
+    border-bottom: 0;
+    border-top: 0;
+  }
+}
+
+.DTFC_LeftBodyWrapper,
+.DTFC_LeftHeadWrapper {
+  border-right: 1px solid $table-border-color;
+}
+
+.dataTables_scroll {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataTables_scrollBody {
+  order: 1;
+}
+
+.DTFC_ScrollWrapper {
+  border: 1px solid $table-border-color;
+  box-sizing: content-box;
+}
+
+.dataTables_bottom {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .dataTables_length {
+    .form-control {
+      width: auto;
+      display: inline-block;
+    }
+  }
+}
+
+.form-group {
+  &.is-inline {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+}
 
 .modal-header {
   .close {
@@ -273,20 +372,32 @@ html {
 }
 
 .header {
+  transition: $transition-base;
   background-color: $white;
   @extend .py-2;
   @include space(3, height);
-  box-shadow: 0 4px 4px rgba(0,0,0,0.15);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: map-get($layers, header);
-  @include media-breakpoint-up(md) {
-    padding-left: $sidebar-width;
-    .is-collapsed & {
-      padding-left: $sidebar-collapsed-width;
+
+  .page-container & {
+    @include media-breakpoint-up(md) {
+      padding-left: $sidebar-width;
+
+      .is-collapsed & {
+        padding-left: $sidebar-collapsed-width;
+      }
     }
+  }
+
+  &.is-scrolling {
+    box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.25);
+  }
+
+  &.has-nav {
+    height: auto;
   }
 }
 
@@ -323,4 +434,40 @@ html {
       background-color: rgba($modal-backdrop-bg, 0.5);
     }
   }
+}
+
+.navbar-secondary {
+  &.navbar-dark .navbar-nav {
+    .nav-link {
+      color: $white;
+
+      &:hover {
+        color: $yellow;
+      }
+
+      &.active {
+        text-decoration: underline;
+        color: $yellow;
+      }
+    }
+  }
+}
+
+.nav-tabs {
+  .nav-item {
+    margin-right: 1em;
+  }
+
+  .nav-link {
+    padding: 1rem 1.5rem;
+    border-color: $nav-tabs-link-active-border-color;
+    color: $gray-500;
+
+    &.active {}
+  }
+}
+
+tr.total th {
+  background-color: $gray-500;
+  color: $white;
 }

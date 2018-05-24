@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const isProd = process.env.APP_ENV === 'prod';
 
@@ -46,7 +47,7 @@ const config = {
         }]
       },
       {
-        test: /\.(sass|scss)$/,
+        test:/\.(s*)css$/,
         exclude: /node_modules/,
         use: extractStyles.extract({
           use: [{
@@ -113,29 +114,43 @@ const config = {
       Util: 'exports-loader?Util!bootstrap/js/dist/util',
       Popper: ['popper.js', 'default'],
       DataTable: 'exports-loader?DataTable!vanilla-datatables/dist/vanilla-dataTables.min',
-      HighCharts: 'exports-loader?HighCharts!highcharts/js/highcharts'
+      Highcharts: 'exports-loader?Highcharts!highcharts/js/highcharts'
     }),
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'Praesto',
-      filename: 'login.html', //Name of file in ./dist/
-      template: 'templates/login.pug', //Name of template in ./src
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Praesto Dashboard',
-      filename: 'dashboard.html',
-      template: 'templates/dashboard.pug',
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: 'Praesto',
+    //   bodyClass: 'page-login',
+    //   filename: 'login.html', //Name of file in ./dist/
+    //   template: 'templates/login.pug', //Name of template in ./src
+    // }),
+    // new HtmlWebpackPlugin({
+    //   title: 'Praesto Dashboard',
+    //   filename: 'dashboard.html',
+    //   bodyClass: 'page-dashboard',
+    //   template: 'templates/dashboard.pug',
+    // }),
     new HtmlWebpackPlugin({
       title: 'Praesto Users',
       filename: 'users.html',
+      bodyClass: 'page-users',
       template: 'templates/users.pug',
     }),
     new HtmlWebpackPlugin({
       title: 'Praesto Sales',
+      bodyClass: 'page-sales',
       filename: 'sales.html',
       template: 'templates/sales.pug',
     }),
+    new HtmlWebpackPlugin({
+      title: 'Praesto Inventory',
+      bodyClass: 'page-inventory',
+      filename: 'inventory.html',
+      template: 'templates/inventory.pug',
+    }),
+    new CopyWebpackPlugin([{
+      from: './data',
+      to: './data'
+    }]),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'scripts/commons.js',

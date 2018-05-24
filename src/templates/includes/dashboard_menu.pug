@@ -1,0 +1,22 @@
+block content
+  -var menu = {
+  - 'Overview': 'overview.html', 
+  - 'Sales': 'sales.html', 
+  - 'Inventory': 'inventory.html',
+  - 'Exceptions': 'exceptions.html', 
+  - 'Advertising': 'advertising.html', 
+  - 'Product Ranks': 'product-ranks.html', 
+  - 'Keywords': 'keywords.html', 
+  - 'Buy Box Reports': 'buy-box-reports.html', 
+  - 'MAP': 'map.html', 
+  - 'Reviews': 'reviews.html', 
+  - 'Chargebacks': 'chargebacks.html', 
+  - 'Forecasting': 'forecasting.html', 
+  - 'Recommendations': 'recommendations.html'};
+  - var index = 0;
+  nav.navbar.navbar-expand.navbar-secondary.navbar-dark.bg-dark
+    ul.navbar-nav.py-1
+      each url, item in menu
+        - index++;
+        li(class='nav-item ' + (index < Object.keys(menu).length ? 'border-right': ''))
+          a(href=url class='nav-link py-0 ' + (selected === item.toLowerCase() ? 'active': ''))= item
