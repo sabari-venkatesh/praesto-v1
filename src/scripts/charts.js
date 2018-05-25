@@ -200,7 +200,8 @@ $(document).ready(() => {
   if ($('#chart-inventory').length > 0) {
     Highcharts.chart('chart-inventory', {
       chart: {
-        zoomType: 'xy'
+        zoomType: 'xy',
+        height: 300
       },
       title: {
         text: 'Inventory'

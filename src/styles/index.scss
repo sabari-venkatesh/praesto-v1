@@ -36,14 +36,14 @@
 @import "~bootstrap/scss/carousel";*/
 @import "~bootstrap/scss/utilities";
 /*@import "~bootstrap/scss/print";*/
-
 // our custom styles here
-
 .badge {
   font-size: 87.5%;
+
   &.badge-secondary {
     color: $white;
   }
+
   &.is-active {
     background-color: $primary;
   }
@@ -75,14 +75,12 @@ strong {
 }
 
 .table {
+  border: 1px solid $table-border-color;
   tbody td,
   thead th {
     font-weight: 400;
     vertical-align: middle;
-
-    .dataTables_scroll & {
-      border-right: 1px solid $table-border-color;
-    }
+    border-left: 1px solid $table-border-color;
   }
 
   thead {
@@ -98,6 +96,12 @@ strong {
     color: $gray-700;
     border-bottom: 0;
     border-top: 0;
+  }
+}
+
+.dataTables_wrapper {
+  :not(.tab-pane) > & {
+    padding: 0;
   }
 }
 
@@ -409,12 +413,10 @@ html {
       height: 42px;
       background: url("../images/logo.png") no-repeat 50% 50%;
       width: 42px;
-
       @include media-breakpoint-up(md) {
         width: 160px;
         background-image: url("../images/logo_praesto.png");
       }
-
       background-size: 100% auto;
     }
   }
@@ -459,6 +461,7 @@ html {
       background-color: rgba($modal-backdrop-bg, 0.5);
     }
   }
+
   .has-nav + & {
     @include media-breakpoint-down(lg) {
       body:not(.is-collapsed) & {
@@ -501,10 +504,10 @@ html {
 }
 
 .nav-tabs-compact {
-  font-size: .875rem;
+  font-size: 0.875rem;
 
   .nav-link {
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 }
 

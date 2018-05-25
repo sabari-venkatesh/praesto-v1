@@ -147,10 +147,86 @@ $(document).ready(() => {
     ]
   });
 
-  $('#table-replenishment_product').DataTable({
-
+  /* Exceptions */
+  $('#table-replenishment').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
   });
 
+  $('#table-replenishment_product').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-count_image').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-count_aplus').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-count_twister').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-products_changes').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-products_offer').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-buy_box').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-best_seller').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-amazon_sellers').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
 
   $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
     //  $($.fn.dataTable.tables(true)).css('width', '100%');
