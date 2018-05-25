@@ -500,6 +500,14 @@ html {
   }
 }
 
+.nav-tabs-compact {
+  font-size: .875rem;
+
+  .nav-link {
+    padding: .5rem 1rem;
+  }
+}
+
 tr.total th {
   background-color: $gray-500;
   color: $white;

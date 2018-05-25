@@ -15,11 +15,15 @@ $(document).ready(() => {
   const headerNav = $('header.has-nav');
 
   /* declare the functions here */
-  const toggleSidebar = (breakpoint) => {
-    if ($(window).innerWidth() < breakpoint) {
-      $('body').addClass('is-collapsed');
-    } else {
+  const toggleSidebar = () => {
+    var breakpoint = 768;
+    if ($('.has-nav').length > 0) {
+      breakpoint = 1200;
+    }
+    if ($(window).innerWidth() > breakpoint) {
       $('body').removeClass('is-collapsed');
+    } else {
+      $('body').addClass('is-collapsed');
     }
   };
 
@@ -58,11 +62,7 @@ $(document).ready(() => {
   });
 
   $('.overlay').click(() => {
-    if ($('.has-nav').length > 0) {
-      toggleSidebar(1200);
-    } else {
-      toggleSidebar(768);
-    }
+    toggleSidebar();
   });
 
   $(window).scroll(() => {
@@ -86,7 +86,7 @@ $(document).ready(() => {
 
 
   /* list the functions to be invoked on page initialization here */
-  toggleSidebar();
+  //toggleSidebar();
   setContentSpacing();
 
   $('#table-users').DataTable({
@@ -146,6 +146,11 @@ $(document).ready(() => {
       }
     ]
   });
+
+  $('#table-replenishment_product').DataTable({
+
+  });
+
 
   $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
     //  $($.fn.dataTable.tables(true)).css('width', '100%');

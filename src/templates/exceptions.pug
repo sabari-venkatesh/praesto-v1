@@ -5,4 +5,40 @@ block content
   include includes/header
   include includes/mobile-menu
   // Section: Main content
-  main.content.mt-4.container-fluid  
+  main.content.mt-4.container-fluid
+    div.mb-4
+      h4.mb-0 Products with Detail Page Variances
+      #chart-exceptions_count
+    div.mb-4
+      ul#tab-exceptions.nav.nav-tabs.nav-tabs-compact.flex-nowrap(role='tablist')
+        li.nav-item.text-uppercase
+          a#tab-count_image.nav-link.active(data-toggle='tab' href='#tab-count_image-body' role='tab' aria-controls='tab-count_image-body' aria-selected='true') Count of Image Change
+        li.nav-item.text-uppercase
+          a#tab-count_aplus.nav-link(data-toggle='tab' href='#tab-count_aplus-body' role='tab' aria-controls='tab-count_aplus-body' aria-selected='false') Count of No A+
+        li.nav-item.text-uppercase
+          a#tab-count_twister.nav-link(data-toggle='tab' href='#tab-count_twister-body' role='tab' aria-controls='tab-count_twister-body' aria-selected='false') Count of variation (twister) change
+        li.nav-item.text-uppercase
+          a#tab-replenishment.nav-link(data-toggle='tab' href='#tab-replenishment-body' role='tab' aria-controls='tab-replenishment-body' aria-selected='false') Replenishment Code Changes
+        li.nav-item.text-uppercase
+          a#tab-products_changes.nav-link(data-toggle='tab' href='#tab-products_changes-body' role='tab' aria-controls='tab-products_changes-body' aria-selected='false') Product Category Changes
+        li.nav-item.text-uppercase
+          a#tab-products_offer.nav-link(data-toggle='tab' href='#tab-products_offer-body' role='tab' aria-controls='tab-products_offer-body' aria-selected='false') Products without offer
+      #tab-exceptions-body.tab-content.border.py-4
+        // Section: Count of Image Change tab
+        #tab-count_image-body.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='tab-count_image')
+          include includes/exceptions/tab-count_image
+        // Section: Count of A+ tab
+        #tab-count_aplus-body.tab-pane.fade(role='tabpanel' aria-labelledby='tab-count_aplus')
+          include includes/exceptions/tab-count_aplus
+        // Section: Count of variation (twister) change tab
+        #tab-count_twister-body.tab-pane.fade(role='tabpanel' aria-labelledby='tab-count_twister')
+          include includes/exceptions/tab-count_twister
+        // Section: Replenishment Code
+        #tab-replenishment-body.tab-pane.fade(role='tabpanel' aria-labelledby='tab-replenishment')
+          include includes/exceptions/tab-replenishment
+        // Section: Product Category Changes
+        #tab-products_changes-body.tab-pane.fade(role='tabpanel' aria-labelledby='tab-products_changes')
+          include includes/exceptions/tab-products_changes
+        // Section: Products without offer
+        #tab-products_offer-body.tab-pane.fade(role='tabpanel' aria-labelledby='tab-products_offer')
+          include includes/exceptions/tab-products_offer
