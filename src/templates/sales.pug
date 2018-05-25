@@ -3,6 +3,8 @@ block link
   -var selected = 'sales';
 block content
   include includes/header
+  include includes/mobile-menu
+  // Section: Main content
   main.content.mt-4.container-fluid
     // Section: Overview
     .row.justify-content-between.mb-4
@@ -21,15 +23,18 @@ block content
             i.icon-group.text-warning
           .card-body.text-center
             .row
-              .col-4.text-primary.border-right.mb-2.mb-md-0
-                h1.mb-0 650
-                span Customers
-              .col-4.text-muted.border-right.mb-2.mb-md-0
-                h1.mb-0 289
-                span Sales
-              .col-4.text-muted.mb-2.mb-md-0
-                h1.mb-0 1,289
-                span Units
+              .col-3.text-primary.border-right.mb-2.mb-md-0
+                h3.mb-0 650
+                small Customers
+              .col-3.text-muted.border-right.mb-2.mb-md-0
+                h3.mb-0 289
+                small Avg. Sales
+              .col-3.text-muted.border-right.mb-2.mb-md-0
+                h3.mb-0 1,289
+                small Avg. Units
+              .col-3.text-muted.mb-2.mb-md-0
+                h3.mb-0 289
+                small ASP 
       .col-sm-6.col-lg-4.mb-4
         .card.border.rounded-0
           .card-header.rounded-0.d-flex.justify-content-between.bg-white
@@ -37,15 +42,18 @@ block content
             i.icon-group.text-warning
           .card-body.text-center
             .row
-              .col-4.text-primary.border-right.mb-2.mb-md-0
-                h1.mb-0 650
-                span Customers
-              .col-4.text-muted.border-right.mb-2.mb-md-0
-                h1.mb-0 289
-                span Sales
-              .col-4.text-muted.mb-2.mb-md-0
-                h1.mb-0 1,289
-                span Units
+              .col-3.text-primary.border-right.mb-2.mb-md-0
+                h3.mb-0 650
+                small Customers
+              .col-3.text-muted.border-right.mb-2.mb-md-0
+                h3.mb-0 289
+                small Avg. Sales
+              .col-3.text-muted.border-right.mb-2.mb-md-0
+                h3.mb-0 1,289
+                small Avg. Units
+              .col-3.text-muted.mb-2.mb-md-0
+                h3.mb-0 289
+                small ASP 
       .col-sm-6.col-lg-4.mb-4
         .card.border.rounded-0
           .card-header.rounded-0.d-flex.justify-content-between.bg-white
@@ -53,16 +61,18 @@ block content
             i.icon-group.text-warning
           .card-body.text-center
             .row
-              .col-4.text-primary.border-right.mb-2.mb-md-0
-                h1.mb-0 650
-                span Customers
-              .col-4.text-muted.border-right.mb-2.mb-md-0
-                h1.mb-0 289
-                span Sales
-              .col-4.text-muted.mb-2.mb-md-0
-                h1.mb-0 1,289
-                span Units
-
+              .col-3.text-primary.border-right.mb-2.mb-md-0
+                h3.mb-0 650
+                small Customers
+              .col-3.text-muted.border-right.mb-2.mb-md-0
+                h3.mb-0 289
+                small Avg. Sales
+              .col-3.text-muted.border-right.mb-2.mb-md-0
+                h3.mb-0 1,289
+                small Avg. Units
+              .col-3.text-muted.mb-2.mb-md-0
+                h3.mb-0 289
+                small ASP 
     // Section: Charts
     .row.mb-4
       .col-sm-6
@@ -121,6 +131,10 @@ block content
       .col-auto
         h3.mb-0 Conversion Metrics
         small.text-muted Last Updated: 05/10/2018 05:00 AM
+      .col-auto
+        label.toggle.has-text.d-block.text-right
+          input(type='checkbox' checked)
+          span.handle(data-on='Trailing 6 Weeks' data-off='Trailing 6 Months')  
       .w-100.mb-4
       .col-12
         .border.py-3

@@ -130,19 +130,19 @@ const config = {
     //   template: 'templates/dashboard.pug',
     // }),
     new HtmlWebpackPlugin({
-      title: 'Praesto Users',
+      title: 'Users',
       filename: 'users.html',
       bodyClass: 'page-users',
       template: 'templates/users.pug',
     }),
     new HtmlWebpackPlugin({
-      title: 'Praesto Sales',
+      title: 'Sales',
       bodyClass: 'page-sales',
       filename: 'sales.html',
       template: 'templates/sales.pug',
     }),
     new HtmlWebpackPlugin({
-      title: 'Praesto Inventory',
+      title: 'Inventory',
       bodyClass: 'page-inventory',
       filename: 'inventory.html',
       template: 'templates/inventory.pug',

@@ -18,6 +18,8 @@ $(document).ready(() => {
   const toggleSidebar = () => {
     if ($(window).innerWidth() < 768) {
       $('body').addClass('is-collapsed');
+    } else {
+      $('body').removeClass('is-collapsed');
     }
   };
 
@@ -70,6 +72,12 @@ $(document).ready(() => {
   $(window).resize(() => {
     toggleSidebar();
     setContentSpacing();
+  });
+
+  $('.select-daterange').change(() => {
+    var selected = $('.select-daterange option:selected').val().toLowerCase();
+    $('.daterange').addClass('d-none');
+    $('#' + selected).removeClass('d-none');
   });
 
 

@@ -36,6 +36,7 @@
 @import "~bootstrap/scss/carousel";*/
 @import "~bootstrap/scss/utilities";
 /*@import "~bootstrap/scss/print";*/
+
 // our custom styles here
 
 .badge {
@@ -327,6 +328,7 @@ html {
   .navbar-nav {
     width: 100%;
     flex: 1;
+    overflow: auto;
   }
 
   .nav-link {
@@ -398,6 +400,24 @@ html {
 
   &.has-nav {
     height: auto;
+
+    .navbar-nav {
+      white-space: nowrap;
+      overflow: auto;
+    }
+
+    .navbar-brand {
+      height: 58px;
+      background: url("../images/logo.png") no-repeat 50% 50%;
+      width: 58px;
+
+      @include media-breakpoint-up(md) {
+        width: 220px;
+        background-image: url("../images/logo_praesto.png");
+      }
+
+      background-size: 100% auto;
+    }
   }
 }
 

@@ -2,37 +2,43 @@ block content
   table(id='table-conversion_metrics' class='table m-0' style='width: 100%')
     thead
       tr
-        th(rowspan='2').text-center
+        th.text-center.border-bottom-0
           strong Products
         th(colspan='3').text-center
           div
             strong Week 1 2018
-          div 08-Apr
+          small 08-Apr - 14 Apr
         th(colspan='3').text-center
           div
             strong Week 2 2018
-          div 15-Apr
+          small 15-Apr - 21 Apr
         th(colspan='3').text-center
           div
             strong Week 3 2018
-          div 22-Apr
+          small 22-Apr - 28 Apr
         th(colspan='3').text-center
           div
             strong Week 4 2018
-          div 29-Apr
+          small 29-Apr - 05 May
         th(colspan='3').text-center
           div
             strong Week 5 2018
-          div 06-May
+          small 06-May - 12 May
         th(colspan='3').text-center
           div
             strong Week 6 2018
-          div 13-May
+          small 13-May - 19 May
         th(colspan='3').text-center
           div
             strong Current Week
-          div 20-May
+          small 20-May - 26 May
       tr
+        th.border-top-0
+          select.custom-select.form-control
+            option(selected='') SKU
+            option(value='1') ASIN
+            option(value='2') Model
+            option(value='2') Part
         th.text-center Unique Page Views
         th.text-center Units Sold
         th.text-center Conversion in %

@@ -12,7 +12,7 @@ if ($('#chart-sales_customers').length > 0) {
       text: 'Sales to Customers'
     },
     xAxis: {
-      categories: ['18 Mar', '19 Mar', '20 Mar', '21 Mar', '22 Mar']
+      categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr', '20 Apr']
     },
     yAxis: {
       min: 0,
@@ -39,20 +39,23 @@ if ($('#chart-sales_customers').length > 0) {
     },
     series: [{
       name: '3P Sales - MFN',
-      data: [500, 300, 400, 700, 200]
+      type: 'column',
+      data: [50, 200, 400, 700, 200, 480]
     }, {
       name: '3P Sales - FBA',
-      data: [280, 250, 304, 20, 10]
+      type: 'column',
+      data: [100, 300, 500, 400, 600, 500]
     }, {
       name: 'Amazon Sales',
-      data: [30, 84, 104, 182, 65]
+      type: 'column',
+      data: [900, 600, 300, 200, 400, 600]
     }, {
       name: 'Amazon COGS',
-      data: [0, 14, 340, 122, 465]
+      type: 'spline',
+      data: [200, 314, 440, 522, 665, 855]
     }]
   });
 }
-
 
 /* Sales: Sales to Amazon */
 if ($('#chart-sales_amazon').length > 0) {
@@ -93,7 +96,6 @@ if ($('#chart-sales_amazon').length > 0) {
     }]
   });
 }
-
 
 /* Sales: Geographic Trends */
 if ($('#chart-sales_geographic').length > 0) {
@@ -154,7 +156,6 @@ if ($('#chart-sales_geographic').length > 0) {
     });
   });
 }
-
 
 /* Inventory: Inventory Source */
 if ($('#chart-inventory').length > 0) {

@@ -1,28 +1,45 @@
 block content
+  - var weeks = [
+  - 'Select Week', 
+  - 'May 20 2018 - May 26 2018', 
+  - 'May 13 2018 - May 19 2018',
+  - 'May 06 2018 - May 12 2018',
+  - 'Apr 29 2018 - May 05 2018',
+  - 'Apr 22 2018 - Apr 28 2018', 
+  - 'Apr 15 2018 - Apr 21 2018'];
+  - var months = [
+  - 'Select Month', 
+  - '01 Jan 2018 - 31 Jan 2018', 
+  - '01 Feb 2018 - 29 Feb 2018',
+  - '01 Mar 2018 - 31 12 2018',
+  - 'Apr 01 2018 - Apr 30 2018',
+  - 'May 01 2018 - May 31 2018']
+  // Section: Header
   header.header.has-nav.text-muted
     .header-top.container-fluid
       .row.no-gutters.align-items-center.mb-2
-        .header-left.col-sm-8.col-md-7.col-xl-5
+        .header-left.col.col-lg-8.col-xl-6
           .row.align-items-center.no-gutters
-            a(href="#").col-md-auto.text-center
-              img(src=require('../images/logo_praesto.png') width=120)
-            .form-row.border-left.col.mb-0.ml-md-4.pl-2.py-4.py-md-2
-              label.col-3.col-form-label(for="sales-marketplace") Market Place
-              .col-8
+            a(href="#").navbar-brand.col-auto.text-center
+            .form-row.border-left.col.mb-0.ml-md-4.pl-2.py-md-2
+              label.d-none.d-md-inline-block.col-3.col-form-label(for="sales-marketplace") Market Place
+              .col.col-md-8
                 select.custom-select.form-control
-                  option(selected='') Amazon
+                  option(selected='') Choose Market Place
+                  option(value='2') Amazon
                   option(value='1') Best Buy
                   option(value='2') Walmart
-        .header-right.col-md-auto.ml-auto
+        .header-right.col-auto.ml-auto
           .dropdown.show.text-right
             a#user-menu.btn.text-muted.dropdown-toggle.d-inline-flex.align-items-center.rounded-0(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-              | James Walter
+              span.d-none.d-inline-md-block James Walter
               i.rounded.icon-user.text-primary.icon-md.ml-2
             .dropdown-menu(aria-labelledby='user-menu')
               a.dropdown-item(href='settings.html') My Profile
               a.dropdown-item(href='#') Log out
     .header-nav.mb-2
       include ./dashboard_menu
+    // Section: Search Filters  
     .container-fluid
       .row.align-items-center
         .col.mb-2.mb-sm-0
@@ -32,7 +49,17 @@ block content
                 i.icon-search.icon-md.text-primary
             input.form-control.form-control-lg(type='text' placeholder='Search by ASIN, Part #, Model #, SKU' aria-label='Search' aria-describedby='search')
         .col-sm-auto.mb-2.mb-sm-0.pl-sm-0
-          select.custom-select.form-control.w-auto.mr-2
-            each range in ['Select Date Range', 'Daily', 'Weekly', 'Monthly']
+          select.custom-select.form-control.form-control-lg.w-auto.mr-2.select-daterange
+            each range in ['Select Date Range', 'Weekly', 'Monthly']
+              option(value=range) #{range}      
+        .col-sm-auto.mb-2.mb-sm-0.pl-sm-0.daterange.d-none(id='weekly')
+          select.custom-select.form-control.form-control-lg.w-auto.mr-2
+            each range in weeks
               option(value=range) #{range}
-          button.btn.btn-primary.rounded-0.mr-2 Apply
+        .col-sm-auto.mb-2.mb-sm-0.pl-sm-0.daterange.d-none(id='monthly')
+          select.custom-select.form-control.form-control-lg.w-auto.mr-2
+            each range in months
+              option(value=range) #{range}      
+        .col-sm-auto
+          button.btn.btn-primary.btn-lg.rounded-0.mr-2 Apply
+  .overlay        

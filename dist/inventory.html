@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory
+    </title>
+  <link href="css/index.css" rel="stylesheet"></head>
+  <body class="page-inventory">
+    <!-- Section: Header-->
+    <header class="header has-nav text-muted">
+      <div class="header-top container-fluid">
+        <div class="row no-gutters align-items-center mb-2">
+          <div class="header-left col col-lg-8 col-xl-6">
+            <div class="row align-items-center no-gutters"><a class="navbar-brand col-auto text-center" href="#"></a>
+              <div class="form-row border-left col mb-0 ml-md-4 pl-2 py-md-2">
+                <label class="d-none d-md-inline-block col-3 col-form-label" for="sales-marketplace">Market Place</label>
+                <div class="col col-md-8">
+                  <select class="custom-select form-control">
+                    <option selected="">Choose Market Place</option>
+                    <option value="2">Amazon</option>
+                    <option value="1">Best Buy</option>
+                    <option value="2">Walmart</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-right col-auto ml-auto">
+            <div class="dropdown show text-right"><a class="btn text-muted dropdown-toggle d-inline-flex align-items-center rounded-0" id="user-menu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-none d-inline-md-block">James Walter</span><i class="rounded icon-user text-primary icon-md ml-2"></i></a>
+              <div class="dropdown-menu" aria-labelledby="user-menu"><a class="dropdown-item" href="settings.html">My Profile</a><a class="dropdown-item" href="#">Log out</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-nav mb-2">
+        <!-- Section: Dashboard menu-->
+        <nav class="navbar navbar-expand navbar-secondary navbar-dark bg-dark">
+          <button class="d-sm-none btn navbar-toggle text-muted rounded-0"><i class="icon-menu icon-md"></i></button>
+          <h3 class="text-white ml-2 mb-0 d-sm-none">Inventory</h3>
+          <ul class="navbar-nav py-1 d-none d-sm-inline-flex">
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 active" href="inventory.html">Inventory</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+            <li class="nav-item "><a class="nav-link py-0 " href="recommendations.html">Recommendations</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Section: Search Filters  -->
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col mb-2 mb-sm-0">
+            <div class="input-group">
+              <div class="input-group-prepend"><span class="input-group-text px-2 px-md-4" id="search"><i class="icon-search icon-md text-primary"></i></span></div>
+              <input class="form-control form-control-lg" type="text" placeholder="Search by ASIN, Part #, Model #, SKU" aria-label="Search" aria-describedby="search">
+            </div>
+          </div>
+          <div class="col-sm-auto mb-2 mb-sm-0 pl-sm-0">
+            <select class="custom-select form-control form-control-lg w-auto mr-2 select-daterange">
+              <option value="Select Date Range">Select Date Range      </option>
+              <option value="Weekly">Weekly      </option>
+              <option value="Monthly">Monthly      </option>
+            </select>
+          </div>
+          <div class="col-sm-auto mb-2 mb-sm-0 pl-sm-0 daterange d-none" id="weekly">
+            <select class="custom-select form-control form-control-lg w-auto mr-2">
+              <option value="Select Week">Select Week</option>
+              <option value="May 20 2018 - May 26 2018">May 20 2018 - May 26 2018</option>
+              <option value="May 13 2018 - May 19 2018">May 13 2018 - May 19 2018</option>
+              <option value="May 06 2018 - May 12 2018">May 06 2018 - May 12 2018</option>
+              <option value="Apr 29 2018 - May 05 2018">Apr 29 2018 - May 05 2018</option>
+              <option value="Apr 22 2018 - Apr 28 2018">Apr 22 2018 - Apr 28 2018</option>
+              <option value="Apr 15 2018 - Apr 21 2018">Apr 15 2018 - Apr 21 2018</option>
+            </select>
+          </div>
+          <div class="col-sm-auto mb-2 mb-sm-0 pl-sm-0 daterange d-none" id="monthly">
+            <select class="custom-select form-control form-control-lg w-auto mr-2">
+              <option value="Select Month">Select Month      </option>
+              <option value="01 Jan 2018 - 31 Jan 2018">01 Jan 2018 - 31 Jan 2018      </option>
+              <option value="01 Feb 2018 - 29 Feb 2018">01 Feb 2018 - 29 Feb 2018      </option>
+              <option value="01 Mar 2018 - 31 12 2018">01 Mar 2018 - 31 12 2018      </option>
+              <option value="Apr 01 2018 - Apr 30 2018">Apr 01 2018 - Apr 30 2018      </option>
+              <option value="May 01 2018 - May 31 2018">May 01 2018 - May 31 2018      </option>
+            </select>
+          </div>
+          <div class="col-sm-auto">
+            <button class="btn btn-primary btn-lg rounded-0 mr-2">Apply</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="overlay">       </div>
+    <main class="content mt-4 container-fluid">
+      <div class="row justify-content-between mb-4">
+        <div class="col-auto">
+          <h3 class="mb-0">Inventory Overview</h3><small class="text-muted">Last Updated: 05/10/2018 05:00 AM</small>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-primary rounded-0 d-inline-flex align-items-center" type="button" title="Download"><i class="icon-download icon-md mr-sm-2"></i><span class="d-none d-sm-block">Download</span></button>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-sm-12">
+          <div class="border p-4">
+            <div class="btn-group" role="group" aria-label="Sales to Customers Chart">
+              <button class="btn btn-secondary text-white rounded-0" type="button">3P</button>
+              <button class="btn rounded-0" type="button">Amazon</button>
+            </div>
+            <div id="chart-inventory"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Section: Inventory Trends-->
+      <div class="row mb-4">
+        <div class="col-auto">
+          <h3 class="mb-0">Inventory Trends</h3><small class="text-muted">Last Updated: 05/10/2018 05:00 AM</small>
+        </div>
+        <div class="col-auto">
+          <label class="toggle has-text d-block text-right">
+            <input type="checkbox" checked><span class="handle" data-on="Trailing 6 Weeks" data-off="Trailing 6 Months"></span>
+          </label>
+        </div>
+        <div class="w-100 mb-4"></div>
+        <div class="col-12">
+          <table class="table m-0" id="table-inventory_trends" style="width: 100%">
+            <thead>
+              <tr>
+                <th class="text-center border-bottom-0"><strong>Products</strong></th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 1 2018</strong></div>
+                  <div>08-Apr</div>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 2 2018</strong></div>
+                  <div>15-Apr</div>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 3 2018</strong></div>
+                  <div>22-Apr</div>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 4 2018</strong></div>
+                  <div>29-Apr</div>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 5 2018</strong></div>
+                  <div>06-May</div>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 6 2018</strong></div>
+                  <div>13-May</div>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Current Week</strong></div>
+                  <div>20-May</div>
+                </th>
+              </tr>
+              <tr>
+                <th class="border-top-0">
+                  <select class="custom-select form-control">
+                    <option selected="">SKU</option>
+                    <option value="1">ASIN</option>
+                    <option value="2">Model</option>
+                    <option value="2">Part</option>
+                  </select>
+                </th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+              </tr>
+              <tr class="total">
+                <th class="text-center">Total</th>
+                <th class="text-right">$67.00</th>
+                <th class="text-center">150.00</th>
+                <th class="text-right">$260.00</th>
+                <th class="text-center">10</th>
+                <th class="text-right">$467.00</th>
+                <th class="text-center">150.00</th>
+                <th class="text-right">$160.00</th>
+                <th class="text-center">140</th>
+                <th class="text-right">$675.00</th>
+                <th class="text-center">150.00</th>
+                <th class="text-right">$650.00</th>
+                <th class="text-center">120</th>
+                <th class="text-right">630.00</th>
+                <th class="text-center">100</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">
+                  <div>AMZ1290838</div>
+                  <div class="text-center">Vs</div>
+                  <div>Prior Yr / ASP</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.75</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <div>AMZ1290838</div>
+                  <div class="text-center">Vs</div>
+                  <div>Prior Yr / ASP</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <div>AMZ1290838</div>
+                  <div class="text-center">Vs</div>
+                  <div>Prior Yr / ASP</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <div>AMZ1290838</div>
+                  <div class="text-center">Vs</div>
+                  <div>Prior Yr / ASP</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">50,000.00</div>
+                  <div class="py-2 text-right text-danger">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">500.00</div>
+                  <div class="py-2 text-right text-success">17%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">80</div>
+                  <div class="py-2 text-center">150.00</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+<div class="footer p-4 text-center text-muted" style="background: #e1e1e1">
+  <p>Copyrights 2018. Praesto. All Rights Reserved</p>
+</div>
+    </main>
+  <script type="text/javascript" src="scripts/commons.js"></script><script type="text/javascript" src="scripts/app.js"></script></body>
+</html>
