@@ -21,10 +21,10 @@ block content
         .header-left.col.col-lg-8.col-xl-6
           .row.align-items-center.no-gutters
             a(href="#").navbar-brand.col-auto.text-center
-            .form-row.border-left.col.mb-0.ml-md-4.pl-2.py-md-2
+            .form-row.border-left.col.mb-0.ml-md-4.pl-2
               label.d-none.d-md-inline-block.col-3.col-form-label(for="sales-marketplace") Market Place
-              .col.col-md-8
-                select.custom-select.form-control
+              .col.col-md-6
+                select.custom-select.form-control.form-control-sm#sales-marketplace
                   option(selected='') Choose Market Place
                   option(value='2') Amazon
                   option(value='1') Best Buy
@@ -41,25 +41,25 @@ block content
       include ./dashboard_menu
     // Section: Search Filters  
     .container-fluid
-      .row.align-items-center
-        .col.mb-2.mb-sm-0
+      .form-row.align-items-center.flex-md-nowrap
+        .col-md.mb-2.mb-md-0
           .input-group
             .input-group-prepend
               span#search.input-group-text.px-2.px-md-4
                 i.icon-search.icon-md.text-primary
-            input.form-control.form-control-lg(type='text' placeholder='Search by ASIN, Part #, Model #, SKU' aria-label='Search' aria-describedby='search')
-        .col-sm-auto.mb-2.mb-sm-0.pl-sm-0
-          select.custom-select.form-control.form-control-lg.w-auto.mr-2.select-daterange
+            input.form-control.form-control(type='text' placeholder='Search by ASIN, Part #, Model #, SKU' aria-label='Search' aria-describedby='search')
+        .col-6.col-md-auto.mb-md-0
+          select.custom-select.form-control.select-daterange.rounded-0
             each range in ['Select Date Range', 'Weekly', 'Monthly']
               option(value=range) #{range}      
-        .col-sm-auto.mb-2.mb-sm-0.pl-sm-0.daterange.d-none(id='weekly')
-          select.custom-select.form-control.form-control-lg.w-auto.mr-2
+        .col-6.col-md-auto.mb-md-0.daterange.d-none(id='weekly')
+          select.custom-select.form-control.rounded-0
             each range in weeks
               option(value=range) #{range}
-        .col-sm-auto.mb-2.mb-sm-0.pl-sm-0.daterange.d-none(id='monthly')
-          select.custom-select.form-control.form-control-lg.w-auto.mr-2
+        .col-6.col-md-auto.mb-2.mb-md-0.daterange.d-none(id='monthly')
+          select.custom-select.form-control.rounded-0
             each range in months
               option(value=range) #{range}      
-        .col-sm-auto
-          button.btn.btn-primary.btn-lg.rounded-0.mr-2 Apply
+        .col-sm-auto.ml-auto.mt-2.mt-md-0
+          button.btn.btn-primary.rounded-0 Apply
   .overlay        

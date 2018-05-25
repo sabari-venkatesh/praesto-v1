@@ -15,7 +15,7 @@
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/dropdown";
-/*@import "~bootstrap/scss/button-group";*/
+@import "~bootstrap/scss/button-group";
 @import "~bootstrap/scss/input-group";
 @import "~bootstrap/scss/custom-forms";
 @import "~bootstrap/scss/nav";
@@ -47,6 +47,10 @@
   &.is-active {
     background-color: $primary;
   }
+}
+
+.pagination {
+  margin-top: 1rem;
 }
 
 #table-sales_geography_wrapper tr td:first-child {
@@ -401,23 +405,24 @@ html {
   &.has-nav {
     height: auto;
 
-    .navbar-nav {
-      white-space: nowrap;
-      overflow: auto;
-    }
-
     .navbar-brand {
-      height: 58px;
+      height: 42px;
       background: url("../images/logo.png") no-repeat 50% 50%;
-      width: 58px;
+      width: 42px;
 
       @include media-breakpoint-up(md) {
-        width: 220px;
+        width: 160px;
         background-image: url("../images/logo_praesto.png");
       }
 
       background-size: 100% auto;
     }
+  }
+}
+
+.is-collapsed {
+  .has-nav ~ .sidebar {
+    width: 0;
   }
 }
 
@@ -452,6 +457,14 @@ html {
     body:not(.is-collapsed) & {
       display: block;
       background-color: rgba($modal-backdrop-bg, 0.5);
+    }
+  }
+  .has-nav + & {
+    @include media-breakpoint-down(lg) {
+      body:not(.is-collapsed) & {
+        display: block;
+        background-color: rgba($modal-backdrop-bg, 0.5);
+      }
     }
   }
 }

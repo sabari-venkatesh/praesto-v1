@@ -15,8 +15,8 @@ $(document).ready(() => {
   const headerNav = $('header.has-nav');
 
   /* declare the functions here */
-  const toggleSidebar = () => {
-    if ($(window).innerWidth() < 768) {
+  const toggleSidebar = (breakpoint) => {
+    if ($(window).innerWidth() < breakpoint) {
       $('body').addClass('is-collapsed');
     } else {
       $('body').removeClass('is-collapsed');
@@ -58,7 +58,11 @@ $(document).ready(() => {
   });
 
   $('.overlay').click(() => {
-    toggleSidebar();
+    if ($('.has-nav').length > 0) {
+      toggleSidebar(1200);
+    } else {
+      toggleSidebar(768);
+    }
   });
 
   $(window).scroll(() => {
@@ -84,7 +88,6 @@ $(document).ready(() => {
   /* list the functions to be invoked on page initialization here */
   toggleSidebar();
   setContentSpacing();
-
 
   $('#table-users').DataTable({
     dom: 'rt<"dataTables_bottom"lp>',
@@ -124,6 +127,7 @@ $(document).ready(() => {
 
   $('#table-sales_geography').DataTable({
     ajax: './data/sales-demography.json',
+    dom: 'rt<"dataTables_bottom justify-content-end"p>',
     searching: false,
     lengthChange: false,
     fixedHeader: true,

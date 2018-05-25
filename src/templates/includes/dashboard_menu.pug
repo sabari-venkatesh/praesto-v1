@@ -15,11 +15,11 @@ block content
   - 'Forecasting': 'forecasting.html', 
   - 'Recommendations': 'recommendations.html'};
   - var index = 0;
-  nav.navbar.navbar-expand.navbar-secondary.navbar-dark.bg-dark
-    button.d-sm-none.btn.navbar-toggle.text-muted.rounded-0
+  nav.navbar.navbar-expand.navbar-secondary.navbar-dark.bg-dark.py-0
+    button.d-xl-none.btn.navbar-toggle.text-muted.rounded-0
       i.icon-menu.icon-md
-    h3.text-white.ml-2.mb-0.d-sm-none= htmlWebpackPlugin.options.title
-    ul.navbar-nav.py-1.d-none.d-sm-inline-flex
+    h3.text-white.ml-2.mb-0.d-xl-none= htmlWebpackPlugin.options.title
+    ul.navbar-nav.py-1.d-none.d-xl-inline-flex
       each url, item in menu
         - index++;
         li(class='nav-item ' + (index < Object.keys(menu).length ? 'border-right': ''))

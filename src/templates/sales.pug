@@ -5,93 +5,93 @@ block content
   include includes/header
   include includes/mobile-menu
   // Section: Main content
-  main.content.mt-4.container-fluid
+  main.content.mt-2.container-fluid
     // Section: Overview
-    .row.justify-content-between.mb-4
+    .row.justify-content-between.mb-2
       .col-auto
-        h3.mb-0 Sales Overview
+        h4.mb-0 Sales Overview
         small.text-muted Last Updated: 05/10/2018 05:00 AM
       .col-auto
-        button.btn.btn-primary.rounded-0.d-inline-flex.align-items-center(type='button' title='Download')
+        button.btn.btn-sm.btn-primary.rounded-0.d-inline-flex.align-items-center(type='button' title='Download')
           i.icon-download.icon-md.mr-sm-2
           span.d-none.d-sm-block Download
-      .w-100.mb-4
-      .col-sm-6.col-lg-4.mb-4
+      .w-100.mb-2
+      .col-sm-6.col-lg-4.mb-2
         .card.border.rounded-0
-          .card-header.rounded-0.d-flex.justify-content-between.bg-white
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white.px-2.py-1
             h5.mb-0.text-primary Total Customers
             i.icon-group.text-warning
-          .card-body.text-center
+          .card-body.text-center.p-2
             .row
               .col-3.text-primary.border-right.mb-2.mb-md-0
-                h3.mb-0 650
+                h4.mb-0 650
                 small Customers
               .col-3.text-muted.border-right.mb-2.mb-md-0
-                h3.mb-0 289
+                h4.mb-0 289
                 small Avg. Sales
               .col-3.text-muted.border-right.mb-2.mb-md-0
-                h3.mb-0 1,289
+                h4.mb-0 1,289
                 small Avg. Units
               .col-3.text-muted.mb-2.mb-md-0
-                h3.mb-0 289
+                h4.mb-0 289
                 small ASP 
-      .col-sm-6.col-lg-4.mb-4
+      .col-sm-6.col-lg-4.mb-2
         .card.border.rounded-0
-          .card-header.rounded-0.d-flex.justify-content-between.bg-white
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white.px-2.py-1
             h5.mb-0.text-primary New Customers
             i.icon-group.text-warning
-          .card-body.text-center
+          .card-body.text-center.p-2
             .row
               .col-3.text-primary.border-right.mb-2.mb-md-0
-                h3.mb-0 650
+                h4.mb-0 650
                 small Customers
               .col-3.text-muted.border-right.mb-2.mb-md-0
-                h3.mb-0 289
+                h4.mb-0 289
                 small Avg. Sales
               .col-3.text-muted.border-right.mb-2.mb-md-0
-                h3.mb-0 1,289
+                h4.mb-0 1,289
                 small Avg. Units
               .col-3.text-muted.mb-2.mb-md-0
-                h3.mb-0 289
+                h4.mb-0 289
                 small ASP 
-      .col-sm-6.col-lg-4.mb-4
+      .col-sm-6.col-lg-4.mb-2
         .card.border.rounded-0
-          .card-header.rounded-0.d-flex.justify-content-between.bg-white
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white.px-2.py-1
             h5.mb-0.text-primary Repeat Customers
             i.icon-group.text-warning
-          .card-body.text-center
+          .card-body.text-center.p-2
             .row
               .col-3.text-primary.border-right.mb-2.mb-md-0
-                h3.mb-0 650
+                h4.mb-0 650
                 small Customers
               .col-3.text-muted.border-right.mb-2.mb-md-0
-                h3.mb-0 289
+                h4.mb-0 289
                 small Avg. Sales
               .col-3.text-muted.border-right.mb-2.mb-md-0
-                h3.mb-0 1,289
+                h4.mb-0 1,289
                 small Avg. Units
               .col-3.text-muted.mb-2.mb-md-0
-                h3.mb-0 289
+                h4.mb-0 289
                 small ASP 
     // Section: Charts
     .row.mb-4
       .col-sm-6
-        .border.p-4
+        .border.p-2
           .btn-group(role='group' aria-label='Sales to Customers Chart')
-            button.btn.btn-secondary.text-white.rounded-0(type='button') Dollars
-            button.btn.rounded-0(type='button') Units
+            button.btn.btn-sm.btn-secondary.text-white.rounded-0(type='button') Dollars
+            button.btn.btn-sm.btn-light.rounded-0(type='button') Units
           #chart-sales_customers
       .col-sm-6
-        .border.p-4
+        .border.p-2
           .btn-group(role='group' aria-label='Sales to Amazon')
-            button.btn.btn-secondary.text-white.rounded-0(type='button') Dollars
-            button.btn.rounded-0(type='button') Units
+            button.btn.btn-sm.btn-secondary.text-white.rounded-0(type='button') Dollars
+            button.btn.btn-sm.btn-light.rounded-0(type='button') Units
           #chart-sales_amazon
 
     // Section: Sales Trends
-    .row.mb-4
+    .row.mb-4.align-items-center
       .col-auto
-        h3.mb-0 Sales Trends
+        h4.mb-0 Sales Trends
         small.text-muted Last Updated: 05/10/2018 05:00 AM
       .col-auto
         label.toggle.has-text.d-block.text-right
@@ -113,9 +113,9 @@ block content
             include includes/sales/trends-customers
     
     // Section: Geographic Trends
-    .row.mb-4
+    .row.mb-4.align-items-center
       .col-auto
-        h3.mb-0 Geographic Trends
+        h4.mb-0 Geographic Trends
         small.text-muted Last Updated: 05/10/2018 05:00 AM
       .w-100.mb-4
       .col-12
@@ -127,9 +127,9 @@ block content
             .col-md-6
               .border.py-2
                 table(id='table-sales_geography' class='table m-0')
-    .row.mb-4
+    .row.mb-4.align-items-center
       .col-auto
-        h3.mb-0 Conversion Metrics
+        h4.mb-0 Conversion Metrics
         small.text-muted Last Updated: 05/10/2018 05:00 AM
       .col-auto
         label.toggle.has-text.d-block.text-right

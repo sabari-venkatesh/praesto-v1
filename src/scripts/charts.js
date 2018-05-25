@@ -6,7 +6,8 @@ import mapData from './us-all.js';
 if ($('#chart-sales_customers').length > 0) {
   Highcharts.chart('chart-sales_customers', {
     chart: {
-      type: 'column'
+      type: 'column',
+      height: (9 / 21 * 100) + '%'
     },
     title: {
       text: 'Sales to Customers'
@@ -53,7 +54,25 @@ if ($('#chart-sales_customers').length > 0) {
       name: 'Amazon COGS',
       type: 'spline',
       data: [200, 314, 440, 522, 665, 855]
-    }]
+    }],
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          chart: {
+            height: 300
+          },
+          subtitle: {
+            text: null
+          },
+          navigator: {
+            enabled: false
+          }
+        }
+      }]
+    }
   });
 }
 
@@ -61,7 +80,8 @@ if ($('#chart-sales_customers').length > 0) {
 if ($('#chart-sales_amazon').length > 0) {
   Highcharts.chart('chart-sales_amazon', {
     chart: {
-      type: 'column'
+      type: 'column',
+      height: (9 / 21 * 100) + '%'
     },
     title: {
       text: 'Sales to Amazon'
@@ -93,7 +113,25 @@ if ($('#chart-sales_amazon').length > 0) {
     }, {
       name: 'Amazon Shipped - Confirmed PO',
       data: [280, 250, 304, 20, 10]
-    }]
+    }],
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          chart: {
+            height: 300
+          },
+          subtitle: {
+            text: null
+          },
+          navigator: {
+            enabled: false
+          }
+        }
+      }]
+    }
   });
 }
 
