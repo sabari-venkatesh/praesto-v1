@@ -147,6 +147,66 @@ const config = {
       filename: 'inventory.html',
       template: 'templates/inventory.pug',
     }),
+    new HtmlWebpackPlugin({
+      title: 'Exceptions',
+      bodyClass: 'page-exceptions',
+      filename: 'exceptions.html',
+      template: 'templates/exceptions.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Advertising',
+      bodyClass: 'page-advertising',
+      filename: 'advertising.html',
+      template: 'templates/advertising.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Product Ranks',
+      bodyClass: 'page-product_ranks',
+      filename: 'product-ranks.html',
+      template: 'templates/product-ranks.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Keywords',
+      bodyClass: 'page-keywords',
+      filename: 'keywords.html',
+      template: 'templates/keywords.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Buy-Box Reports',
+      bodyClass: 'page-buy_box_reports',
+      filename: 'buy-box-reports.html',
+      template: 'templates/buy-box-reports.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'MAP',
+      bodyClass: 'page-map',
+      filename: 'map.html',
+      template: 'templates/map.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Reviews',
+      bodyClass: 'page-reviews',
+      filename: 'reviews.html',
+      template: 'templates/reviews.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Chargebacks',
+      bodyClass: 'page-chargebacks',
+      filename: 'chargebacks.html',
+      template: 'templates/chargebacks.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Forecasting',
+      bodyClass: 'page-forecasting',
+      filename: 'forecasting.html',
+      template: 'templates/forecasting.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Recommendations',
+      bodyClass: 'page-recommendations',
+      filename: 'recommendations.html',
+      template: 'templates/recommendations.pug',
+    }),
     new CopyWebpackPlugin([{
       from: './data',
       to: './data'
