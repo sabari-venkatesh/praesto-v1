@@ -66,31 +66,24 @@
           </div>
           <div class="col-6 col-md-auto mb-md-0">
             <select class="custom-select form-control select-daterange rounded-0">
-              <option value="Select Date Range">Select Date Range      </option>
-              <option value="Weekly">Weekly      </option>
-              <option value="Monthly">Monthly      </option>
+              <option value="Select Date Range">Select Date Range</option>
+              <option value="Yesterday">Yesterday</option>
+              <option value="Week-to-Date">Week-to-Date</option>
+              <option value="Prior Week">Prior Week</option>
+              <option value="Month to Date">Month to Date</option>
+              <option value="Prior Month">Prior Month</option>
+              <option value="Customized: Enter custom date range">Customized: Enter custom date range</option>
             </select>
           </div>
-          <div class="col-6 col-md-auto mb-md-0 daterange d-none" id="weekly">
-            <select class="custom-select form-control rounded-0">
-              <option value="Select Week">Select Week</option>
-              <option value="May 20 2018 - May 26 2018">May 20 2018 - May 26 2018</option>
-              <option value="May 13 2018 - May 19 2018">May 13 2018 - May 19 2018</option>
-              <option value="May 06 2018 - May 12 2018">May 06 2018 - May 12 2018</option>
-              <option value="Apr 29 2018 - May 05 2018">Apr 29 2018 - May 05 2018</option>
-              <option value="Apr 22 2018 - Apr 28 2018">Apr 22 2018 - Apr 28 2018</option>
-              <option value="Apr 15 2018 - Apr 21 2018">Apr 15 2018 - Apr 21 2018</option>
-            </select>
-          </div>
-          <div class="col-6 col-md-auto mb-2 mb-md-0 daterange d-none" id="monthly">
-            <select class="custom-select form-control rounded-0">
-              <option value="Select Month">Select Month      </option>
-              <option value="01 Jan 2018 - 31 Jan 2018">01 Jan 2018 - 31 Jan 2018      </option>
-              <option value="01 Feb 2018 - 29 Feb 2018">01 Feb 2018 - 29 Feb 2018      </option>
-              <option value="01 Mar 2018 - 31 12 2018">01 Mar 2018 - 31 12 2018      </option>
-              <option value="Apr 01 2018 - Apr 30 2018">Apr 01 2018 - Apr 30 2018      </option>
-              <option value="May 01 2018 - May 31 2018">May 01 2018 - May 31 2018      </option>
-            </select>
+          <div class="col-6 col-md-auto mb-md-0 daterange d-none" id="daterange">
+            <div class="form-row">
+              <div class="col mb-2 mb-md-0">
+                <input class="form-control" type="date" placeholder="fromdate">
+              </div>
+              <div class="col"> 
+                <input class="form-control" type="date" placeholder="todate">
+              </div>
+            </div>
           </div>
           <div class="col-sm-auto ml-auto mt-2 mt-md-0">
             <button class="btn btn-primary rounded-0">Apply</button>

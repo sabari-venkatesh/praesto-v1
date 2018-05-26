@@ -6575,8 +6575,12 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 87.5%; }
   .badge.badge-secondary {
     color: #fff; }
-  .badge.is-active {
-    background-color: #1b66aa; }
+    .badge.badge-secondary.is-active, .badge.badge-secondary[href].is-active:hover, .badge.badge-secondary[href].is-active:focus {
+      background-color: #1b66aa;
+      color: #fff; }
+
+.text-nowrap {
+  white-space: nowrap; }
 
 .pagination {
   margin-top: 1rem; }
@@ -6604,6 +6608,12 @@ strong {
     font-weight: 400;
     vertical-align: middle;
     border-left: 1px solid #dee2e6; }
+    .table tbody td.text-success, .table tbody td .text-success, .table tbody td.text-danger, .table tbody td .text-danger,
+    .table thead th.text-success,
+    .table thead th .text-success,
+    .table thead th.text-danger,
+    .table thead th .text-danger {
+      font-weight: 500; }
   .table thead tr:first-child th {
     border-top: 0; }
   .table tbody td {

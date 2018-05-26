@@ -6,9 +6,9 @@ webpackJsonp([0],{
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {
 
-var _Highcharts = __webpack_require__(16);
+var _highcharts = __webpack_require__(16);
 
-var _Highcharts2 = _interopRequireDefault(_Highcharts);
+var _highcharts2 = _interopRequireDefault(_highcharts);
 
 var _highmaps = __webpack_require__(17);
 
@@ -23,7 +23,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 $(document).ready(function () {
   /* Sales: Sales to Customers */
   if ($('#chart-sales_customers').length > 0) {
-    _Highcharts2.default.chart('chart-sales_customers', {
+    _highcharts2.default.chart('chart-sales_customers', {
       chart: {
         type: 'column',
         height: 9 / 21 * 100 + '%'
@@ -45,7 +45,7 @@ $(document).ready(function () {
         x: 30,
         verticalAlign: 'bottom',
         y: 0,
-        backgroundColor: _Highcharts2.default.theme && _Highcharts2.default.theme.background2 || 'white',
+        backgroundColor: _highcharts2.default.theme && _highcharts2.default.theme.background2 || 'white',
         shadow: false
       },
       tooltip: {
@@ -97,7 +97,7 @@ $(document).ready(function () {
 
   /* Sales: Sales to Amazon */
   if ($('#chart-sales_amazon').length > 0) {
-    _Highcharts2.default.chart('chart-sales_amazon', {
+    _highcharts2.default.chart('chart-sales_amazon', {
       chart: {
         type: 'column',
         height: 9 / 21 * 100 + '%'
@@ -119,7 +119,7 @@ $(document).ready(function () {
         x: 0,
         verticalAlign: 'bottom',
         y: 0,
-        backgroundColor: _Highcharts2.default.theme && _Highcharts2.default.theme.background2 || 'white',
+        backgroundColor: _highcharts2.default.theme && _highcharts2.default.theme.background2 || 'white',
         shadow: false
       },
       tooltip: {
@@ -212,7 +212,7 @@ $(document).ready(function () {
 
   /* Inventory: Inventory Source */
   if ($('#chart-inventory').length > 0) {
-    _Highcharts2.default.chart('chart-inventory', {
+    _highcharts2.default.chart('chart-inventory', {
       chart: {
         zoomType: 'xy',
         height: 300
@@ -228,26 +228,26 @@ $(document).ready(function () {
         labels: {
           format: '{value}',
           style: {
-            color: _Highcharts2.default.getOptions().colors[1]
+            color: _highcharts2.default.getOptions().colors[1]
           }
         },
         title: {
           text: '',
           style: {
-            color: _Highcharts2.default.getOptions().colors[1]
+            color: _highcharts2.default.getOptions().colors[1]
           }
         }
       }, { // Secondary yAxis
         title: {
           text: '',
           style: {
-            color: _Highcharts2.default.getOptions().colors[0]
+            color: _highcharts2.default.getOptions().colors[0]
           }
         },
         labels: {
           format: '{value}',
           style: {
-            color: _Highcharts2.default.getOptions().colors[0]
+            color: _highcharts2.default.getOptions().colors[0]
           }
         },
         opposite: true
@@ -261,7 +261,7 @@ $(document).ready(function () {
         x: 0,
         verticalAlign: 'bottom',
         y: 0,
-        backgroundColor: _Highcharts2.default.theme && _Highcharts2.default.theme.legendBackgroundColor || '#FFFFFF'
+        backgroundColor: _highcharts2.default.theme && _highcharts2.default.theme.legendBackgroundColor || '#FFFFFF'
       },
       series: [{
         name: 'Amazon On-Hand',
@@ -284,7 +284,7 @@ $(document).ready(function () {
 
   /* Exceptions: Count of Exceptions */
   if ($('#chart-exceptions_count').length > 0) {
-    _Highcharts2.default.chart('chart-exceptions_count', {
+    _highcharts2.default.chart('chart-exceptions_count', {
       chart: {
         type: 'column',
         zoomType: 'xy'
@@ -315,7 +315,7 @@ $(document).ready(function () {
         x: 0,
         verticalAlign: 'bottom',
         y: 0,
-        backgroundColor: _Highcharts2.default.theme && _Highcharts2.default.theme.legendBackgroundColor || '#FFFFFF'
+        backgroundColor: _highcharts2.default.theme && _highcharts2.default.theme.legendBackgroundColor || '#FFFFFF'
       },
       series: [{
         name: 'Count of Image Change',
@@ -345,6 +345,7 @@ $(document).ready(function () {
     });
   }
 });
+//import HighMaps from 'Highcharts/highmaps';
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
@@ -460,10 +461,41 @@ $(document).ready(function () {
     setContentSpacing();
   });
 
+  //$('input[name="daterangepicker"]').daterangepicker();
+
   $('.select-daterange').change(function () {
-    var selected = $('.select-daterange option:selected').val().toLowerCase();
-    $('.daterange').addClass('d-none');
-    $('#' + selected).removeClass('d-none');
+    var last = $('.select-daterange option:last-child');
+
+    if (last.is(':selected')) {
+      //var selected = $('.select-daterange option:selected').val().toLowerCase();
+      $('#daterange').removeClass('d-none');
+    } else {
+      $('#daterange').addClass('d-none');
+    }
+  });
+
+  $('.table-filters .badge').click(function (event) {
+
+    event.preventDefault();
+    var ele = $(event.target),
+        tableFilters = ele.parent(),
+        group = ele.attr('name'),
+        filters = $('.badge', tableFilters),
+        isAllOption = $(filters).index(ele) === 0,
+        groupAll = $('[name="all"]', tableFilters),
+        groupCogs = $('[name="cogs"]', tableFilters);
+
+    if (group === 'all') {
+      groupCogs.removeClass('is-active');
+      if (isAllOption) {
+        groupAll.addClass('is-active');
+      } else {
+        groupAll.removeClass('is-active');
+      }
+    } else {
+      groupAll.removeClass('is-active');
+    }
+    ele.addClass('is-active');
   });
 
   /* list the functions to be invoked on page initialization here */
@@ -611,6 +643,7 @@ $(document).ready(function () {
     $($.fn.dataTable.tables(true)).DataTable().columns.adjust().draw();
   });
 });
+//import 'bootstrap-daterangepicker';
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),

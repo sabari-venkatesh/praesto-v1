@@ -42,11 +42,17 @@
 
   &.badge-secondary {
     color: $white;
+    &.is-active,
+    &[href].is-active:hover, 
+    &[href].is-active:focus {
+      background-color: $primary;
+      color: $white;  
+    }
   }
+}
 
-  &.is-active {
-    background-color: $primary;
-  }
+.text-nowrap {
+  white-space: nowrap;
 }
 
 .pagination {
@@ -81,6 +87,11 @@ strong {
     font-weight: 400;
     vertical-align: middle;
     border-left: 1px solid $table-border-color;
+
+    &.text-success, .text-success,
+    &.text-danger, .text-danger {
+      font-weight: 500;
+    }
   }
 
   thead {

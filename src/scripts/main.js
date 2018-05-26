@@ -5,6 +5,7 @@ import '../styles/index.scss';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/modal';
 import 'bootstrap/js/dist/tab';
+//import 'bootstrap-daterangepicker';
 import DataTable from 'datatables.net-bs4';
 import 'datatables.net-fixedcolumns';
 import './charts.js';
@@ -78,11 +79,42 @@ $(document).ready(() => {
     setContentSpacing();
   });
 
+  //$('input[name="daterangepicker"]').daterangepicker();
+
   $('.select-daterange').change(() => {
-    var selected = $('.select-daterange option:selected').val().toLowerCase();
-    $('.daterange').addClass('d-none');
-    $('#' + selected).removeClass('d-none');
+    var last = $('.select-daterange option:last-child');
+
+    if (last.is(':selected')) {
+      //var selected = $('.select-daterange option:selected').val().toLowerCase();
+      $('#daterange').removeClass('d-none');
+    } else {
+      $('#daterange').addClass('d-none');
+    }
   });
+
+ $('.table-filters .badge').click((event) => {
+    
+    event.preventDefault();
+    var ele = $(event.target),
+    tableFilters = ele.parent(),
+    group = ele.attr('name'),
+    filters = $('.badge', tableFilters),
+    isAllOption = ($(filters).index(ele) === 0),
+    groupAll = $(('[name="all"]'), tableFilters),
+    groupCogs = $(('[name="cogs"]'), tableFilters);
+
+    if(group === 'all') {
+      groupCogs.removeClass('is-active');
+      if(isAllOption) {
+        groupAll.addClass('is-active');
+      } else {
+        groupAll.removeClass('is-active');
+      }
+    } else {
+      groupAll.removeClass('is-active');
+    }
+    ele.addClass('is-active');
+  });  
 
 
   /* list the functions to be invoked on page initialization here */

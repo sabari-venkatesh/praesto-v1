@@ -1,4 +1,12 @@
 block content
+  - var ranges = [
+  - 'Select Date Range', 
+  - 'Yesterday',
+  - 'Week-to-Date',
+  - 'Prior Week',
+  - 'Month to Date',
+  - 'Prior Month',
+  - 'Customized: Enter custom date range'];
   - var weeks = [
   - 'Select Week', 
   - 'May 20 2018 - May 26 2018', 
@@ -50,16 +58,14 @@ block content
             input.form-control.form-control(type='text' placeholder='Search by ASIN, Part #, Model #, SKU' aria-label='Search' aria-describedby='search')
         .col-6.col-md-auto.mb-md-0
           select.custom-select.form-control.select-daterange.rounded-0
-            each range in ['Select Date Range', 'Weekly', 'Monthly']
-              option(value=range) #{range}      
-        .col-6.col-md-auto.mb-md-0.daterange.d-none(id='weekly')
-          select.custom-select.form-control.rounded-0
-            each range in weeks
+            each range in ranges
               option(value=range) #{range}
-        .col-6.col-md-auto.mb-2.mb-md-0.daterange.d-none(id='monthly')
-          select.custom-select.form-control.rounded-0
-            each range in months
-              option(value=range) #{range}      
+        .col-6.col-md-auto.mb-md-0.daterange.d-none(id='daterange')
+          .form-row
+            .col.mb-2.mb-md-0
+              input.form-control(type='date' placeholder='fromdate')
+            .col  
+              input.form-control(type='date' placeholder='todate')
         .col-sm-auto.ml-auto.mt-2.mt-md-0
           button.btn.btn-primary.rounded-0 Apply
   .overlay        

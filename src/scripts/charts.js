@@ -1,5 +1,6 @@
-import Highcharts from 'Highcharts';
-import HighMaps from 'Highcharts/highmaps';
+import Highcharts from 'highcharts';
+import HighMaps from 'highcharts/highmaps';
+//import HighMaps from 'Highcharts/highmaps';
 import mapData from './us-all.js';
 
 $(document).ready(() => {

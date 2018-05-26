@@ -1,9 +1,11 @@
 block content
-  .text-right.mb-2
-    .px-3.d-inline-flex.align-items-center
-      label.mb-0.mr-2(for='product-filter') Filter By:
-      each filter in ['All', '3P-MFN', '3P-FBA', 'Amazon Sales', 'Amazon COGS']
-        if (filter === 'All')
-          a(href="#").badge.badge-secondary.rounded-0.ml-2.is-active #{filter}
-        else
-          a(href="#").badge.badge-secondary.rounded-0.ml-2 #{filter}
+	- var filters = {
+	-	'all': ['All', '3P-MFN', '3P-FBA', 'Amazon Sales'],
+	- 'cogs': ['Amazon COGS']
+	- };
+	.text-right.mb-2
+		.px-3.d-inline-flex.align-items-center.table-filters
+			label.mb-0.mr-2(for='product-filter') Filter By:
+			each options, group in filters
+				each option in options
+					a.badge.badge-secondary.rounded-0.ml-2(href='#' name=group) #{option}

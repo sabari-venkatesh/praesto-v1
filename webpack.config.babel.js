@@ -114,7 +114,7 @@ const config = {
       Util: 'exports-loader?Util!bootstrap/js/dist/util',
       Popper: ['popper.js', 'default'],
       DataTable: 'exports-loader?DataTable!vanilla-datatables/dist/vanilla-dataTables.min',
-      Highcharts: 'exports-loader?Highcharts!highcharts/js/highcharts'
+      //Highcharts: 'exports-loader?Highcharts!highcharts/js/highcharts'
     }),
     new CleanWebpackPlugin(['dist']),
     // new HtmlWebpackPlugin({
