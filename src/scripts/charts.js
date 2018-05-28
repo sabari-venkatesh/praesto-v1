@@ -331,4 +331,95 @@ $(document).ready(() => {
       }]
     });
   }
+
+  /* Advertising: All AMS Advertising Source */
+  if ($('#chart-advertising').length > 0) {
+    Highcharts.chart('chart-advertising', {
+      chart: {
+        zoomType: 'xy'
+      },
+      title: {
+        text: 'All AMS Advertising'
+      },
+      xAxis: [{
+        categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr', '20 Apr'],
+        crosshair: true
+      }],
+      yAxis: [{ // Primary yAxis
+        labels: {
+          format: '{value}',
+          style: {
+            color: Highcharts.getOptions().colors[1]
+          }
+        },
+        title: {
+          text: '',
+          style: {
+            color: Highcharts.getOptions().colors[1]
+          }
+        }
+      }, { // Secondary yAxis
+        title: {
+          text: '',
+          style: {
+            color: Highcharts.getOptions().colors[0]
+          }
+        },
+        labels: {
+          format: '{value}',
+          style: {
+            color: Highcharts.getOptions().colors[0]
+          }
+        },
+        opposite: true
+      }],
+      tooltip: {
+        shared: true
+      },
+      legend: {
+        layout: 'horizontal',
+        align: 'center',
+        x: 0,
+        verticalAlign: 'bottom',
+        y: 0,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+      },
+      series: [{
+        name: 'Sales',
+        color: '#ed7d31',
+        type: 'column',
+        yAxis: 1,
+        data: [900, 600, 300, 200, 400, 1100],
+      }, {
+        name: 'Impressions',
+        type: 'spline',
+        color: '#4472C4',
+        data: [862, 150, 850, 680, 400, 500],
+      }, {
+        name: 'Clicks',
+        color: '#1b66aa',
+        type: 'spline',
+        yAxis: 1,
+        data: [750, 680, 750, 680, 675, 800],
+      }, {
+        name: 'CPC',
+        color: '#25aa1b',
+        type: 'spline',
+        yAxis: 1,
+        data: [680, 750, 850, 950, 680, 1050],
+      }, {
+        name: 'ACOS',
+        color: '#7cb5ec',
+        type: 'spline',
+        yAxis: 1,
+        data: [700, 157, 235, 687, 845, 900],
+      }, {
+        name: 'Live Campaigns',
+        color: '#795548',
+        type: 'spline',
+        yAxis: 1,
+        data: [100, 300, 680, 950, 425, 800],
+      }]
+    });
+  }
 });

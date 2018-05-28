@@ -526,3 +526,33 @@ tr.total th {
   background-color: $gray-500;
   color: $white;
 }
+
+.chart-info-list {
+  padding: 0;
+  margin: 0;
+   li {
+    list-style: none;
+    position: relative;
+    border-left: 4px solid #000;
+    padding: 5px 10px;
+    margin: 8px 0;
+   }
+   .info-sales {
+      border-left-color: #ed7d31;
+   }
+   .info-impressions {
+      border-left-color: #4472C4;
+   }
+   .info-clicks {
+      border-left-color: #1b66aa;
+   }
+   .info-cpc {
+      border-left-color: #25aa1b;
+   }
+   .info-acos {
+      border-left-color: #7cb5ec;
+   }
+   .info-live {
+      border-left-color: #795548;
+   }
+}
