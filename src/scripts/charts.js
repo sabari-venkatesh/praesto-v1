@@ -422,4 +422,66 @@ $(document).ready(() => {
       }]
     });
   }
+
+  /* Map: All Count of Violations  */
+  if ($('#chart-map').length > 0) {
+    Highcharts.chart('chart-map', {
+      chart: {
+        zoomType: 'xy'
+      },
+      title: {
+        text: 'Count of Violations'
+      },
+      xAxis: [{
+        categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr', '20 Apr'],
+        crosshair: true
+      }],
+      yAxis: [{ // Primary yAxis
+        labels: {
+          format: '{value}',
+          style: {
+            color: Highcharts.getOptions().colors[1]
+          }
+        },
+        title: {
+          text: '',
+          style: {
+            color: Highcharts.getOptions().colors[1]
+          }
+        }
+      }, { // Secondary yAxis
+        title: {
+          text: '',
+          style: {
+            color: Highcharts.getOptions().colors[0]
+          }
+        },
+        labels: {
+          format: '{value}',
+          style: {
+            color: Highcharts.getOptions().colors[0]
+          }
+        },
+        opposite: false
+      }],
+      tooltip: {
+        shared: true
+      },
+      legend: {
+        layout: 'horizontal',
+        align: 'center',
+        x: 0,
+        verticalAlign: 'bottom',
+        y: 0,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+      },
+      series: [{
+        name: 'Violations',
+        color: '#4472c4',
+        type: 'column',
+        yAxis: 1,
+        data: [900, 600, 300, 200, 400, 1100],
+      }]
+    });
+  }
 });

@@ -273,6 +273,16 @@ $(document).ready(() => {
     paging: false
   });
 
+  $('#top20-seller, #top20-problem-products').DataTable({
+    dom: 'rt<"dataTables_bottom"lp>',
+    fixedHeader: true,
+    orderCellsTop: true,
+    scrollX: true,
+    scrollCollapse: true,
+    scrollY: 500,
+    paging: false
+  });
+
   $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
     //  $($.fn.dataTable.tables(true)).css('width', '100%');
     $($.fn.dataTable.tables(true)).DataTable().columns.adjust().draw();

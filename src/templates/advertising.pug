@@ -42,8 +42,7 @@ block content
         small.text-muted By Ad Type
       .w-100.mb-4
       .col-12
-        .row
-          include includes/advertising/performing-keywords
+        include includes/advertising/performing-keywords
     
     // Section:  Performing Products
     .w-100.mb-4
@@ -53,8 +52,7 @@ block content
         small.text-muted By Product Advertised
       .w-100.mb-4
       .col-12
-        .row
-          include includes/advertising/performing_products
+        include includes/advertising/performing_products
 
     //Section:  Brand Store Metrics
     .w-100.mb-4
@@ -63,14 +61,10 @@ block content
         h4.mb-0 Top 20 Performing Products
         small.text-muted Audience Insights
       .w-100.mb-4
-      .col-12
-        .row
-          .col-sm-12.col-md-6
-            h5 Top Targeted Segments
-            .row
-              include includes/advertising/targeted-segments
-          .col-sm-12.col-md-6
-            h5 Top Un-Targeted Segments
-            .row
-              include includes/advertising/un-targeted-segments
+      .col-md-6
+        h5 Top Targeted Segments
+        include includes/advertising/targeted-segments
+      .col-md-6
+        h5 Top Un-Targeted Segments
+        include includes/advertising/un-targeted-segments
   include includes/footer  

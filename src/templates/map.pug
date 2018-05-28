@@ -1,0 +1,16 @@
+extends layout
+block link
+  -var selected = 'advertising';
+block content
+  include includes/header
+  include includes/mobile-menu
+  main.content.mt-2.container-fluid
+    .border.p-4
+      #chart-map
+    .w-100.mb-4
+    .row.mb-4
+      .col-sm-12.col-md-6
+        include includes/map/top20-sellers
+      .col-sm-12.col-md-6
+        include includes/map/top20-problem-products
+  include includes/footer  
