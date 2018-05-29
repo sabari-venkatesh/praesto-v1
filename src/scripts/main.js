@@ -283,6 +283,17 @@ $(document).ready(() => {
     paging: false
   });
 
+  $('#across-theweb').DataTable({
+    dom: 'rt<"dataTables_bottom"lp>',
+    fixedHeader: true,
+    orderCellsTop: true,
+    ordering: false,
+    scrollX: true,
+    scrollCollapse: true,
+    scrollY: 500,
+    paging: false
+  });
+
   $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
     //  $($.fn.dataTable.tables(true)).css('width', '100%');
     $($.fn.dataTable.tables(true)).DataTable().columns.adjust().draw();

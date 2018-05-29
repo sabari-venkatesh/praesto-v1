@@ -1,6 +1,6 @@
 extends layout
 block link
-  -var selected = 'advertising';
+  -var selected = 'map';
 block content
   include includes/header
   include includes/mobile-menu
@@ -8,9 +8,13 @@ block content
     .border.p-4
       #chart-map
     .w-100.mb-4
-    .row.mb-4
+    .row
       .col-sm-12.col-md-6
         include includes/map/top20-sellers
+      .visiable-xs
       .col-sm-12.col-md-6
         include includes/map/top20-problem-products
+    .row
+      .col-sm-12.col-md-6
+        include includes/map/across-the-web
   include includes/footer  
