@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory
+    </title>
+  <link href="css/index.css" rel="stylesheet"></head>
+  <body class="page-inventory">
+    <!-- Section: Header-->
+    <header class="header has-nav text-muted">
+      <div class="header-top container-fluid">
+        <div class="row no-gutters align-items-center mb-2">
+          <div class="header-left col col-lg-8 col-xl-6">
+            <div class="row align-items-center no-gutters"><a class="navbar-brand col-auto text-center" href="#"></a>
+              <div class="form-row border-left col mb-0 ml-md-4 pl-2">
+                <label class="d-none d-md-inline-block col-3 col-form-label" for="sales-marketplace">Market Place</label>
+                <div class="col col-md-6">
+                  <select class="custom-select form-control form-control-sm" id="sales-marketplace">
+                    <option selected="">Choose Market Place</option>
+                    <option value="2">Amazon</option>
+                    <option value="1">Best Buy</option>
+                    <option value="2">Walmart</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-right col-auto ml-auto">
+            <div class="dropdown show text-right"><a class="btn text-muted dropdown-toggle d-inline-flex align-items-center rounded-0" id="user-menu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-none d-inline-md-block">James Walter</span><i class="rounded icon-user text-primary icon-md ml-2"></i></a>
+              <div class="dropdown-menu" aria-labelledby="user-menu"><a class="dropdown-item" href="settings.html">My Profile</a><a class="dropdown-item" href="#">Log out</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-nav mb-2">
+        <!-- Section: Dashboard menu -->
+        <nav class="navbar navbar-expand navbar-secondary navbar-dark bg-dark py-0">
+          <button class="d-xl-none btn navbar-toggle text-muted rounded-0"><i class="icon-menu icon-md"></i></button>
+          <h3 class="text-white ml-2 mb-0 d-xl-none">Inventory</h3>
+          <ul class="navbar-nav py-1 d-none d-xl-inline-flex">
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 active" href="inventory.html">Inventory</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+            <li class="nav-item "><a class="nav-link py-0 " href="recommendations.html">Recommendations</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Section: Search Filters  -->
+      <div class="container-fluid">
+        <div class="form-row align-items-center">
+          <div class="col-md mb-2 mb-md-0">
+            <div class="input-group">
+              <div class="input-group-prepend"><span class="input-group-text px-2 px-md-4" id="search"><i class="icon-search icon-md text-primary"></i></span></div>
+              <input class="form-control" id="myInput" type="text" placeholder="Search by ASIN, Part #, Model #, SKU" aria-label="Search" aria-describedby="search">
+            </div>
+          </div>
+          <div class="col-12 col-md-auto mb-2 mb-md-0">
+            <select class="custom-select form-control select-daterange rounded-0">
+              <option value="Select Date Range">Select Date Range</option>
+              <option value="Yesterday">Yesterday</option>
+              <option value="Week-to-Date">Week-to-Date</option>
+              <option value="Prior Week">Prior Week</option>
+              <option value="Month to Date">Month to Date</option>
+              <option value="Prior Month">Prior Month</option>
+              <option value="Customized: Enter custom date range">Customized: Enter custom date range</option>
+            </select>
+          </div>
+          <div class="col-9 col-md-auto mb-md-0 daterange d-none" id="daterange">
+            <div class="form-row">
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" type="text" placeholder="from date" id="daterange-from"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" type="text" placeholder="to date" id="daterange-to"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 col-md-auto mt-md-0">
+            <button class="btn btn-primary rounded-0 w-100">Apply</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="overlay">       </div>
+    <!-- Section: Dashboard menu-->
+    <aside class="sidebar d-xl-none">
+      <nav class="navbar navbar-expand navbar-secondary navbar-dark navbar-vertical bg-dark">
+        <ul class="navbar-nav py-1 flex-column">
+          <li class="nav-item"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+          <li class="nav-item"><a class="nav-link py-0 active" href="inventory.html">Inventory</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="recommendations.html">Recommendations</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content mt-2 container-fluid">
+      <!-- Section: Overview-->
+            <div class="row align-items-center mb-2">
+              <div class="col">
+                <div class="row align-items-center">
+                  <h1 class="col-md-auto h4 mb-0">Inventory Overview</h1><small class="col-md-auto px-md-0 text-muted">(From 05/20/2018 To 05/25/2018)</small>
+                </div>
+              </div>
+              <div class="col-auto ml-auto">
+                <button class="btn btn-sm btn-primary rounded-0 d-inline-flex align-items-center" type="button" title="Download"><i class="icon-download icon-md mr-sm-2"></i><span class="d-none d-sm-block">Download	</span></button>
+              </div>
+            </div>
+      <div class="border p-2 mb-4">
+        <div class="btn-group" role="group" aria-label="Sales to Customers Chart">
+          <button class="btn rounded-0" type="button">3P</button>
+          <button class="btn rounded-0" type="button">Amazon</button>
+        </div>
+        <div id="chart-inventory"></div>
+      </div>
+      <!-- Section: Inventory Trends-->
+      <div class="row mb-4">
+        <div class="col-auto">
+          <h2 class="h4 mb-0">Inventory Trends</h2><small class="text-muted">Last Updated: 05/26/2018 05:00 AM</small>
+        </div>
+        <div class="col-auto">
+          <label class="datas1 toggle has-text d-block text-right">
+            <input type="checkbox" checked><span class="handle" data-on="Trailing 6 Weeks" data-off="Trailing 6 Months"></span>
+          </label>
+        </div>
+        <div class="w-100 mb-4"></div>
+        <div class="col-12">
+          <table class="table m-0" id="table-inventory_trends" style="width: 100%">
+            <thead>
+              <tr>
+                <th class="text-center border-bottom-0"><strong>Products</strong></th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 1 2018</strong></div><small>08-Apr - 14 Apr</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 2 2018</strong></div><small>15-Apr - 21 Apr</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 3 2018</strong></div><small>22-Apr - 28 Apr</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 4 2018</strong></div><small>29-Apr - 05 May</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 5 2018</strong></div><small>06-May - 12 May</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 6 2018</strong></div><small>13-May - 19 May</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Current Week</strong></div><small>20-May - 26 May</small>
+                </th>
+              </tr>
+              <tr>
+                <th class="border-top-0">
+                  <select class="custom-select form-control">
+                    <option selected="">SKU</option>
+                    <option value="1">ASIN</option>
+                    <option value="2">Model</option>
+                    <option value="2">Part</option>
+                  </select>
+                </th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+                <th class="text-right">Sales($)</th>
+                <th class="text-center">Units</th>
+              </tr>
+              <tr class="total">
+                <th class="text-center">Total</th>
+                <th class="text-right">413,488.00</th>
+                <th class="text-center">2,739</th>
+                <th class="text-right">411,903.50</th>
+                <th class="text-center">3,466</th>
+                <th class="text-right">410,154.65</th>
+                <th class="text-center">3,716</th>
+                <th class="text-right">410,154.65</th>
+                <th class="text-center">3,348</th>
+                <th class="text-right">423,789.15</th>
+                <th class="text-center">3,055</th>
+                <th class="text-right">431,605.90</th>
+                <th class="text-center">3,555</th>
+                <th class="text-right">383,898.15</th>
+                <th class="text-center">3,525</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">
+                  <div>B018E65WW2</div>
+                  <div class="text-center">Vs</div>
+                  <div>Prior Yr / ASP</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">158,244.00</div>
+                  <div class="py-2 text-right text-danger">5%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">1954</div>
+                  <div class="py-2 text-center">$8,045.79</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">205,951.75</div>
+                  <div class="py-2 text-right text-success">8%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">2705</div>
+                  <div class="py-2 text-center">$16,250.25</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">225,654.15</div>
+                  <div class="py-2 text-right text-success">12%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">3021</div>
+                  <div class="py-2 text-center">$26,244.12</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">184,500.50</div>
+                  <div class="py-2 text-right text-danger">1%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">2498</div>
+                  <div class="py-2 text-center">$2046.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">158,244.00</div>
+                  <div class="py-2 text-right text-success">5%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">1954</div>
+                  <div class="py-2 text-center">$8,045.79</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">205,951.75</div>
+                  <div class="py-2 text-right text-success">8%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">2705</div>
+                  <div class="py-2 text-center">$16,250.25</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">225,654.15</div>
+                  <div class="py-2 text-right text-success">12%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">3021</div>
+                  <div class="py-2 text-center">$26,244.12</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <div>B01BON4QAQ</div>
+                  <div class="text-center">Vs</div>
+                  <div>Prior Yr / ASP</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">255,244.00</div>
+                  <div class="py-2 text-right text-success">6%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">785</div>
+                  <div class="py-2 text-center">$15,541.79</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">205,951.75</div>
+                  <div class="py-2 text-right text-success">8%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">761</div>
+                  <div class="py-2 text-center">$16,250.25</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">184,500.50</div>
+                  <div class="py-2 text-right text-danger">1%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">695</div>
+                  <div class="py-2 text-center">$2046.00</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">225,654.15</div>
+                  <div class="py-2 text-right text-success">10%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">850</div>
+                  <div class="py-2 text-center">$22,544.12</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">265,545.15</div>
+                  <div class="py-2 text-right text-success">12%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">1101</div>
+                  <div class="py-2 text-center">$31,542.12</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">225,654.15</div>
+                  <div class="py-2 text-right text-danger">10%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">850</div>
+                  <div class="py-2 text-center">$22,544.12</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-right">158,244.00</div>
+                  <div class="py-2 text-right text-danger">5%</div>
+                </td>
+                <td>
+                  <div class="py-2 border-bottom text-center">504</div>
+                  <div class="py-2 text-center">$8,045.79</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+<div class="footer p-4 text-center text-muted" style="background: #e1e1e1">
+  <p class="mb-0">Copyrights 2018. Praesto. All Rights Reserved</p>
+</div>
+  <script type="text/javascript" src="scripts/commons.js"></script><script type="text/javascript" src="scripts/app.js"></script></body>
+</html>

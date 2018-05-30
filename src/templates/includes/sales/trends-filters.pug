@@ -8,4 +8,7 @@ block content
 			label.mb-0.mr-2(for='product-filter') Filter By:
 			each options, group in filters
 				each option in options
-					a.badge.badge-secondary.rounded-0.ml-2(href='#' name=group) #{option}
+					if (group === 'all')
+						a.badge.badge-secondary.rounded-0.ml-2.is-active(href='#' name=group) #{option}
+					else
+						a.badge.badge-secondary.rounded-0.ml-2(href='#' name=group) #{option}

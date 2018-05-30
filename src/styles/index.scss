@@ -37,16 +37,29 @@
 @import "~bootstrap/scss/utilities";
 /*@import "~bootstrap/scss/print";*/
 // our custom styles here
+
+body[class*="page"] {
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1;
+  }
+}
+
+.pagination {
+  margin: 0;
+}
 .badge {
   font-size: 87.5%;
 
   &.badge-secondary {
     color: $white;
     &.is-active,
-    &[href].is-active:hover, 
+    &[href].is-active:hover,
     &[href].is-active:focus {
       background-color: $primary;
-      color: $white;  
+      color: $white;
     }
   }
 }
@@ -54,9 +67,13 @@
 .text-nowrap {
   white-space: nowrap;
 }
-
-.pagination {
-  margin-top: 1rem;
+.btn-group {
+  .btn {
+    @extend .btn-light;
+    &.is-active {
+      @extend .btn-secondary;
+    }
+  }
 }
 
 #table-sales_geography_wrapper tr td:first-child {
@@ -133,20 +150,6 @@ strong {
 .DTFC_ScrollWrapper {
   border: 1px solid $table-border-color;
   box-sizing: content-box;
-}
-
-.dataTables_bottom {
-  margin-top: 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  .dataTables_length {
-    .form-control {
-      width: auto;
-      display: inline-block;
-    }
-  }
 }
 
 .form-group {

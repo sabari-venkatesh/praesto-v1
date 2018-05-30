@@ -113,7 +113,7 @@ const config = {
       jQuery: 'jquery',
       Util: 'exports-loader?Util!bootstrap/js/dist/util',
       Popper: ['popper.js', 'default'],
-      DataTable: 'exports-loader?DataTable!vanilla-datatables/dist/vanilla-dataTables.min',
+      //DataTable: 'exports-loader?DataTable!vanilla-datatables/dist/vanilla-dataTables.min',
       //Highcharts: 'exports-loader?Highcharts!highcharts/js/highcharts'
     }),
     new CleanWebpackPlugin(['dist']),
@@ -165,12 +165,12 @@ const config = {
       filename: 'product-ranks.html',
       template: 'templates/product-ranks.pug',
     }),
-    new HtmlWebpackPlugin({
-      title: 'Keywords',
-      bodyClass: 'page-keywords',
-      filename: 'keywords.html',
-      template: 'templates/keywords.pug',
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: 'Keywords',
+    //   bodyClass: 'page-keywords',
+    //   filename: 'keywords.html',
+    //   template: 'templates/keywords.pug',
+    // }),
     new HtmlWebpackPlugin({
       title: 'Buy-Box Reports',
       bodyClass: 'page-buy_box_reports',
@@ -183,30 +183,30 @@ const config = {
       filename: 'map.html',
       template: 'templates/map.pug',
     }),
-    new HtmlWebpackPlugin({
-      title: 'Reviews',
-      bodyClass: 'page-reviews',
-      filename: 'reviews.html',
-      template: 'templates/reviews.pug',
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: 'Reviews',
+    //   bodyClass: 'page-reviews',
+    //   filename: 'reviews.html',
+    //   template: 'templates/reviews.pug',
+    // }),
     new HtmlWebpackPlugin({
       title: 'Chargebacks',
       bodyClass: 'page-chargebacks',
       filename: 'chargebacks.html',
       template: 'templates/chargebacks.pug',
     }),
-    new HtmlWebpackPlugin({
-      title: 'Forecasting',
-      bodyClass: 'page-forecasting',
-      filename: 'forecasting.html',
-      template: 'templates/forecasting.pug',
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Recommendations',
-      bodyClass: 'page-recommendations',
-      filename: 'recommendations.html',
-      template: 'templates/recommendations.pug',
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: 'Forecasting',
+    //   bodyClass: 'page-forecasting',
+    //   filename: 'forecasting.html',
+    //   template: 'templates/forecasting.pug',
+    // }),
+    // new HtmlWebpackPlugin({
+    //   title: 'Recommendations',
+    //   bodyClass: 'page-recommendations',
+    //   filename: 'recommendations.html',
+    //   template: 'templates/recommendations.pug',
+    // }),
     new CopyWebpackPlugin([{
       from: './data',
       to: './data'

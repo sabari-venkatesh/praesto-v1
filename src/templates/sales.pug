@@ -7,96 +7,106 @@ block content
   // Section: Main content
   main.content.mt-2.container-fluid
     // Section: Overview
-    .row.align-items-center.mb-2
-      .col-auto.ml-auto
-        button.btn.btn-sm.btn-primary.rounded-0.d-inline-flex.align-items-center(type='button' title='Download')
-          i.icon-download.icon-md.mr-sm-2
-          span.d-none.d-sm-block Download
-      .w-100.mb-2
-      .col-md-auto.mb-2.pr-2
-        h4.mb-0 Sales Overview
-        small.text-muted Last Updated: 05/10/2018 05:00 AM
-      .col
-        .row.justify-content-between  
-          .col-sm-6.col-xl-4.mb-4.mb-md-2.px-2
-            .card.border.rounded-0
-              .card-header.rounded-0.d-flex.justify-content-between.bg-white.px-2.py-1.border-bottom
-                h6.mb-0.text-primary Total Customers
-                i.icon-group.text-warning
-              .card-body.text-center.p-2
-                .row
-                  .col-3.text-primary.border-right.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 650
-                    small Customers
-                  .col-3.text-muted.border-right.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 289
-                    small Avg. Sales
-                  .col-3.text-muted.border-right.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 1,289
-                    small Avg. Units
-                  .col-3.text-muted.mb-2.mb-md-0
-                    h5.mb-0 289
-                    small ASP 
-          .col-sm-6.col-xl-4.mb-4.mb-md-2.px-2
-            .card.border.rounded-0
-              .card-header.rounded-0.d-flex.justify-content-between.bg-white.px-2.py-1.border-bottom
-                h6.mb-0.text-primary New Customers
-                i.icon-group.text-warning
-              .card-body.text-center.p-2
-                .row
-                  .col-3.text-primary.border-right.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 650
-                    small Customers
-                  .col-3.text-muted.border-right.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 289
-                    small Avg. Sales
-                  .col-3.text-muted.border-right.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 1,289
-                    small Avg. Units
-                  .col-3.text-muted.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 289
-                    small ASP 
-          .col-sm-6.col-xl-4.mb-4.mb-md-2.pl-2
-            .card.border.rounded-0
-              .card-header.rounded-0.d-flex.justify-content-between.bg-white.px-2.py-1.border-bottom
-                h6.mb-0.text-primary Repeat Customers
-                i.icon-group.text-warning
-              .card-body.text-center.p-2
-                .row
-                  .col-3.text-primary.border-right.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 650
-                    small Customers
-                  .col-3.text-muted.border-right.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 289
-                    small Avg. Sales
-                  .col-3.text-muted.border-right.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 1,289
-                    small Avg. Units
-                  .col-3.text-muted.mb-2.mb-md-0.text-nowrap
-                    h5.mb-0 289
-                    small ASP 
+    include includes/content-header
+    +content-header('Sales Overview')
+    .row.mb-2
+      .col-md-6.col-xl-4.mb-4.mb-md-2
+        .card.border.rounded-0
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white.p-2.border-bottom
+            h6.mb-0.text-primary Total Customers
+            i.icon-group.text-warning
+          .card-body.text-center.p-2
+            .form-row.text-muted.text-nowrap.justify-content-center
+              .col-3.col-md.text-primary.border-right.mb-2.mb-md-0
+                h5.mb-0 14
+                small Customers
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $39
+                small Avg. Sales
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 1
+                small Avg. Units
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $39
+                small ASP
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $39
+                small Total Sales
+              .col-3.col-md.mb-2.mb-md-0
+                h5.mb-0 $39
+                small Total Units
+      .col-md-6.col-xl-4.mb-4.mb-md-2
+        .card.border.rounded-0
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white.p-2.border-bottom
+            h6.mb-0.text-primary New Customers
+            i.icon-group.text-warning
+          .card-body.text-center.p-2
+            .form-row.text-muted.text-nowrap.justify-content-center
+              .col-3.col-md.text-primary.border-right.mb-2.mb-md-0
+                h5.mb-0 12
+                small Customers
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $40
+                small Avg. Sales
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 1
+                small Avg. Units
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $40
+                small ASP
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $39
+                small Total Sales
+              .col-3.col-md.mb-2.mb-md-0
+                h5.mb-0 $39
+                small Total Units
+      .col-md-6.col-xl-4.mb-4.mb-md-2
+        .card.border.rounded-0
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white.p-2.border-bottom
+            h6.mb-0.text-primary Repeat Customers
+            i.icon-group.text-warning
+          .card-body.text-center.p-2
+            .form-row.text-muted.text-nowrap.justify-content-center
+              .col-3.col-md.text-primary.border-right.mb-2.mb-md-0
+                h5.mb-0 2
+                small Customers
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $35
+                small Avg. Sales
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 1
+                small Avg. Units
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $35
+                small ASP
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $39
+                small Total Sales
+              .col-3.col-md.mb-2.mb-md-0
+                h5.mb-0 $39
+                small Total Units
     // Section: Charts
     .row.mb-4
       .col-sm-6
         .border.p-2
           .btn-group(role='group' aria-label='Sales to Customers Chart')
-            button.btn.btn-sm.btn-secondary.text-white.rounded-0(type='button') Dollars
-            button.btn.btn-sm.btn-light.rounded-0(type='button') Units
+            button.btn.rounded-0(type='button') Dollars
+            button.btn.rounded-0(type='button') Units
           #chart-sales_customers
       .col-sm-6
         .border.p-2
           .btn-group(role='group' aria-label='Sales to Amazon')
-            button.btn.btn-sm.btn-secondary.text-white.rounded-0(type='button') Dollars
-            button.btn.btn-sm.btn-light.rounded-0(type='button') Units
+            button.btn.rounded-0(type='button') Dollars
+            button.btn.rounded-0(type='button') Units
           #chart-sales_amazon
 
     // Section: Sales Trends
     .row.mb-4.align-items-center
       .col-auto
         h4.mb-0 Sales Trends
-        small.text-muted Last Updated: 05/10/2018 05:00 AM
+        small.text-muted Last Updated: 05/26/2018 05:00 AM
       .col-auto
-        label.toggle.has-text.d-block.text-right
+        label.datas1.toggle.has-text.d-block.text-right
           input(type='checkbox' checked)
           span.handle(data-on='Trailing 6 Weeks' data-off='Trailing 6 Months')
       .w-100.mb-4
@@ -118,7 +128,7 @@ block content
     .row.mb-4.align-items-center
       .col-auto
         h4.mb-0 Geographic Trends
-        small.text-muted Last Updated: 05/10/2018 05:00 AM
+        small.text-muted Last Updated: 05/26/2018 05:00 AM
       .w-100.mb-4
       .col-12
         .border.p-4
@@ -132,9 +142,9 @@ block content
     .row.mb-4.align-items-center
       .col-auto
         h4.mb-0 Conversion Metrics
-        small.text-muted Last Updated: 05/10/2018 05:00 AM
+        small.text-muted Last Updated: 05/26/2018 05:00 AM
       .col-auto
-        label.toggle.has-text.d-block.text-right
+        label.datas2.toggle.has-text.d-block.text-right
           input(type='checkbox' checked)
           span.handle(data-on='Trailing 6 Weeks' data-off='Trailing 6 Months')  
       .w-100.mb-4

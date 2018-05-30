@@ -5,9 +5,11 @@ block content
   include includes/header
   include includes/mobile-menu
   // Section: Main content
-  main.content.mt-4.container-fluid
-    div.mb-4
-      h4.mb-0 Products with Detail Page Variances
+  main.content.mt-2.container-fluid
+    include includes/content-header
+    +content-header('Exceptions Overview')
+    .border.p-4.mb-4
+      h2.h5.mb-0 Products with Detail Page Variances
       #chart-exceptions_count
     div.mb-4
       ul#tab-exceptions.nav.nav-tabs.nav-tabs-compact.flex-nowrap(role='tablist')
@@ -44,11 +46,12 @@ block content
           include includes/exceptions/tab-products_offer
     // Section: Items without Buy-Box      
     div.mb-4
-      h4.mb-2 Items without Buy-Box
+      h2.h4.mb-2 Items without Buy-Box
       include includes/exceptions/section-buy_box
     div.mb-4
-      h4.mb-2 Best Seller Badge Changes
+      h2.h4.mb-2 Best Seller Badge Changes
       include includes/exceptions/section-best_seller
     div.mb-4
-      h4.mb-2 Amazon Seller Changes
+      h2.h4.mb-2 Amazon Seller Changes
       include includes/exceptions/section-amazon_sellers
+  include includes/footer    

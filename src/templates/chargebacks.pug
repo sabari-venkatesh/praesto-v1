@@ -1,14 +1,14 @@
 extends layout
 block link
-  -var selected = 'Chargebacks';
+  -var selected = 'chargebacks';
 block content
   include includes/header
   include includes/mobile-menu
   main.content.mt-2.container-fluid
-    .row.mb-4
-      .col-sm-12
-        .border.p-4
-          #chart-chargeback-trend
+    include includes/content-header
+    +content-header('Chargebacks Overview')
+    .border.p-4.mb-4
+      #chart-chargeback-trend
     .row.mb-4
       .col-sm-12
           table(id='table-charge-back-dispute' class='table m-0' style='width: 100%')

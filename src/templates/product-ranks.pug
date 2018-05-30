@@ -1,0 +1,208 @@
+extends layout
+block link
+  -var selected = 'product ranks';
+block content
+  include includes/header
+  include includes/mobile-menu
+  // Section: Main content
+  main.content.mt-2.container-fluid
+    include includes/content-header
+    +content-header('Product Ranks Overview')
+    .border.p-4.mb-4
+      #chart-product_ranks
+    // Section: Product Ranking
+    .mb-4
+      h2.h4.mb-2 Product Ranking
+      table(id='table-product_ranks' class='table m-0' style='width: 100%')
+        thead
+          tr
+            th(rowspan='2').text-center 
+              strong Products
+            th.text-center(colspan='5')
+              strong Average
+          tr
+            th.text-center Trailing 7 Days
+            th.text-center Trailing 14 Days
+            th.text-center Trailing 30 Days
+            th.text-center Trailing 6 Months
+            th.text-center Trailing 12 Months
+        tbody
+          tr
+            td.text-center B002BZX8Z6
+            td.text-center.text-success 15
+            td.text-center.text-danger 18
+            td.text-center.text-danger 17
+            td.text-center.text-success 25
+            td.text-center.text-danger 30
+          tr
+            td.text-center B002BZX8Z7
+            td.text-center.text-danger 17
+            td.text-center.text-danger 18
+            td.text-center.text-danger 30
+            td.text-center.text-success 15
+            td.text-center.text-success 25
+          tr
+            td.text-center B002BZX8Z8
+            td.text-center.text-success 15
+            td.text-center.text-success 25
+            td.text-center.text-danger 17
+            td.text-center.text-danger 18
+            td.text-center.text-danger 30
+          tr
+            td.text-center B002BZX8Z9
+            td.text-center.text-success 65
+            td.text-center.text-danger 18
+            td.text-center.text-success 25
+            td.text-center.text-danger 18
+            td.text-center.text-danger 35
+          tr
+            td.text-center B002BZX8A1
+            td.text-center.text-success 6
+            td.text-center.text-danger 19
+            td.text-center.text-success 20
+            td.text-center.text-danger 68
+            td.text-center.text-danger 25
+    .row.mb-4
+      // Section: Top 20 Gainers - By Category - ASIN
+      .col-xl-6.mb-4.mb-xl-0
+        h2.h4.mb-2 Top 20 Gainers
+        table(id='table-product_gainers' class='table m-0' style='width: 100%')
+          thead
+            tr
+              th.text-center 
+                strong Category
+              th.text-center
+                strong ASIN
+              th.text-center 
+                strong Trailing 7 Days
+              th.text-center 
+                strong Trailing 14 Days
+              th.text-center 
+                strong Trailing 30 Days
+              th.text-center 
+                strong Trailing 6 Months
+              th.text-center 
+                strong Trailing 12 Months
+          tbody
+            tr
+              td.text-center HPC
+              td.text-center B002BZX8Z6
+              td.text-center.text-success 15
+              td.text-center.text-danger 18
+              td.text-center.text-danger 17
+              td.text-center.text-success 25
+              td.text-center.text-danger 30
+            tr
+              td.text-center HPC
+              td.text-center B002BZX8Z7
+              td.text-center.text-danger 17
+              td.text-center.text-danger 18
+              td.text-center.text-danger 30
+              td.text-center.text-success 15
+              td.text-center.text-success 25
+            tr
+              td.text-center Deals
+              td.text-center B002BZX8Z8
+              td.text-center.text-success 15
+              td.text-center.text-success 25
+              td.text-center.text-danger 17
+              td.text-center.text-danger 18
+              td.text-center.text-danger 30
+            tr
+              td.text-center Deals
+              td.text-center B002BZX8Z9
+              td.text-center.text-success 65
+              td.text-center.text-danger 18
+              td.text-center.text-success 25
+              td.text-center.text-danger 18
+              td.text-center.text-danger 35
+            tr
+              td.text-center Deals
+              td.text-center B002BZX8A1
+              td.text-center.text-success 6
+              td.text-center.text-danger 19
+              td.text-center.text-success 20
+              td.text-center.text-danger 68
+              td.text-center.text-danger 25
+      // Section: Top 20 Losers - By Category - ASIN
+      .col-xl-6
+        h2.h4.mb-2 Top 20 Losers
+        table(id='table-product_losers' class='table m-0' style='width: 100%')
+          thead
+            tr
+              th.text-center 
+                strong Category
+              th.text-center
+                strong ASIN
+              th.text-center 
+                strong Trailing 7 Days
+              th.text-center 
+                strong Trailing 14 Days
+              th.text-center 
+                strong Trailing 30 Days
+              th.text-center 
+                strong Trailing 6 Months
+              th.text-center 
+                strong Trailing 12 Months
+          tbody
+            tr
+              td.text-center HPC
+              td.text-center B002BZX8Z6
+              td.text-center.text-success 15
+              td.text-center.text-danger 18
+              td.text-center.text-danger 17
+              td.text-center.text-success 25
+              td.text-center.text-danger 30
+            tr
+              td.text-center HPC
+              td.text-center B002BZX8Z7
+              td.text-center.text-danger 17
+              td.text-center.text-danger 18
+              td.text-center.text-danger 30
+              td.text-center.text-success 15
+              td.text-center.text-success 25
+            tr
+              td.text-center Deals
+              td.text-center B002BZX8Z8
+              td.text-center.text-success 15
+              td.text-center.text-success 25
+              td.text-center.text-danger 17
+              td.text-center.text-danger 18
+              td.text-center.text-danger 30
+            tr
+              td.text-center Deals
+              td.text-center B002BZX8Z9
+              td.text-center.text-success 65
+              td.text-center.text-danger 18
+              td.text-center.text-success 25
+              td.text-center.text-danger 18
+              td.text-center.text-danger 35
+            tr
+              td.text-center Deals
+              td.text-center B002BZX8A1
+              td.text-center.text-success 6
+              td.text-center.text-danger 19
+              td.text-center.text-success 20
+              td.text-center.text-danger 68
+              td.text-center.text-danger 25
+    // Section: Category Analysis
+    .row.mb-4
+      .col-auto
+        h2.h4.mb-2 Category Analysis
+      .w-100.mb-2
+      .col-sm-6  
+        table(id='table-product_category' class='table m-0' style='width: 100%')
+          thead
+            tr
+              th.text-center
+                strong Category Name
+              th.text-center
+                strong Number of Products
+          tbody
+            tr
+              td.text-center HPC
+              td.text-center 4
+            tr
+              td.text-center Deals
+              td.text-center 1
+  include includes/footer

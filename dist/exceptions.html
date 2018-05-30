@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exceptions
+    </title>
+  <link href="css/index.css" rel="stylesheet"></head>
+  <body class="page-exceptions">
+    <!-- Section: Header-->
+    <header class="header has-nav text-muted">
+      <div class="header-top container-fluid">
+        <div class="row no-gutters align-items-center mb-2">
+          <div class="header-left col col-lg-8 col-xl-6">
+            <div class="row align-items-center no-gutters"><a class="navbar-brand col-auto text-center" href="#"></a>
+              <div class="form-row border-left col mb-0 ml-md-4 pl-2">
+                <label class="d-none d-md-inline-block col-3 col-form-label" for="sales-marketplace">Market Place</label>
+                <div class="col col-md-6">
+                  <select class="custom-select form-control form-control-sm" id="sales-marketplace">
+                    <option selected="">Choose Market Place</option>
+                    <option value="2">Amazon</option>
+                    <option value="1">Best Buy</option>
+                    <option value="2">Walmart</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-right col-auto ml-auto">
+            <div class="dropdown show text-right"><a class="btn text-muted dropdown-toggle d-inline-flex align-items-center rounded-0" id="user-menu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-none d-inline-md-block">James Walter</span><i class="rounded icon-user text-primary icon-md ml-2"></i></a>
+              <div class="dropdown-menu" aria-labelledby="user-menu"><a class="dropdown-item" href="settings.html">My Profile</a><a class="dropdown-item" href="#">Log out</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-nav mb-2">
+        <!-- Section: Dashboard menu -->
+        <nav class="navbar navbar-expand navbar-secondary navbar-dark bg-dark py-0">
+          <button class="d-xl-none btn navbar-toggle text-muted rounded-0"><i class="icon-menu icon-md"></i></button>
+          <h3 class="text-white ml-2 mb-0 d-xl-none">Exceptions</h3>
+          <ul class="navbar-nav py-1 d-none d-xl-inline-flex">
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 active" href="exceptions.html">Exceptions</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+            <li class="nav-item "><a class="nav-link py-0 " href="recommendations.html">Recommendations</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Section: Search Filters  -->
+      <div class="container-fluid">
+        <div class="form-row align-items-center">
+          <div class="col-md mb-2 mb-md-0">
+            <div class="input-group">
+              <div class="input-group-prepend"><span class="input-group-text px-2 px-md-4" id="search"><i class="icon-search icon-md text-primary"></i></span></div>
+              <input class="form-control" id="myInput" type="text" placeholder="Search by ASIN, Part #, Model #, SKU" aria-label="Search" aria-describedby="search">
+            </div>
+          </div>
+          <div class="col-12 col-md-auto mb-2 mb-md-0">
+            <select class="custom-select form-control select-daterange rounded-0">
+              <option value="Select Date Range">Select Date Range</option>
+              <option value="Yesterday">Yesterday</option>
+              <option value="Week-to-Date">Week-to-Date</option>
+              <option value="Prior Week">Prior Week</option>
+              <option value="Month to Date">Month to Date</option>
+              <option value="Prior Month">Prior Month</option>
+              <option value="Customized: Enter custom date range">Customized: Enter custom date range</option>
+            </select>
+          </div>
+          <div class="col-9 col-md-auto mb-md-0 daterange d-none" id="daterange">
+            <div class="form-row">
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" type="text" placeholder="from date" id="daterange-from"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" type="text" placeholder="to date" id="daterange-to"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 col-md-auto mt-md-0">
+            <button class="btn btn-primary rounded-0 w-100">Apply</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="overlay">       </div>
+    <!-- Section: Dashboard menu-->
+    <aside class="sidebar d-xl-none">
+      <nav class="navbar navbar-expand navbar-secondary navbar-dark navbar-vertical bg-dark">
+        <ul class="navbar-nav py-1 flex-column">
+          <li class="nav-item"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+          <li class="nav-item"><a class="nav-link py-0 active" href="exceptions.html">Exceptions</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="recommendations.html">Recommendations</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- Section: Main content-->
+    <main class="content mt-2 container-fluid">
+            <div class="row align-items-center mb-2">
+              <div class="col">
+                <div class="row align-items-center">
+                  <h1 class="col-md-auto h4 mb-0">Exceptions Overview</h1><small class="col-md-auto px-md-0 text-muted">(From 05/20/2018 To 05/25/2018)</small>
+                </div>
+              </div>
+              <div class="col-auto ml-auto">
+                <button class="btn btn-sm btn-primary rounded-0 d-inline-flex align-items-center" type="button" title="Download"><i class="icon-download icon-md mr-sm-2"></i><span class="d-none d-sm-block">Download	</span></button>
+              </div>
+            </div>
+      <div class="border p-4 mb-4">
+        <h2 class="h5 mb-0">Products with Detail Page Variances</h2>
+        <div id="chart-exceptions_count"></div>
+      </div>
+      <div class="mb-4">
+        <ul class="nav nav-tabs nav-tabs-compact flex-nowrap" id="tab-exceptions" role="tablist">
+          <li class="nav-item text-uppercase"><a class="nav-link active" id="tab-count_image" data-toggle="tab" href="#tab-count_image-body" role="tab" aria-controls="tab-count_image-body" aria-selected="true">Count of Image Change</a></li>
+          <li class="nav-item text-uppercase"><a class="nav-link" id="tab-count_aplus" data-toggle="tab" href="#tab-count_aplus-body" role="tab" aria-controls="tab-count_aplus-body" aria-selected="false">Count of No A+</a></li>
+          <li class="nav-item text-uppercase"><a class="nav-link" id="tab-count_twister" data-toggle="tab" href="#tab-count_twister-body" role="tab" aria-controls="tab-count_twister-body" aria-selected="false">Count of variation (twister) change</a></li>
+          <li class="nav-item text-uppercase"><a class="nav-link" id="tab-replenishment" data-toggle="tab" href="#tab-replenishment-body" role="tab" aria-controls="tab-replenishment-body" aria-selected="false">Replenishment Code Changes</a></li>
+          <li class="nav-item text-uppercase"><a class="nav-link" id="tab-products_changes" data-toggle="tab" href="#tab-products_changes-body" role="tab" aria-controls="tab-products_changes-body" aria-selected="false">Product Category Changes</a></li>
+          <li class="nav-item text-uppercase"><a class="nav-link" id="tab-products_offer" data-toggle="tab" href="#tab-products_offer-body" role="tab" aria-controls="tab-products_offer-body" aria-selected="false">Products without offer</a></li>
+        </ul>
+        <div class="tab-content border py-4" id="tab-exceptions-body">
+          <!-- Section: Count of Image Change tab-->
+          <div class="tab-pane fade show active" id="tab-count_image-body" role="tabpanel" aria-labelledby="tab-count_image">
+            <p class="lead px-3 mb-0">Top Products with Image Changes</p>
+            <table class="table" id="table-count_image">
+              <thead>
+                <tr>
+                  <th class="text-center"><strong>ASIN</strong></th>
+                  <th class="text-center"><strong>Product Name</strong></th>
+                  <th class="text-center"><strong>Last Day</strong></th>
+                  <th class="text-center"><strong>Last 7 Days</strong></th>
+                  <th class="text-center"><strong>Last 14 Days</strong></th>
+                  <th class="text-center"><strong>4 Weeks</strong></th>
+                  <th class="text-center"><strong>4 Weeks +</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">B01NBHK5XX</td>
+                  <td class="text-center">Install Centric ICGM12BNGM 2005-16 Class II Complete Installation Solution for Car Stereos</td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                </tr>
+                <tr>
+                  <td class="text-center">B01EXS1NA0</td>
+                  <td class="text-center">New Domaine Shredded Latex Cooling pillow- Queen</td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"></td>
+                  <td class="text-center"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Section: Count of A+ tab-->
+          <div class="tab-pane fade" id="tab-count_aplus-body" role="tabpanel" aria-labelledby="tab-count_aplus">
+            <p class="lead px-3 mb-0">Top Products with A+ Changes</p>
+            <table class="table" id="table-count_aplus" style="width: 100%">
+              <thead>
+                <tr>
+                  <th class="text-center" rowspan="2"><strong>ASIN</strong></th>
+                  <th class="text-center" rowspan="2"><strong>Product Name</strong></th>
+                  <th class="text-center" colspan="2"><strong>Has A+?</strong></th>
+                </tr>
+                <tr>
+                  <th class="text-center"><strong>Yes</strong></th>
+                  <th class="text-center"><strong>No    </strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">B01NBHK5XX</td>
+                  <td class="text-center">Install Centric ICGM12BNGM 2005-16 Class II Complete Installation Solution for Car Stereos</td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                </tr>
+                <tr>
+                  <td class="text-center">B01EXS1NA0</td>
+                  <td class="text-center">New Domaine Shredded Latex Cooling pillow- Queen</td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Section: Count of variation (twister) change tab-->
+          <div class="tab-pane fade" id="tab-count_twister-body" role="tabpanel" aria-labelledby="tab-count_twister">
+            <p class="lead px-3 mb-0">Top Products with Page Variation Changes</p>
+            <table class="table" id="table-count_twister" style="width: 100%">
+              <thead>
+                <tr>
+                  <th class="text-center"><strong>ASIN</strong></th>
+                  <th class="text-center"><strong>Product Name</strong></th>
+                  <th class="text-center"><strong>Last Day</strong></th>
+                  <th class="text-center"><strong>Last 7 Days</strong></th>
+                  <th class="text-center"><strong>Last 14 Days</strong></th>
+                  <th class="text-center"><strong>4 Weeks</strong></th>
+                  <th class="text-center"><strong>4 Weeks +</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">B01NBHK5XX</td>
+                  <td class="text-center">Install Centric ICGM12BNGM 2005-16 Class II Complete Installation Solution for Car Stereos</td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                </tr>
+                <tr>
+                  <td class="text-center">B01EXS1NA0</td>
+                  <td class="text-center">New Domaine Shredded Latex Cooling pillow- Queen</td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"></td>
+                  <td class="text-center"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Section: Replenishment Code-->
+          <div class="tab-pane fade" id="tab-replenishment-body" role="tabpanel" aria-labelledby="tab-replenishment">
+            <table class="table" id="table-replenishment" style="width: 100%">
+              <thead>
+                <tr>
+                  <th class="text-center"><strong>Replenishment Codes</strong></th>
+                  <th class="text-center"><strong>PR</strong></th>
+                  <th class="text-center"><strong>NP</strong></th>
+                  <th class="text-center"><strong>OS</strong></th>
+                  <th class="text-center"><strong>OB</strong></th>
+                  <th class="text-center"><strong>NR</strong></th>
+                  <th class="text-center"><strong>NS</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">Products with Zero On-Hand</td>
+                  <td class="text-center">5</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">9</td>
+                  <td class="text-center">7</td>
+                  <td class="text-center">1</td>
+                </tr>
+                <tr>
+                  <td class="text-center">Products with Zero On-Order</td>
+                  <td class="text-center">8</td>
+                  <td class="text-center">0</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">9</td>
+                  <td class="text-center">5</td>
+                </tr>
+                <tr>
+                  <td class="text-center">Products with No Order in last 1 week</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">6</td>
+                  <td class="text-center">8</td>
+                  <td class="text-center">5</td>
+                  <td class="text-center">0</td>
+                  <td class="text-center">5</td>
+                </tr>
+                <tr>
+                  <td class="text-center">Products with No Order in last 2 weeks</td>
+                  <td class="text-center">4</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">5</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">6</td>
+                  <td class="text-center">2</td>
+                </tr>
+                <tr>
+                  <td class="text-center">Products with No Order in last 4 weeks</td>
+                  <td class="text-center">10</td>
+                  <td class="text-center">9</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">4</td>
+                  <td class="text-center">7</td>
+                  <td class="text-center">6</td>
+                </tr>
+                <tr>
+                  <td class="text-center">Products with No Order in last 3 months</td>
+                  <td class="text-center">6</td>
+                  <td class="text-center">0</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">4</td>
+                  <td class="text-center">2</td>
+                </tr>
+                <tr>
+                  <td class="text-center">Products with No Order in > 12 months</td>
+                  <td class="text-center">0</td>
+                  <td class="text-center">0</td>
+                  <td class="text-center">0</td>
+                  <td class="text-center">0</td>
+                  <td class="text-center">0</td>
+                  <td class="text-center">0</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table m-0" id="table-replenishment_product" style="width: 100%">
+              <thead>
+                <tr>
+                  <th class="text-center"><strong>Product</strong></th>
+                  <th class="text-center"><strong>Replenishment Codes</strong></th>
+                  <th class="text-right"><strong>Prior Year $ Sales</strong></th>
+                  <th class="text-center"><strong>Units on Hand</strong></th>
+                  <th class="text-right"><strong>Current Year Sales</strong></th>
+                  <th class="text-center"><strong>Last Ordered Date</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">B01NBHK5XX</td>
+                  <td class="text-center">PR</td>
+                  <td class="text-right">$253,834</td>
+                  <td class="text-center">152</td>
+                  <td class="text-right">$302,232</td>
+                  <td class="text-center">24 May 2018 </td>
+                </tr>
+                <tr>
+                  <td class="text-center">B01EXS1NA0</td>
+                  <td class="text-center">PR</td>
+                  <td class="text-right">$453,545</td>
+                  <td class="text-center">112</td>
+                  <td class="text-right">$398,564</td>
+                  <td class="text-center">22 May 2018</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Section: Product Category Changes-->
+          <div class="tab-pane fade" id="tab-products_changes-body" role="tabpanel" aria-labelledby="tab-products_changes">
+            <p class="lead px-3 mb-0">Top Products with Category Changes</p>
+            <table class="table" id="table-products_changes" style="width: 100%">
+              <thead>
+                <tr>
+                  <th class="text-center"><strong>ASIN</strong></th>
+                  <th class="text-center"><strong>Product Name</strong></th>
+                  <th class="text-center"><strong>Category</strong></th>
+                  <th class="text-center"><strong>Last Day</strong></th>
+                  <th class="text-center"><strong>Last 7 Days</strong></th>
+                  <th class="text-center"><strong>Last 14 Days</strong></th>
+                  <th class="text-center"><strong>4 Weeks</strong></th>
+                  <th class="text-center"><strong>4 Weeks +</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">B01EXS1NA0</td>
+                  <td class="text-center">New Domaine Shredded Latex Cooling pillow- Queen</td>
+                  <td class="text-center">Bed Pillows & Positioners</td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                </tr>
+                <tr>
+                  <td class="text-center">B01NBHK5XX</td>
+                  <td class="text-center">Install Centric ICGM12BNGM 2005-16 Class II Complete Installation Solution for Car Stereos</td>
+                  <td class="text-center">Car Electronics</td>
+                  <td class="text-center"></td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Section: Products without offer-->
+          <div class="tab-pane fade" id="tab-products_offer-body" role="tabpanel" aria-labelledby="tab-products_offer">
+            <table class="table" id="table-products_offer" style="width: 100%">
+              <thead>
+                <tr>
+                  <th class="text-center"><strong>ASIN</strong></th>
+                  <th class="text-center"><strong>Days without Offer</strong></th>
+                  <th class="text-center"><strong>Last 7 Days</strong></th>
+                  <th class="text-center"><strong>Last 14 Days</strong></th>
+                  <th class="text-center"><strong>4 Weeks</strong></th>
+                  <th class="text-center"><strong>4 Weeks +</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">B01EXS1NA0</td>
+                  <td class="text-center">4</td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                </tr>
+                <tr>
+                  <td class="text-center">B01BON4QAQ</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"> </td>
+                </tr>
+                <tr>
+                  <td class="text-center">B01NBHK5XX</td>
+                  <td class="text-center">5</td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                </tr>
+                <tr>
+                  <td class="text-center">B018E65WW2</td>
+                  <td class="text-center">4</td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+                  <td class="text-center"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Section: Items without Buy-Box      -->
+      <div class="mb-4">
+        <h2 class="h4 mb-2">Items without Buy-Box</h2>
+        <table class="table" id="table-buy_box">
+          <thead>
+            <tr>
+              <th class="text-center"></th>
+              <th class="text-center"><strong>ASIN</strong></th>
+              <th class="text-center"><strong>Last Day</strong></th>
+              <th class="text-center"><strong>Last 7 Days</strong></th>
+              <th class="text-center"><strong>Last 14 Days</strong></th>
+              <th class="text-center"><strong>4 Weeks</strong></th>
+              <th class="text-center"><strong>4 Weeks +</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left">Currently Unavailable</td>
+              <td class="text-center">B018E65WW2</td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+            </tr>
+            <tr>
+              <td class="text-left"><a href="#">See All Buying Options</a></td>
+              <td class="text-center">B01NBHK5XX</td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mb-4">
+        <h2 class="h4 mb-2">Best Seller Badge Changes</h2>
+        <table class="table" id="table-best_seller">
+          <thead>
+            <tr>
+              <th class="text-center" rowspan="2"><strong>ASIN</strong></th>
+              <th class="text-center" rowspan="2"><strong>Product Name</strong></th>
+              <th class="text-center" rowspan="2"><strong>Last Action</strong></th>
+              <th class="text-center" rowspan="2"><strong>Has Best Seller</strong></th>
+              <th class="text-center" rowspan="2"><strong>Amazon's Choice</strong></th>
+              <th class="text-center" colspan="5"><strong>Change in Best Seller Badge</strong></th>
+              <th class="text-center" rowspan="2"><strong>Days With Best-Seller</strong></th>
+              <th class="text-center" rowspan="2"><strong>Days Without Best-Seller</strong></th>
+            </tr>
+            <tr>
+              <th class="text-center"><strong>Last Day</strong></th>
+              <th class="text-center"><strong>Last 7 Days</strong></th>
+              <th class="text-center"><strong>Last 14 Days</strong></th>
+              <th class="text-center"><strong>4 Weeks</strong></th>
+              <th class="text-center"><strong>4 Weeks +  </strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">B01NBHK5XX</td>
+              <td class="text-center">Install Centric ICGM12BNGM 2005-16 Class II Complete Installation Solution for Car Stereos</td>
+              <td class="text-center">Yes</td>
+              <td class="text-center">No</td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center">1</td>
+              <td class="text-center">3</td>
+              <td class="text-center">5</td>
+              <td class="text-center">3</td>
+              <td class="text-center">6</td>
+              <td class="text-center">6</td>
+              <td class="text-center">9</td>
+            </tr>
+            <tr>
+              <td class="text-center">B01EXS1NA0</td>
+              <td class="text-center">New Domaine Shredded Latex Cooling pillow- Queen</td>
+              <td class="text-center">Yes</td>
+              <td class="text-center">No</td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center">8</td>
+              <td class="text-center">5</td>
+              <td class="text-center">10</td>
+              <td class="text-center">9</td>
+              <td class="text-center">5</td>
+              <td class="text-center">8</td>
+              <td class="text-center">1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mb-4">
+        <h2 class="h4 mb-2">Amazon Seller Changes</h2>
+        <table class="table" id="table-amazon_sellers">
+          <thead>
+            <tr>
+              <th class="text-center"> <strong>Sellers</strong></th>
+              <th class="text-center"><strong>Last Day</strong></th>
+              <th class="text-center"><strong>Last 7 Days</strong></th>
+              <th class="text-center"><strong>Last 14 Days</strong></th>
+              <th class="text-center"><strong>4 Weeks</strong></th>
+              <th class="text-center"><strong>4 Weeks +</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">Number of New Sellers</td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+            </tr>
+            <tr>
+              <td class="text-center">Number of Active Sellers</td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+            </tr>
+            <tr>
+              <td class="text-center">Number of Attrite Sellers</td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"><i class="icon-check text-success p-1"></i></td>
+              <td class="text-center"></td>
+              <td class="text-center"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+<div class="footer p-4 text-center text-muted" style="background: #e1e1e1">
+  <p class="mb-0">Copyrights 2018. Praesto. All Rights Reserved</p>
+</div>
+  <script type="text/javascript" src="scripts/commons.js"></script><script type="text/javascript" src="scripts/app.js"></script></body>
+</html>

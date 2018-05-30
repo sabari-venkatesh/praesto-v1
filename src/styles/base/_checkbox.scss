@@ -1,10 +1,21 @@
 .toggle {
 	cursor: pointer;
 	margin: 0;
-    input[type=checkbox],
-    input[type=radio] {
-        display: none;
+
+	input[type=checkbox],
+	input[type=radio] {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
 	}
+}
+
+.toggle {
 	.handle {
 		position: relative;
 		top: 0;
@@ -14,33 +25,37 @@
 		height: 10px;
 		border-radius: 10px;
 		background-color: #999;
+
 		&:before {
 			position: absolute;
 			top: -5px;
 			transform: translateX(-10%);
-			left: 0px;
+			left: 0;
 			display: block;
 			width: 20px;
 			height: 20px;
 			content: "";
 			background-color: #ccc;
-			transition: all .25s ease-in-out;
+			transition: all 0.25s ease-in-out;
 			border-radius: 50%;
 		}
 	}
+
 	input[type=checkbox]:checked + .handle {
-        background-color: #1b66aa;
-        &:before {
-            transform: translateX(110%);
-            background-color: hsl(209, 73%, 60%);
-        }
-    }
+		background-color: #1b66aa;
+
+		&:before {
+			transform: translateX(110%);
+			background-color: hsl(209, 73%, 60%);
+		}
+	}
 
 	&.is-mini {
 		.handle {
 			background-color: #e37874;
 			width: 32px;
 			height: 16px;
+
 			&::before {
 				top: 0;
 				background-color: #eee;
@@ -52,6 +67,7 @@
 
 		input[type=checkbox]:checked + .handle {
 			background-color: #a4e276;
+
 			&:before {
 				transform: translateX(110%);
 				background-color: #eee;
@@ -59,30 +75,47 @@
 		}
 	}
 
-  &.has-text {
-    .handle {
-      width: 150px;
-      text-align: center;
-      height: auto;
-      padding: .5em;
-      color: #fff;
-      &:before {
-        background-color: #fff;
-        border: 1px solid #aaa;
-        top: 0;
-        width: 10px;
-        height: 100%;
-        border-radius: 10px;
-        transform: translateX(0);
-      }
-    }
+	&.has-text {
+		.handle {
+			width: 150px;
+			text-align: center;
+			height: 2rem;
+			padding: 0.5em;
+			color: #fff;
 
-    input[type=checkbox]:checked + .handle {
-      background: #37c235;
-      &:before {
-        background-color: #fff;
-        transform: translate(140px);
-      }
-    }
-  }
+			&:before {
+				content: "";
+				background-color: #fff;
+				border: 1px solid #aaa;
+				top: 0;
+				width: 10px;
+				height: 100%;
+				border-radius: 10px;
+				transform: translateX(0);
+			}
+
+			&:after {
+				content: attr(data-off);
+				color: #fff;
+				position: absolute;
+				left: 50%;
+				width: 100%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		input[type=checkbox]:checked + .handle {
+			background: #37c235;
+
+			&:before {
+				background-color: #fff;
+				transform: translate(140px);
+			}
+
+			&:after {
+				content: attr(data-on);
+			}
+		}
+	}
 }

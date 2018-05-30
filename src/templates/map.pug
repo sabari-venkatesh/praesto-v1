@@ -5,6 +5,8 @@ block content
   include includes/header
   include includes/mobile-menu
   main.content.mt-2.container-fluid
+    include includes/content-header
+    +content-header('Map Overview')
     .border.p-4
       #chart-map
     .w-100.mb-4

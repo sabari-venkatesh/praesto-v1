@@ -423,6 +423,45 @@ $(document).ready(() => {
     });
   }
 
+  /* Product Ranks: Daily Rank of all products */
+  if ($('#chart-product_ranks').length > 0) {
+    Highcharts.chart('chart-product_ranks', {
+      chart: {
+        type: 'column',
+        height: 300
+      },
+      title: {
+        text: 'Daily ranking of all Products'
+      },
+      xAxis: {
+        categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr']
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Rank'
+        },
+      },
+      legend: {
+        align: 'center',
+        x: 0,
+        verticalAlign: 'bottom',
+        y: 0,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+        shadow: false
+      },
+      tooltip: {
+        headerFormat: '<b>{point.x}</b><br/>',
+        pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+      },
+      series: [{
+        name: 'All Products',
+        data: [400, 190, 80, 180, 10],
+        type: 'spline',
+      }]
+    });
+  }
+
   /* Map: All Count of Violations  */
   if ($('#chart-map').length > 0) {
     Highcharts.chart('chart-map', {
@@ -481,6 +520,100 @@ $(document).ready(() => {
         type: 'column',
         yAxis: 1,
         data: [900, 600, 300, 200, 400, 1100],
+      }]
+    });
+  }
+
+  /* Buy-box: Buy-box report */
+  if ($('#chart-buy-box').length > 0) {
+    Highcharts.chart('chart-buy-box', {
+      chart: {
+        zoomType: 'xy',
+        height: 300
+      },
+      title: {
+        text: 'All Products - BuyBox'
+      },
+      xAxis: [{
+        title: {
+          text: 'Date',
+          style: {
+            color: Highcharts.getOptions().colors[1]
+          }
+        },
+        categories: ['4/15/2018', '4/16/2018', '4/17/2018', '4/18/2018', '4/19/2018', '4/20/2018']
+      }],
+      yAxis: {
+        min: 82,
+        max: 100,
+        labels: {
+          formatter: function() {
+            return this.value + '%';
+          }
+        },
+        title: {
+          text: 'BuyBox %',
+          style: {
+            color: Highcharts.getOptions().colors[1]
+          }
+        }
+      },
+      series: [{
+        name: 'Products',
+        type: 'column',
+        color: '#1b66aa',
+        data: [98, 88, 92, 90, 95, 88],
+      }]
+    });
+  }
+
+  if ($('#chart-chargeback-trend').length > 0) {
+    Highcharts.chart('chart-chargeback-trend', {
+      chart: {
+        zoomType: 'xy',
+        height: 300
+      },
+      title: {
+        text: 'Chargeback Trends'
+      },
+      xAxis: [{
+        categories: ['April', 'May', 'June', 'July', 'Augest', 'September'],
+        crosshair: true
+      }],
+      yAxis: [{ // Secondary yAxis
+        title: {
+          text: '',
+          style: {
+            color: Highcharts.getOptions().colors[0]
+          }
+        },
+        labels: {
+          format: '{value}',
+          style: {
+            color: Highcharts.getOptions().colors[0]
+          }
+        }
+      }],
+      tooltip: {
+        shared: true
+      },
+      legend: {
+        layout: 'horizontal',
+        align: 'center',
+        x: 0,
+        verticalAlign: 'bottom',
+        y: 0,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+      },
+      series: [{
+        name: 'Chargebacks this year',
+        type: 'line',
+        color: '#25aa1b',
+        data: [1200, 900, 600, 500, 700, 500],
+      }, {
+        name: 'Chargebacks last year',
+        type: 'line',
+        data: [1000, 600, 200, 200, 400, 1200],
       }]
     });
   }

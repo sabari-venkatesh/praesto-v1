@@ -4,32 +4,25 @@ block link
 block content
   include includes/header
   include includes/mobile-menu
-  main.content.mt-4.container-fluid
-    .row.justify-content-between.mb-4
-      .col-auto
-        h3.mb-0 Inventory Overview
-        small.text-muted Last Updated: 05/10/2018 05:00 AM
-      .col-auto
-        button.btn.btn-primary.rounded-0.d-inline-flex.align-items-center(type='button' title='Download')
-          i.icon-download.icon-md.mr-sm-2
-          span.d-none.d-sm-block Download
-    .row.mb-4
-      .col-sm-12
-        .border.p-4
-          .btn-group(role='group' aria-label='Sales to Customers Chart')
-            button.btn.btn-secondary.text-white.rounded-0(type='button') 3P
-            button.btn.btn-light.rounded-0(type='button') Amazon
-          #chart-inventory
+  main.content.mt-2.container-fluid
+    // Section: Overview
+    include includes/content-header
+    +content-header('Inventory Overview')
+    .border.p-2.mb-4
+      .btn-group(role='group' aria-label='Sales to Customers Chart')
+        button.btn.rounded-0(type='button') 3P
+        button.btn.rounded-0(type='button') Amazon
+      #chart-inventory
     // Section: Inventory Trends
     .row.mb-4
       .col-auto
-        h3.mb-0 Inventory Trends
-        small.text-muted Last Updated: 05/10/2018 05:00 AM
+        h2.h4.mb-0 Inventory Trends
+        small.text-muted Last Updated: 05/26/2018 05:00 AM
       .col-auto
-        label.toggle.has-text.d-block.text-right
+        label.datas1.toggle.has-text.d-block.text-right
           input(type='checkbox' checked)
           span.handle(data-on='Trailing 6 Weeks' data-off='Trailing 6 Months')
       .w-100.mb-4
       .col-12
         include includes/inventory/trends-inventory
-    include includes/footer        
+  include includes/footer
