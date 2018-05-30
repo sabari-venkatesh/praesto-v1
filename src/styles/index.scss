@@ -152,6 +152,22 @@ strong {
   box-sizing: content-box;
 }
 
+.dataTables_bottom {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .dataTables_length {
+    display: flex;
+    align-items: center;
+    .form-control {
+      width: auto;
+      display: inline-block;
+    }
+  }
+}
+
 .form-group {
   &.is-inline {
     display: flex;
@@ -519,7 +535,6 @@ html {
 
 .nav-tabs-compact {
   font-size: 0.875rem;
-
   .nav-link {
     padding: 0.5rem 1rem;
   }
@@ -562,4 +577,90 @@ tr.total th {
 
 .text-indent-20 {
   text-indent: 20px;
+}
+.star-review {
+  padding: 0;
+  justify-content: center;
+  > div {
+    list-style: none;
+    margin-bottom: 15px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+    .review-content {
+      min-height: 280px;
+      .card-header {
+        position: relative;
+        background: #f7f7f7;
+        .card-title {
+          margin-bottom: 0;
+        }
+        .rating {
+          padding: 0;
+          position: absolute;
+          right: 10px;
+          top: 8px;
+          margin: 0;
+          li {
+            list-style: none;
+            float: right;
+            font-size: 1.3em;
+            padding: 0 2px;
+            .icon-star {
+              color: #ff5e00
+            }
+            .icon-star-o {
+              color: #535558;
+            }
+          }
+        }
+      }
+      .card-body {
+        text-align: left;
+        .list-group {
+          padding: 0 10px 0 0;
+          margin: 0;
+          max-height: 210px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          li {
+            list-style: none;
+            margin-bottom: 10px;
+            line-height: 16px;
+            padding: 10px;
+            transition: all 0.2s;
+            &:hover {
+              background: #f9f9f9
+            }
+            h6 {
+              font-weight: 500;
+              margin: 0
+            }
+            p {
+              padding: 5px 0;
+              margin: 0;
+              font-size: 13px;
+              line-height: 14px;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }           
+          }
+        }
+      }
+    }
+  }
+}
+
+.cus-tooltip {
+  color: $gray-700;
+  display: flex;
+  align-items: center;
+  .icon-info-circle {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  &:hover {
+    text-decoration: none;
+  }
 }

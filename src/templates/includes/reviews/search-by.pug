@@ -1,0 +1,10 @@
+block content
+	- var filters = {
+	-	'all': ['ASIN', 'Part', 'Model', 'SKU'],
+	- };
+	.text-right.mb-2
+		.px-3.d-inline-flex.align-items-center.table-filters
+			label.mb-0.mr-2(for='product-filter') Search By:
+			each options, group in filters
+				each option in options
+					a.badge.badge-secondary.rounded-0.ml-2(href='#' name=group) #{option}

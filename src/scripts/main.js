@@ -378,6 +378,30 @@ $(document).ready(() => {
     paging: false
   });
 
+  $('#table-reviews_trends').DataTable({
+    dom: 'rt<"dataTables_bottom"lp>',
+    fixedHeader: true,
+    fixedColumns: {
+      leftColumns: 2
+    },
+    orderCellsTop: true,
+    scrollX: true,
+    scrollCollapse: true,
+    scrollY: 300,
+  });
+
+  $('#table-reviews_weeks').DataTable({
+    dom: 'rt<"dataTables_bottom"lp>',
+    fixedHeader: true,
+    fixedColumns: {
+      leftColumns: 1
+    },
+    orderCellsTop: true,
+    scrollX: true,
+    scrollCollapse: true,
+    scrollY: 300,
+  });
+
   $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
     //  $($.fn.dataTable.tables(true)).css('width', '100%');
     $($.fn.dataTable.tables(true)).DataTable().columns.adjust().draw();

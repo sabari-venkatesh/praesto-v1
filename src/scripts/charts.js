@@ -617,4 +617,92 @@ $(document).ready(() => {
       }]
     });
   }
+
+  /* Reviews: YTD reviews / Last Year Reviews  */
+  if ($('#chart-reviews').length > 0) {
+    Highcharts.chart('chart-reviews', {
+      chart: {
+        type: 'area',
+        zoomType: 'xy'
+      },
+      title: {
+        text: 'YTD reviews / Last Year Reviews'
+      },
+      xAxis: {
+        allowDecimals: false,
+        categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr', '20 Apr'],
+      },
+      yAxis: {
+        labels: {
+          formatter: function () {
+            return this.value / 10;
+          }
+        }
+      },
+      tooltip: {
+        pointFormat: '{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+      },
+      series: [{
+        name: 'Total Reviews Last Year',
+        color: '#7cb5ec',
+        data: [
+          90, 100, 95, 90, 80, 105
+        ]
+      }, {
+          name: 'Total Reviews Year to Date',
+          color: '#dfe1e2',
+          data: [70, 65, 45, 78, 75, 70
+        ]
+      }]
+    });
+  }
+    /* Reviews: Pie chart */
+  if ($('#chart-reviews-pie').length > 0) {
+    Highcharts.chart('chart-reviews-pie', {
+      chart: {
+        type: 'pie',
+      },
+      title: {
+        text: 'Star Rating'
+      },
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true,
+            format: '{point.name}: {point.y:.1f}%'
+          }
+        }
+      },
+      tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+      },
+      series: [{
+        name: 'Star',
+        colorByPoint: true,
+        data: [
+          {
+            name: '5 Star',
+            y: 62.74,
+          },
+          {
+            name: '4 Star',
+            y: 10.57,
+          },
+          {
+            name: '3 Star',
+            y: 7.23,
+          },
+          {
+            name: '2 Star',
+            y: 5.58,
+          },
+          {
+            name: '1 Star',
+            y: 4.02,
+          },
+        ]
+      }]
+    });
+  }
 });

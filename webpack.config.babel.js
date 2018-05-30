@@ -183,12 +183,12 @@ const config = {
       filename: 'map.html',
       template: 'templates/map.pug',
     }),
-    // new HtmlWebpackPlugin({
-    //   title: 'Reviews',
-    //   bodyClass: 'page-reviews',
-    //   filename: 'reviews.html',
-    //   template: 'templates/reviews.pug',
-    // }),
+    new HtmlWebpackPlugin({
+      title: 'Reviews',
+      bodyClass: 'page-reviews',
+      filename: 'reviews.html',
+      template: 'templates/reviews.pug',
+    }),
     new HtmlWebpackPlugin({
       title: 'Chargebacks',
       bodyClass: 'page-chargebacks',
