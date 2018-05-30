@@ -5,10 +5,10 @@ block content
   include includes/header
   include includes/mobile-menu
   main.content.mt-2.container-fluid
-    include includes/content-header
-    +content-header('Chargebacks Overview')
-    .border.p-4.mb-4
-      #chart-chargeback-trend
+    .row.mb-4
+      .col-sm-12
+        .border.p-4
+          #chart-chargeback-trend
     .row.mb-4
       .col-sm-12
           table(id='table-charge-back-dispute' class='table m-0' style='width: 100%')
@@ -42,99 +42,99 @@ block content
                 td.text-center 25
                 td.text-center 30
                 td.text-center 1
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
+                td.text-center 130
+                td.text-center 30
+                td.text-center 25
+                td.text-center 15
+                td.text-center 50
               tr
                 td.text-center ASN Accuracy
                 td.text-center 12
                 td.text-center 10
                 td.text-center 100
                 td.text-center 2
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
+                td.text-center 75
+                td.text-center 25
+                td.text-center 7
+                td.text-center 7
+                td.text-center 24
               tr
                 td.text-center No carton/package content label
                 td.text-center 10
                 td.text-center 40
                 td.text-center 40
                 td.text-center 1
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
+                td.text-center 40
+                td.text-center 40
+                td.text-center 20
+                td.text-center 10
+                td.text-center 42
               tr
                 td.text-center Oversized Carton
                 td.text-center 2
                 td.text-center 5
                 td.text-center 28
                 td.text-center 1
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
+                td.text-center 15
+                td.text-center 5
+                td.text-center 18
+                td.text-center 18
+                td.text-center 180
               tr
                 td.text-center Overweight Carton
                 td.text-center 8
                 td.text-center 18
                 td.text-center 14
                 td.text-center 1
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
+                td.text-center 38
+                td.text-center 3
+                td.text-center 14
+                td.text-center 14
+                td.text-center 14
               tr
                 td.text-center PO On-Time Accuracy
                 td.text-center 4
                 td.text-center 14
                 td.text-center 13
                 td.text-center 1
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
+                td.text-center 19
+                td.text-center 19
+                td.text-center 13
+                td.text-center 13
+                td.text-center 135
               tr
                 td.text-center Product preparation
                 td.text-center 7
                 td.text-center 8
                 td.text-center 10
                 td.text-center 1
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
+                td.text-center 120
+                td.text-center 2
+                td.text-center 10
+                td.text-center 10
+                td.text-center 10
               tr
                 td.text-center Rejected PO Rate
                 td.text-center 14
                 td.text-center 10
                 td.text-center 20
                 td.text-center 1
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
+                td.text-center 20
+                td.text-center 16
+                td.text-center 30
+                td.text-center 30
+                td.text-center 90
               tr
                 td.text-center Unfilled by cancel date
                 td.text-center 5
                 td.text-center 20
                 td.text-center 30
                 td.text-center 1
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
-                td.text-center
+                td.text-center 10
+                td.text-center 10
+                td.text-center 13
+                td.text-center 13
+                td.text-center 130
     .row.mb-4
       .col-sm-12
           table(id='table-charge-back-status' class='table m-0' style='width: 100%')

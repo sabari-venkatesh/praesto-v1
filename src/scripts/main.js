@@ -357,6 +357,38 @@ $(document).ready(() => {
     paging: false
   });
 
+  $('#table-buy-box-top-sellers').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end">',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-buy-box-top-problem-products').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end">',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-buy-box-price').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end">',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-buy-box-seller-price').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end">',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
   $('#table-charge-back-dispute').DataTable({
     dom: 'rt<"dataTables_bottom"lp>',
     fixedHeader: true,
@@ -400,6 +432,36 @@ $(document).ready(() => {
     scrollX: true,
     scrollCollapse: true,
     scrollY: 300,
+  });
+
+  $('#table-recommendations-promotion-count').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end">',
+    searching: false,
+    scrollX: true,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-recommendations-promotion-request').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end">',
+    searching: false,
+    scrollX: true,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+  });
+
+  $('#table-recommendations-promotion').DataTable({
+    dom: 'rt<"dataTables_bottom justify-content-end">',
+    searching: false,
+    lengthChange: false,
+    fixedHeader: true,
+    info: false,
+    scrollX: true,
+    scrollCollapse: true,
+    scrollY: 500,
+    paging: false
   });
 
   $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {

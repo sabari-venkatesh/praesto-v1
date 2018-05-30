@@ -201,12 +201,12 @@ const config = {
     //   filename: 'forecasting.html',
     //   template: 'templates/forecasting.pug',
     // }),
-    // new HtmlWebpackPlugin({
-    //   title: 'Recommendations',
-    //   bodyClass: 'page-recommendations',
-    //   filename: 'recommendations.html',
-    //   template: 'templates/recommendations.pug',
-    // }),
+    new HtmlWebpackPlugin({
+      title: 'Recommendations',
+      bodyClass: 'page-recommendations',
+      filename: 'recommendations.html',
+      template: 'templates/recommendations.pug',
+    }),
     new CopyWebpackPlugin([{
       from: './data',
       to: './data'

@@ -1,0 +1,207 @@
+extends layout
+block link
+  -var selected = 'recommendations';
+block content
+  include includes/header
+  include includes/mobile-menu
+  main.content.mt-2.container-fluid
+    .row.mb-4
+      .col-lg-3
+          table(id='table-recommendations-promotion-count' class='table m-0' style='width: 100%')
+            thead
+              tr
+                th.text-center Promotion
+                th.text-center Count
+            tbody
+              tr
+                td.text-center Bulk Buy
+                td.text-center.text-danger 3
+              tr
+                td.text-center Lightning Deal
+                td.text-center 12
+              tr
+                td.text-center Bulk Buy
+                td.text-center.text-success 17
+              tr
+                td.text-center Lightning Deal
+                td.text-center 15
+      .col-lg-9
+          table(id='table-recommendations-promotion-request' class='table m-0' style='width: 100%')
+            thead
+              tr
+                th.text-center ASIN
+                th.text-center Promotion
+                th.text-center Amazon Cost
+                th.text-center Requested Purchase Quantity
+                th.text-center Funding Request
+                th.text-center New Price Request
+            tbody
+              tr
+                td.text-center B001P85I5I
+                td.text-center Bulk Buy
+                td.text-right $120
+                td.text-center.text-danger 3
+                td.text-center Raised
+                td.text-center $105
+              tr
+                td.text-center B001P85I5I
+                td.text-center Bulk Buy
+                td.text-right $85
+                td.text-center 5
+                td.text-center Pending
+                td.text-center $70
+              tr
+                td.text-center B001P85I5I
+                td.text-center Bulk Buy
+                td.text-right $120
+                td.text-center.text-success 17
+                td.text-center Raised
+                td.text-center $105
+              tr
+                td.text-center B001P85I5I
+                td.text-center Bulk Buy
+                td.text-right $85
+                td.text-center 12
+                td.text-center Raised
+                td.text-center $70
+    .row.mb-4
+      .col-12
+        table(id='table-recommendations-promotion' class='table m-0' style='width: 100%')
+          thead
+            tr
+              th.text-center ASIN
+              th.text-center Promotion
+              th.text-center Promotion Name
+              th.text-center Amazon Cost
+              th.text-center Requested Purchase Quantity
+              th.text-center Funding Request
+              th.text-center Likely Promotional Price
+              th.text-center Total quantity
+              th.text-center Maximum funding
+              th.text-center Potential revenue
+              th.text-center Promotion name
+              th.text-center Base merchandising fee
+              th.text-center On-Hand
+              th.text-center TTM Sales
+          tbody
+            tr
+              td.text-center B001P85I5I
+              td.text-center Lightning Deal
+              td.text-center Rockford Fosgate Punch P132 3.5-Inch  Full Range Coaxial Speakers
+              td.text-center $230
+              td.text-center.text-danger 3
+              td.text-center Raised
+              td.text-center $200
+              td.text-center.text-danger 3
+              td.text-center $100
+              td.text-center Reviewed
+              td.text-center Lightning Deal
+              td.text-center $10
+              td.text-center 50
+              td.text-center 500
+            tr
+              td.text-center B0076SIIBM
+              td.text-center Lightning Deal
+              td.text-center Rockford Fosgate Punch P132 3.5-Inch  Full Range Coaxial Speakers
+              td.text-center $320
+              td.text-center 5
+              td.text-center Pending
+              td.text-center $300
+              td.text-center 5
+              td.text-center $250
+              td.text-center Reviewed
+              td.text-center Lightning Deal
+              td.text-center $25
+              td.text-center 45
+              td.text-center 350
+            tr
+              td.text-center B001P88U12
+              td.text-center Lightning Deal
+              td.text-center Rockford Fosgate Punch P132 3.5-Inch  Full Range Coaxial Speakers
+              td.text-center $230
+              td.text-center 17
+              td.text-center Completed
+              td.text-center $200
+              td.text-center 17
+              td.text-center $100
+              td.text-center Reviewed
+              td.text-center Lightning Deal
+              td.text-center $10
+              td.text-center 56
+              td.text-center 65
+            tr
+              td.text-center B001P86SP2
+              td.text-center Lightning Deal
+              td.text-center Rockford Fosgate Punch P132 3.5-Inch  Full Range Coaxial Speakers
+              td.text-center $320
+              td.text-center 15
+              td.text-center Completed
+              td.text-center $300
+              td.text-center 15
+              td.text-center $250
+              td.text-center Reviewed
+              td.text-center Lightning Deal
+              td.text-center $25
+              td.text-center 78
+              td.text-center 87
+            tr
+              td.text-center B001P86SE8
+              td.text-center Lightning Deal
+              td.text-center Rockford Fosgate Punch P132 3.5-Inch  Full Range Coaxial Speakers
+              td.text-center $230
+              td.text-center 27
+              td.text-center Completed
+              td.text-center $200
+              td.text-center 27
+              td.text-center $100
+              td.text-center Reviewed
+              td.text-center Lightning Deal
+              td.text-center $10
+              td.text-center 92
+              td.text-center 290
+            tr
+              td.text-center B001P86T1U
+              td.text-center Lightning Deal
+              td.text-center Rockford Fosgate Punch P132 3.5-Inch  Full Range Coaxial Speakers
+              td.text-center $320
+              td.text-center 19
+              td.text-center Raised
+              td.text-center $300
+              td.text-center 19
+              td.text-center $250
+              td.text-center Reviewed
+              td.text-center Lightning Deal
+              td.text-center $25
+              td.text-center 54
+              td.text-center 45
+            tr
+              td.text-center B0076SIICG
+              td.text-center Lightning Deal
+              td.text-center Rockford Fosgate Punch P132 3.5-Inch  Full Range Coaxial Speakers
+              td.text-center $230
+              td.text-center 8
+              td.text-center Raised
+              td.text-center $200
+              td.text-center 8
+              td.text-center $100
+              td.text-center Reviewed
+              td.text-center Lightning Deal
+              td.text-center $10
+              td.text-center 620
+              td.text-center 260
+            tr
+              td.text-center B001P86SQG
+              td.text-center Lightning Deal
+              td.text-center Rockford Fosgate Punch P132 3.5-Inch  Full Range Coaxial Speakers
+              td.text-center $320
+              td.text-center.text-success 40
+              td.text-center Pending
+              td.text-center $300
+              td.text-center.text-success 40
+              td.text-center $250
+              td.text-center Reviewed
+              td.text-center Lightning Deal
+              td.text-center $25
+              td.text-center 123
+              td.text-center 143
+    include includes/footer
