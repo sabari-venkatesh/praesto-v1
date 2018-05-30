@@ -705,4 +705,85 @@ $(document).ready(() => {
       }]
     });
   }
+
+  /* Reviews: Forecast  */
+  if ($('#chart-forecast').length > 0) {
+    Highcharts.chart('chart-forecast', {
+      title: {
+        text: ' a',
+
+      },
+      xAxis: {
+        type: 'datetime',
+        //tickInterval: 30 * 24 * 3600 * 1000,
+        labels: {
+          rotation: -45,
+          step: 1,
+        },
+        dateTimeLabelFormats: { // don't display the dummy year
+          month: '%b \'%y',
+          year: '%Y'
+        }
+      },
+      legend: {
+        layout: 'horizontal',
+        align: 'top',
+        verticalAlign: 'top'
+      },
+
+      plotOptions: {
+        series: {
+          label: {
+            connectorAllowed: false
+          },
+          pointStart: 2018
+        }
+      },
+      series: [{
+          name: 'Ordered Units',
+          data: [0, 10, 100, 1000, 2000, 3000, 4000, 5000, 6000, 7000 ,8000, 9000, 10000],
+          pointStart: Date.UTC(2018, 0, 28),
+          pointInterval: 24 * 3600 * 1000 * 7 // one week
+        },
+        {
+          name: 'Mean Forecast',
+          data: [0, 10, 100, 2000, 5000, 8000, 9000, 9500, 10000, 10500, 11000, 11500, 12000],
+          pointStart: Date.UTC(2018, 0, 28),
+          pointInterval: 24 * 3600 * 1000 * 7 // one week
+        },
+        {
+          name: 'P70 Forecast',
+          data: [0, 10, 100, 2000, 3000, 3500, 3750, 4000, 4500, 4750, 4800, 5000, 5500],
+          pointStart: Date.UTC(2018, 0, 28),
+          pointInterval: 24 * 3600 * 1000 * 7 // one week
+        }, 
+        {
+          name: 'P80 Forecast',
+          data: [0, 10, 100, 2000, 2500, 3000, 3550, 4200, 4800, 4870, 4800, 4900, 4950],
+          pointStart: Date.UTC(2018, 0, 28),
+          pointInterval: 24 * 3600 * 1000 * 7 // one week
+        },
+        {
+          name: 'P90 Forecast',
+          data: [0, 10, 100, 2000, 2500, 2750, 3000, 3250, 3500, 3750, 4000, 4200, 5000],
+          pointStart: Date.UTC(2018, 0, 28),
+          pointInterval: 24 * 3600 * 1000 * 7 // one week
+        }],
+
+      responsive: {
+        rules: [{
+          condition: {
+            maxWidth: 800
+          },
+          chartOptions: {
+            legend: {
+              layout: 'horizontal',
+              align: 'center',
+              verticalAlign: 'bottom'
+            }
+          }
+        }]
+      }
+    });
+  }
 });

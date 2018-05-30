@@ -1,0 +1,39 @@
+extends layout
+block link
+  -var selected = 'forecasting';
+block content
+  include includes/header
+  include includes/mobile-menu
+  main.content.mt-2.container-fluid
+    include includes/content-header
+    +content-header('Forecast and Inventory Planning')
+    .row.mb-2
+      .col-md-12.col-lg-4.col-xl-3.select-group
+        select.custom-select.form-control
+          option(selected='') Sales View: Ordered Units
+        select.custom-select.form-control
+          option(selected='') Distributor View: Manufacturing
+        select.custom-select.form-control
+          option(selected='') Category: All
+        select.custom-select.form-control
+          option(selected='') Subcategory: All
+        select.custom-select.form-control
+          option(selected='') Brand: All
+        select.custom-select.form-control
+          option(selected='') Reporting Range: Weekly
+        select.custom-select.form-control
+          option(selected='') Last Reported (4/22/18 - 4/28/18)
+      .col-md-12.col-lg-8.col-xl-9
+        #chart-forecast
+    .row.mb-4
+      .col-12
+        .table-action
+          select.custom-select.form-control
+            option(selected='') View by: Asin
+          select.custom-select.form-control
+            option(selected='') Add: Select
+          select.custom-select.form-control
+            option(selected='') P-level: P90 Forecast
+    .mb-4
+      include includes/forecasting/forecasting-view
+  include includes/footer

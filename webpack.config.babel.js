@@ -195,17 +195,17 @@ const config = {
       filename: 'chargebacks.html',
       template: 'templates/chargebacks.pug',
     }),
-    // new HtmlWebpackPlugin({
-    //   title: 'Forecasting',
-    //   bodyClass: 'page-forecasting',
-    //   filename: 'forecasting.html',
-    //   template: 'templates/forecasting.pug',
-    // }),
     new HtmlWebpackPlugin({
       title: 'Recommendations',
       bodyClass: 'page-recommendations',
       filename: 'recommendations.html',
       template: 'templates/recommendations.pug',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Forecasting',
+      bodyClass: 'page-forecasting',
+      filename: 'forecasting.html',
+      template: 'templates/forecasting.pug',
     }),
     new CopyWebpackPlugin([{
       from: './data',

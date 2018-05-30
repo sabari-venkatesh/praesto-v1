@@ -463,6 +463,18 @@ $(document).ready(() => {
     scrollY: 500,
     paging: false
   });
+  
+  $('#table-forecasting_view').DataTable({
+    dom: 'rt<"dataTables_bottom"lp>',
+    fixedHeader: true,
+    fixedColumns: {
+      leftColumns: 1
+    },
+    orderCellsTop: true,
+    scrollX: true,
+    scrollCollapse: true,
+    scrollY: 300,
+  });
 
   $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
     //  $($.fn.dataTable.tables(true)).css('width', '100%');
