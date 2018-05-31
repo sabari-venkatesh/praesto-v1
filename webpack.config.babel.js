@@ -112,6 +112,7 @@ const config = {
       $: 'jquery',
       jQuery: 'jquery',
       Util: 'exports-loader?Util!bootstrap/js/dist/util',
+      Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
       Popper: ['popper.js', 'default'],
       //DataTable: 'exports-loader?DataTable!vanilla-datatables/dist/vanilla-dataTables.min',
       //Highcharts: 'exports-loader?Highcharts!highcharts/js/highcharts'
@@ -165,12 +166,12 @@ const config = {
       filename: 'product-ranks.html',
       template: 'templates/product-ranks.pug',
     }),
-    // new HtmlWebpackPlugin({
-    //   title: 'Keywords',
-    //   bodyClass: 'page-keywords',
-    //   filename: 'keywords.html',
-    //   template: 'templates/keywords.pug',
-    // }),
+    new HtmlWebpackPlugin({
+      title: 'Keywords',
+      bodyClass: 'page-keywords',
+      filename: 'keywords.html',
+      template: 'templates/keywords.pug',
+    }),
     new HtmlWebpackPlugin({
       title: 'Buy-Box Reports',
       bodyClass: 'page-buy_box_reports',

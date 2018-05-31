@@ -1,3 +1,7 @@
+- var count = 20, index = 1;
+- var getRandom = function(precision) {
+  - return (Math.random() * precision).toFixed(2);
+- }
 block content
   table(id='table-reviews_weeks' class='table m-0' style='width: 100%')
     thead
@@ -49,56 +53,39 @@ block content
         th.text-center Deleted
       tr.total
         th.text-center All Products
-        th.text-right 100
-        th.text-center 150.00
-        th.text-right 260.00
-        th.text-center 10
-        th.text-right 467.00
-        th.text-center 150.00
-        th.text-right 160.00
-        th.text-center 140
-        th.text-right 675.00
-        th.text-center 150.00
-        th.text-right 650.00
-        th.text-center 120
-        th.text-right 630.00
-        th.text-center 100
+        th.text-right= getRandom(1000)
+        th.text-center= getRandom(1000)
+        th.text-right= getRandom(1000)
+        th.text-center= getRandom(1000)
+        th.text-right= getRandom(1000)
+        th.text-center= getRandom(1000)
+        th.text-right= getRandom(1000)
+        th.text-center= getRandom(1000)
+        th.text-right= getRandom(1000)
+        th.text-center= getRandom(1000)
+        th.text-right= getRandom(1000)
+        th.text-center= getRandom(1000)
+        th.text-right= getRandom(1000)
+        th.text-center= getRandom(1000)
     tbody
-      tr
-        td 
-          a(href='#')(data-toggle='tooltip')(title='Hooray').cus-tooltip ASIN/Model/Sku
-            i.icon-info-circle
-          // Generated markup by the plugin
-          .tooltip.bs-tooltip-top(role='tooltip')
-              .arrow
-              .tooltip-inner Some tooltip text!
-        td.text-right 50,000.00
-        td.text-center 80
-        td.text-right 500.75
-        td.text-center 80
-        td.text-right 50,000.00
-        td.text-center 80
-        td.text-right 500.00
-        td.text-center 80
-        td.text-right 50,000.00
-        td.text-center 80
-        td.text-right 500.00
-        td.text-center 80
-        td.text-right 500.00
-        td.text-center 80
-      tr
-        td ASIN/Model/Sku
-        td.text-right 50,000.00
-        td.text-center 80
-        td.text-right 500.75
-        td.text-center 80
-        td.text-right 50,000.00
-        td.text-center 80
-        td.text-right 500.00
-        td.text-center 80
-        td.text-right 50,000.00
-        td.text-center 80
-        td.text-right 500.00
-        td.text-center 80
-        td.text-right 500.00
-        td.text-center 80
+      while index < count
+        tr
+          td.text-center 
+            button.btn.btn-sm.btn-link.p-1(role='button' tabindex='0' data-toggle='popover')
+              | B018E65WW#{index}
+              i.ml-2.icon-info
+          td.text-right= getRandom(1000)
+          td.text-center= getRandom(100)
+          td.text-right= getRandom(1000)
+          td.text-center= getRandom(100)
+          td.text-right= getRandom(10000)
+          td.text-center= getRandom(100)
+          td.text-right= getRandom(100)
+          td.text-center= getRandom(1000)
+          td.text-right= getRandom(1000)
+          td.text-center= getRandom(1000)
+          td.text-right= getRandom(1000)
+          td.text-center= getRandom(100)
+          td.text-right= getRandom(1000)
+          td.text-center= getRandom(100)
+        - index++;  

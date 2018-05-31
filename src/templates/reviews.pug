@@ -1,27 +1,29 @@
 extends layout
 block link
-  -var selected = 'reviews';
+	-var selected = 'reviews';
 block content
-  include includes/header
-  include includes/mobile-menu
-  main.content.mt-2.container-fluid
-    .row.border.mb-4
-        .col-sm-12.col-md-4
-            #chart-reviews-pie
-        .col-sm-12.col-md-8
-            #chart-reviews
-    h4.mb-2 Review Trends
-    include includes/reviews/reviews-trends
-    h4.mb-2 Latest 6 reviews across Stars
-    include includes/reviews/latest6-reviews
-    .row.mb-4.align-items-center
-      .col-auto
-        h4.mb-0 Review Trends
-      .col-auto
-        label.toggle.has-text.d-block.text-right
-          input(type='checkbox' checked)
-          span.handle(data-on='Trailing 6 Weeks' data-off='Trailing 6 Months')
-      .w-100.mb-4
-      .col-12
-        include includes/reviews/reviews-trends-weeks
-  include includes/footer  
+	include includes/header
+	include includes/mobile-menu
+	main.content.mt-2.container-fluid
+		.row.border.mb-4
+			.col-sm-12.col-md-4
+				#chart-reviews-pie
+			.col-sm-12.col-md-8
+				#chart-reviews
+		.mb-4
+			h4.mb-2 Review Trends
+			include includes/reviews/reviews-trends
+		.mb-4
+			h4.mb-2 Latest 6 reviews across Stars
+			include includes/reviews/latest6-reviews
+		.row.mb-4.align-items-center
+			.col-auto
+				h4.mb-0 Review Trends
+			.col-auto
+				label.toggle.has-text.d-block.text-right
+					input(type='checkbox' checked)
+					span.handle(data-on='Trailing 6 Weeks' data-off='Trailing 6 Months')
+			.w-100.mb-4
+			.col-12
+				include includes/reviews/reviews-trends-weeks
+	include includes/footer  

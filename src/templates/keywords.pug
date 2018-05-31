@@ -1,10 +1,55 @@
 extends layout
 block link
-  -var selected = 'keywords';
+	-var selected = 'keywords';
 block content
-  include includes/header
-  include includes/mobile-menu
-  main.content.mt-2.container-fluid
-    // Section: Overview
-    include includes/content-header
-    +content-header('Keywords Overview')
+	include includes/header
+	include includes/mobile-menu
+	main.content.mt-2.container-fluid
+		// Section: Overview
+		include includes/content-header
+		+content-header('Keywords Overview')
+		.row
+			.col-md-9
+				#chart-keywords
+			.col-md-3
+				strong Keywords for ASIN8056892
+				table(id='table-keywords' class='table')
+					thead
+						tr
+							th.text-center 
+								strong Keywords
+					tbody
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='amplifiers') amplifiers
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='stereo') stereo
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='car stereo') car stereo
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='speakers') speakers
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='subwoofers') subwoofers
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='single din car stereo') single din car stereo
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='Sound Boss Car Stereos') Sound Boss Car Stereos
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='Sound Boss Car Amplifiers') Sound Boss Car Amplifiers
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='Stereo with Bluetooth') Stereo with Bluetooth
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='car stereos') car stereos
+						tr
+							td.text-center.p-0
+								a.keyword.p-2.d-block(href="#" name='usb car stereo') usb car stereo				
+	include includes/footer							
