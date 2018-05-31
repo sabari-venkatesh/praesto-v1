@@ -131,6 +131,12 @@ const config = {
     //   template: 'templates/dashboard.pug',
     // }),
     new HtmlWebpackPlugin({
+      title: 'Overview Vendor',
+      filename: 'overview-vendor.html',
+      bodyClass: 'page-overview-vendor',
+      template: 'templates/overview-vendor.pug',
+    }),
+    new HtmlWebpackPlugin({
       title: 'Users',
       filename: 'users.html',
       bodyClass: 'page-users',

@@ -309,7 +309,7 @@ $(document).ready(() => {
 		info: false,
 	});
 
-	$('#table-performing_keywords, #table-performing_products').DataTable({
+	$('#table-performing_keywords, #table-performing_products, #table-performing_target, #table-performing_untarget').DataTable({
 		dom: 'rt<"dataTables_bottom"lp>',
 		fixedHeader: true,
 		fixedColumns: {
@@ -321,7 +321,18 @@ $(document).ready(() => {
 		scrollY: 500,
 		paging: false
 	});
-
+	$('#table-aap_performance').DataTable({
+		dom: 'rt<"dataTables_bottom"lp>',
+		fixedHeader: true,
+		fixedColumns: {
+			leftColumns: 1
+		},
+		orderCellsTop: true,
+		scrollX: true,
+		scrollCollapse: true,
+		scrollY: 500,
+		paging: false
+	});
 	$('#table-product_ranks').DataTable({
 		dom: 'rt<"dataTables_bottom justify-content-end"p>',
 		searching: false,

@@ -431,7 +431,77 @@ $(document).ready(() => {
 			}]
 		});
 	}
-
+	/* Advertising: All AAP Advertising Source */
+	if ($('#chart-aap-advertising').length > 0) {
+		Highcharts.chart('chart-aap-advertising', {
+			chart: {
+				zoomType: 'xy',
+				height: 300
+			},
+			title: {
+				text: 'AAP Advertising'
+			},
+			xAxis: [{
+				categories: ['01 Apr', '03 Apr', '05 Apr', '07 Apr', '09 Apr', '11 Apr', '13 Apr', '15 Apr', '17 Apr', '19 Apr', '21 Apr'],
+				crosshair: true
+			}],
+			yAxis: [{ // Primary yAxis
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				},
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				}
+			}, { // Secondary yAxis
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				opposite: true
+			}],
+			tooltip: {
+				shared: true
+			},
+			legend: {
+				layout: 'horizontal',
+				align: 'center',
+				x: 0,
+				verticalAlign: 'bottom',
+				y: 0,
+				backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+			},
+			series: [{
+				name: 'Total Cost',
+				type: 'column',
+				color: '#1b66aa',
+				yAxis: 1,
+				data: [10, 20, 30, 40, 70, 80, 90, 100, 150, 170, 180],
+			}, {
+				name: 'CTR',
+				type: 'spline',
+				color: '#25aa1b',
+				data: [20, 30, 40, 45, 50, 58, 68, 75, 78, 92, 10],
+			}, {
+				name: 'Impressions',
+				type: 'spline',
+				data: [10, 15, 20, 24, 28, 38, 52, 62, 70, 80, 90],
+			}]
+		});
+	}
 	/* Product Ranks: Daily Rank of all products */
 	if ($('#chart-product_ranks').length > 0) {
 		Highcharts.chart('chart-product_ranks', {

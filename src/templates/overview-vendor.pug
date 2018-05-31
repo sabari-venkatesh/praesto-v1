@@ -1,0 +1,13 @@
+extends layout
+block link
+  -var selected = 'overview vendor';
+block content
+  include includes/header
+  include includes/mobile-menu
+  // Section: Main content
+  main.content.mt-2.container-fluid
+    // Section: Overview
+    include includes/content-header
+    +content-header('Overview Vendor Central')
+    
+  include includes/footer

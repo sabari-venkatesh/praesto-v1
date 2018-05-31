@@ -1,0 +1,45 @@
+block content
+    .row.py-4
+      .col-md-4.col-lg-2
+        select.custom-select.form-control.form-control-sm#sales-marketplace
+          option(value='1') Sponsored Products
+          option(value='2') Headline Search
+          option(value='3') Product Display
+        ul.chart-info-list.row
+          li.info-sales.col-6.col-sm-4.col-md-12
+            small.text-muted Sales
+            h4.mb-0 $60,155
+          li.info-impressions.col-6.col-sm-4.col-md-12
+            small.text-muted Impressions
+            h4.mb-0 $12,00,155
+          li.info-clicks.col-6.col-sm-4.col-md-12
+            small.text-muted Clicks
+            h4.mb-0 $20,11,255
+          li.info-cpc.col-6.col-sm-4.col-md-12
+            small.text-muted CPC
+            h4.mb-0 $600,10,25
+          li.info-acos.col-6.col-sm-4.col-md-12
+            small.text-muted ACOS
+            h4.mb-0 $600,155
+          li.info-live.col-6.col-sm-4.col-md-12
+            small.text-muted Live Campaigns
+            h4.mb-0 $50,10,055
+      .col-md-8.col-lg-10
+        #chart-advertising
+    // Section:  Performing Keywords
+    .row
+      .col-auto
+        h2.h4.mb-0 Top 20 Performing Keywords
+        small.text-muted By Ad Type
+      .w-100.mb-4
+      .col-12
+        include performing-keywords
+    // Section:  Performing Products
+    .w-100.mb-4
+    .row
+      .col-auto
+        h2.h4.mb-0 Top 20 Performing Products
+        small.text-muted By Product Advertised
+      .w-100.mb-4
+      .col-12
+        include performing_products	

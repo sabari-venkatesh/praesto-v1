@@ -1,0 +1,69 @@
+block content
+    .row.py-4
+      .col-12
+        .card.border.rounded-0
+          .card-header.rounded-0.d-flex.justify-content-between.bg-white.p-2.border-bottom
+            h2.mb-0 Advertiser: 
+                strong Old school Labs
+          .card-body.text-center.p-2
+            .form-row.text-muted.text-nowrap.justify-content-center
+              .col-3.col-md.text-primary.border-right.mb-2.mb-md-0
+                h5.mb-0 5
+                small Orders
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 136
+                small Line items
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 392
+                small Creatives
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 $242,051.30
+                small Total cost
+              .col-3.col-md.border-right.mb-2.mb-md-0
+                h5.mb-0 18,626
+                small Click-throughs
+              .col-3.col-md.mb-2.mb-md-0
+                h5.mb-0 0.0628%
+                small Average CTR
+    .row.mb-2
+        .col-12
+          .btn-group(role='group' aria-label='Sales to Customers Chart')
+            button.btn.rounded-0(type='button') Overview
+            button.btn.rounded-0(type='button') Order
+            button.btn.rounded-0(type='button') Line item
+            button.btn.rounded-0(type='button') Creative
+            button.btn.rounded-0(type='button') Site  
+    .row.mb-4
+      .col-md-4.col-lg-2
+        ul.chart-info-list.row
+          li.info-sales.col-6.col-sm-4.col-md-12
+            small.text-muted Total Cost
+            h4.mb-0 $60,729.69
+            small.text-muted Total
+          li.info-cpc.col-6.col-sm-4.col-md-12
+            small.text-muted CTR
+            h4.mb-0 0.0477%
+            small.text-muted Total
+          li.info-clicks.col-6.col-sm-4.col-md-12
+            small.text-muted Impressions
+            h4.mb-0 $20,11,255
+            small.text-muted Total
+      .col-md-8.col-lg-10
+        .p-4
+          #chart-aap-advertising
+    .row
+        .col-12
+            include aap-performance-table
+    //Section:  Brand Store Metrics
+    .w-100.mb-4
+    .row.mb-4
+      .col-auto
+        h2.h4.mb-0 Top 20 Performing Products
+        small.text-muted Audience Insights
+      .w-100.mb-4
+      .col-md-6
+        h3.h5 Top Targeted Segments
+        include targeted-segments
+      .col-md-6
+        h3.h5 Top Un-Targeted Segments
+        include un-targeted-segments	

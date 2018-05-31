@@ -7,64 +7,18 @@ block content
   main.content.mt-2.container-fluid
     include includes/content-header
     +content-header('Advertising Overview')
-    .row.mb-4
-      .col-md-4.col-lg-2
-        select.custom-select.form-control.form-control-sm#sales-marketplace
-          option(value='1') Sponsored Products
-          option(value='2') Headline Search
-          option(value='3') Product Display
-        ul.chart-info-list.row
-          li.info-sales.col-6.col-sm-4.col-md-12
-            small.text-muted Sales
-            h4.mb-0 $60,155
-          li.info-impressions.col-6.col-sm-4.col-md-12
-            small.text-muted Impressions
-            h4.mb-0 $12,00,155
-          li.info-clicks.col-6.col-sm-4.col-md-12
-            small.text-muted Clicks
-            h4.mb-0 $20,11,255
-          li.info-cpc.col-6.col-sm-4.col-md-12
-            small.text-muted CPC
-            h4.mb-0 $600,10,25
-          li.info-acos.col-6.col-sm-4.col-md-12
-            small.text-muted ACOS
-            h4.mb-0 $600,155
-          li.info-live.col-6.col-sm-4.col-md-12
-            small.text-muted Live Campaigns
-            h4.mb-0 $50,10,055
-      .col-md-8.col-lg-10
-        .border.p-4
-          #chart-advertising
-    // Section:  Performing Keywords
     .row
-      .col-auto
-        h2.h4.mb-0 Top 20 Performing Keywords
-        small.text-muted By Ad Type
-      .w-100.mb-4
       .col-12
-        include includes/advertising/performing-keywords
-    
-    // Section:  Performing Products
-    .w-100.mb-4
-    .row.mb-4
-      .col-auto
-        h2.h4.mb-0 Top 20 Performing Products
-        small.text-muted By Product Advertised
-      .w-100.mb-4
-      .col-12
-        include includes/advertising/performing_products
-
-    //Section:  Brand Store Metrics
-    .w-100.mb-4
-    .row.mb-4
-      .col-auto
-        h2.h4.mb-0 Top 20 Performing Products
-        small.text-muted Audience Insights
-      .w-100.mb-4
-      .col-md-6
-        h3.h5 Top Targeted Segments
-        include includes/advertising/targeted-segments
-      .col-md-6
-        h3.h5 Top Un-Targeted Segments
-        include includes/advertising/un-targeted-segments
+          ul#tab-sales_trends.nav.nav-tabs(role='tablist')
+            li.nav-item.text-uppercase
+              a#tab-products.nav-link.active(data-toggle='tab' href='#tab-products-body' role='tab' aria-controls='products' aria-selected='true') AMS Advertising
+            li.nav-item.text-uppercase
+              a#tab-customer.nav-link(data-toggle='tab' href='#tab-customer-body' role='tab' aria-controls='customers' aria-selected='false') AAP Advertising
+          #tab-sales_trends-body.tab-content.border
+            // Section: Products tab
+            #tab-products-body.container-fluid.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='tab-products-body')
+              include includes/advertising/ams-advertising
+            // Section: Customers tab  
+            #tab-customer-body.container-fluid.tab-pane.fade(role='tabpanel' aria-labelledby='tab-customer-body')
+              include includes/advertising/aap-advertising
   include includes/footer  
