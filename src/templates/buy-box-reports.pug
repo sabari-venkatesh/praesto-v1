@@ -1,161 +1,162 @@
 extends layout
 block link
-  -var selected = 'buy box reports';
+	-var selected = 'buy box reports';
 block content
-  include includes/header
-  include includes/mobile-menu
-  main.content.mt-2.container-fluid
-    include includes/content-header
-    +content-header('Buy Box Reports Overview')
-    .row.mb-4
-      .col-sm-12
-        .border.p-4
-          #chart-buy-box
-    .row.mb-4
-      .col-sm-6
-        table(id='table-buy-box-top-sellers' class='table m-0' style='width: 100%')
-          thead
-            tr
-              th.text-center Top 20 Sellers
-              th.text-center Number of Products
-          tbody
-            tr
-              td.text-center Amazon
-              td.text-center.text-success 100
-            tr
-              td.text-center Wisinguwell
-              td.text-center 55
-            tr
-              td.text-center eTailz
-              td.text-center 40
-            tr
-              td.text-center NetRush
-              td.text-center 30
-            tr
-              td.text-center Oxycom
-              td.text-center.text-danger 20
-      .col-sm-6
-        table(id='table-buy-box-top-problem-products' class='table m-0' style='width: 100%')
-          thead
-            tr
-              th.text-center Top 20 Problem Products
-              th.text-center Buy-Box
-          tbody
-            tr
-              td.text-center AMZ1290838
-              td.text-center.text-danger 1%
-            tr
-              td.text-center AMZ1290838
-              td.text-center 3%
-            tr
-              td.text-center AMZ1290838
-              td.text-center 5%
-            tr
-              td.text-center AMZ1290838
-              td.text-center 8%
-            tr
-              td.text-center AMZ1290838
-              td.text-center.text-success 9%
-    .row.mb-4
-      .col-sm-6
-        table(id='table-buy-box-price' class='table m-0' style='width: 100%')
-          thead
-            tr
-              th.text-center Seller
-              th.text-center Asin
-              th.text-center Product Name
-              th.text-center Buy-box Price
-              th.text-center Map
-              th.text-center Msrp
-              th.text-center Variance to MAP
-          tbody
-            tr
-              td.text-center Amazon
-              td.text-center AMZ1290838
-              td.text-center THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet
-              td.text-center $67.00
-              td.text-center
-              td.text-center
-              td.text-center
-            tr
-              td.text-center Amazon
-              td.text-center AMZ1290838
-              td.text-center PAIN-MD, Top Pain Relief Supplement, Fast Acting Natural Formula for Joint Pain
-              td.text-center $260.00
-              td.text-center
-              td.text-center
-              td.text-center
-            tr
-              td.text-center Amazon
-              td.text-center AMZ1290838
-              td.text-center Install Centric ICGM12BNGM 2005-16 Class II Complete Installation Solution for C
-              td.text-center $467.00
-              td.text-center
-              td.text-center
-              td.text-center
-            tr
-              td.text-center Amazon
-              td.text-center AMZ1290838
-              td.text-center THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet
-              td.text-center $160.00
-              td.text-center
-              td.text-center
-              td.text-center
-            tr
-              td.text-center Amazon
-              td.text-center AMZ1290838
-              td.text-center PAIN-MD, Top Pain Relief Supplement, Fast Acting Natural Formula for Joint Pain
-              td.text-center $675.00
-              td.text-center
-              td.text-center
-              td.text-center
-      .col-sm-6
-        table(id='table-buy-box-seller-price' class='table m-0' style='width: 100%')
-          thead
-            tr
-              th.text-center Seller
-              th.text-center Asin
-              th.text-center Product Name
-              th.text-center Price
-              th.text-center Map
-              th.text-center Msrp
-              th.text-center Var
-              th.text-center Buy-Box %
-          tbody
-            tr
-              td.text-center Amazon
-              td.text-center AMZ1290838
-              td.text-center PAIN-MD, Top Pain Relief Supplement
-              td.text-center $650.00
-              td.text-center
-              td.text-center
-              td.text-center
-              td.text-center.text-danger 9%
-            tr
-              td.text-center Wisinguwell
-              td.text-center AMZ1290838
-              td.text-center THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet
-              td.text-center $630.00
-              td.text-center
-              td.text-center
-              td.text-center
-              td.text-center 8%
-            tr
-              td.text-center eTailz
-              td.text-center AMZ1290838
-              td.text-center Install Centric ICGM12BNGM 2005-16 Class II Complete Installation Solution for C
-              td.text-center $675.00
-              td.text-center
-              td.text-center
-              td.text-center
-              td.text-center 5%
-            tr
-              td.text-center NetRush
-              td.text-center AMZ1290838
-              td.text-center PAIN-MD, Top Pain Relief Supplement, Fast Acting Natural Formula for Joint Pain
-              td.text-center $160.00
-              td.text-center
-              td.text-center
-              td.text-center
-              td.text-center 3%
-    include includes/footer
+	include includes/header
+	include includes/mobile-menu
+	main.content.mt-2.container-fluid
+		include includes/content-header
+		+content-header('Buy Box Reports Overview')
+		.row.mb-4
+			.col-sm-12
+				.border.p-4
+					#chart-buy-box
+		.row.mb-4
+			.col-sm-6
+				table(id='table-buy-box-top-sellers' class='table m-0' style='width: 100%')
+					thead
+						tr
+							th.text-center Top 20 Sellers
+							th.text-center Number of Products
+					tbody
+						tr
+							td.text-center Amazon
+							td.text-center.text-success 100
+						tr
+							td.text-center Wisinguwell
+							td.text-center 55
+						tr
+							td.text-center eTailz
+							td.text-center 40
+						tr
+							td.text-center NetRush
+							td.text-center 30
+						tr
+							td.text-center Oxycom
+							td.text-center.text-danger 20
+			.col-sm-6
+				table(id='table-buy-box-top-problem-products' class='table m-0' style='width: 100%')
+					thead
+						tr
+							th.text-center Top 20 Problem Products
+							th.text-center Buy-Box
+					tbody
+						tr
+							td.text-center B018E65WW2
+							td.text-center.text-danger 1%
+						tr
+							td.text-center B01BON4QAQ
+							td.text-center 3%
+						tr
+							td.text-center AMZ1290838
+							td.text-center 5%
+						tr
+							td.text-center AMZ1290838
+							td.text-center 8%
+						tr
+							td.text-center AMZ1290838
+							td.text-center.text-success 9%
+
+		.row.mb-4
+			.col-sm-6
+				table(id='table-buy-box-price' class='table m-0' style='width: 100%')
+					thead
+						tr
+							th.text-center Seller
+							th.text-center Asin
+							th.text-center Product Name
+							th.text-center Buy-box Price
+							th.text-center Map
+							th.text-center Msrp
+							th.text-center Variance to MAP
+					tbody
+						tr
+							td.text-center Amazon
+							td.text-center AMZ1290838
+							td.text-center THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet
+							td.text-center $67.00
+							td.text-center
+							td.text-center
+							td.text-center
+						tr
+							td.text-center Amazon
+							td.text-center AMZ1290838
+							td.text-center PAIN-MD, Top Pain Relief Supplement, Fast Acting Natural Formula for Joint Pain
+							td.text-center $260.00
+							td.text-center
+							td.text-center
+							td.text-center
+						tr
+							td.text-center Amazon
+							td.text-center AMZ1290838
+							td.text-center Install Centric ICGM12BNGM 2005-16 Class II Complete Installation Solution for C
+							td.text-center $467.00
+							td.text-center
+							td.text-center
+							td.text-center
+						tr
+							td.text-center Amazon
+							td.text-center AMZ1290838
+							td.text-center THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet
+							td.text-center $160.00
+							td.text-center
+							td.text-center
+							td.text-center
+						tr
+							td.text-center Amazon
+							td.text-center AMZ1290838
+							td.text-center PAIN-MD, Top Pain Relief Supplement, Fast Acting Natural Formula for Joint Pain
+							td.text-center $675.00
+							td.text-center
+							td.text-center
+							td.text-center
+			.col-sm-6
+				table(id='table-buy-box-seller-price' class='table m-0' style='width: 100%')
+					thead
+						tr
+							th.text-center Seller
+							th.text-center Asin
+							th.text-center Product Name
+							th.text-center Price
+							th.text-center Map
+							th.text-center Msrp
+							th.text-center Var
+							th.text-center Buy-Box %
+					tbody
+						tr
+							td.text-center Amazon
+							td.text-center AMZ1290838
+							td.text-center PAIN-MD, Top Pain Relief Supplement
+							td.text-center $650.00
+							td.text-center
+							td.text-center
+							td.text-center
+							td.text-center.text-danger 9%
+						tr
+							td.text-center Wisinguwell
+							td.text-center AMZ1290838
+							td.text-center THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet
+							td.text-center $630.00
+							td.text-center
+							td.text-center
+							td.text-center
+							td.text-center 8%
+						tr
+							td.text-center eTailz
+							td.text-center AMZ1290838
+							td.text-center Install Centric ICGM12BNGM 2005-16 Class II Complete Installation Solution for C
+							td.text-center $675.00
+							td.text-center
+							td.text-center
+							td.text-center
+							td.text-center 5%
+						tr
+							td.text-center NetRush
+							td.text-center AMZ1290838
+							td.text-center PAIN-MD, Top Pain Relief Supplement, Fast Acting Natural Formula for Joint Pain
+							td.text-center $160.00
+							td.text-center
+							td.text-center
+							td.text-center
+							td.text-center 3%
+		include includes/footer

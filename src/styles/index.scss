@@ -38,15 +38,6 @@
 /*@import "~bootstrap/scss/print";*/
 // our custom styles here
 
-body[class*="page"] {
-	display: flex;
-	flex-direction: column;
-
-	.content {
-		flex: 1;
-	}
-}
-
 .pagination {
 	margin: 0;
 }
@@ -150,6 +141,18 @@ strong {
 	border-right: 1px solid $table-border-color;
 }
 
+.DTFC_LeftBodyWrapper {
+	th[class*='sorting'] {
+		@include invisible(hidden);
+	}
+}
+
+.dataTables_wrapper {
+	td.hover {
+		background-color: #e7f1fd;
+	}
+}
+
 .dataTables_scroll {
 	display: flex;
 	flex-direction: column;
@@ -208,6 +211,10 @@ strong {
 		border: 0;
 		font-size: 0.875rem;
 	}
+}
+
+.text-highlight {
+	color: #0b6cc3 !important;
 }
 
 .text-break {
@@ -276,45 +283,69 @@ html {
 	height: 100%;
 }
 
-.page-login {
-	background: url("../images/Login_bg_page.png") no-repeat 100% 50%;
-}
+[class*="page"] {
+	display: flex;
+	flex-direction: column;
 
-.page-forgot_pwd {
-	background: url("../images/forgot_bg_page.png") no-repeat 100% 50%;
-}
+	&.page-login {
+		background: url("../images/Login_bg_page.png") no-repeat 100% 50%;
+		flex-direction: row;
+		align-items: center;
+	}
 
-.page-reset_pwd {
-	background: url("../images/Reset_bg_page.png") no-repeat 100% 50%;
+	&.page-forgot_pwd {
+		background: url("../images/forgot_bg_page.png") no-repeat 100% 50%;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	&.page-reset_pwd {
+		background: url("../images/Reset_bg_page.png") no-repeat 100% 50%;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.content {
+		flex: 1;
+	}
 }
 
 .panel-login {
 	background-color: #fff;
 	@include media-breakpoint-up(md) {
-		background: $white url('../images/Login_bg.jpg') no-repeat 4px 0;
+		background: $white url('../images/Login_bg.jpg') no-repeat 0 0;
+	}
+	@include media-breakpoint-only(xl) {
+		height: 500px;
 	}
 	@include media-breakpoint-down(lg) {
-		background-size: 50% auto;
+		background-size: 50% 100%;
 	}
 }
 
 .panel-forgot_pwd {
 	background-color: $white;
 	@include media-breakpoint-up(md) {
-		background: $white url('../images/forgot_bg.jpg') no-repeat 4px 0;
+		background: $white url('../images/forgot_bg.jpg') no-repeat 0 0;
+	}
+	@include media-breakpoint-only(xl) {
+		height: 500px;
 	}
 	@include media-breakpoint-down(lg) {
-		background-size: 50% auto;
+		background-size: 50% 100%;
 	}
 }
 
 .panel-reset_pwd {
 	background-color: $white;
 	@include media-breakpoint-up(md) {
-		background: $white url('../images/reset_bg.jpg') no-repeat 4px 0;
+		background: $white url('../images/reset_bg.jpg') no-repeat 0 0;
+	}
+	@include media-breakpoint-only(xl) {
+		height: 500px;
 	}
 	@include media-breakpoint-down(lg) {
-		background-size: 50% auto;
+		background-size: 50% 100%;
 	}
 }
 /* dashboard page */
@@ -618,9 +649,11 @@ tr.total th {
 				.rating {
 					li {
 						list-style: none;
+
 						.icon-star {
 							color: #ff5e00;
 						}
+
 						.icon-star-o {
 							color: #535558;
 						}
@@ -692,28 +725,31 @@ tr.total th {
 }
 
 #chart-forecast .highcharts-title {
-  opacity: 0;
+	opacity: 0;
 }
+
 .select-group {
-  padding-top: 15px;
-  .custom-select {
-    margin-bottom: 15px;
-    @media screen and (max-width: 992px) {
-        width: auto;
-        margin-bottom: 10px;
-        margin-right: 10px
-    }
-  }
+	padding-top: 15px;
+
+	.custom-select {
+		margin-bottom: 15px;
+		@media screen and (max-width: 992px) {
+			width: auto;
+			margin-bottom: 10px;
+			margin-right: 10px;
+		}
+	}
 }
 
 .table-action {
-  padding: 10px 15px;
-  background-color: #a7a7a7;
-  .custom-select {
-    display: inline-block;
-    width: auto;
-    margin-right: 15px;
-  }
+	padding: 10px 15px;
+	background-color: #a7a7a7;
+
+	.custom-select {
+		display: inline-block;
+		width: auto;
+		margin-right: 15px;
+	}
 }
 
 .table-linenowrap {

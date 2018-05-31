@@ -1,4 +1,25 @@
 extends layout
-
 block content
-  include includes/article
+  .container.panel-login
+    .row.align-items-center.h-100
+      .col-md-6.offset-md-6.py-5
+        .form-login.row.justify-content-center
+          .col-lg-8
+            img.mb-5.d-block.mx-auto.img-fluid(src='images/logo_praesto.png', alt='Praesto')
+            form
+              .input-group.mb-4
+                .input-group-prepend
+                  span#username.input-group-text
+                    i.icon-user.icon-md.text-primary
+                input.form-control(type='text', placeholder='Username', aria-label='Username', aria-describedby='username')
+              .input-group.mb-4
+                .input-group-prepend
+                  span#password.input-group-text
+                    i.icon-lock-closed.icon-md.text-primary
+                input.form-control(type='text', placeholder='Password', aria-label='Password', aria-describedby='password')
+              label.toggle.d-block.text-right.mb-4.mb-md-5
+                input(type='checkbox')
+                span.handle
+                |               Remember me
+              a.btn.btn-primary.mx-auto.d-block.w-50.mb-4(href='sales.html' role='button') LOGIN
+              a.d-block.text-center.text-dark(href='forgot-password.html') Forgot Password?

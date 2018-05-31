@@ -90,7 +90,7 @@ $(document).ready(() => {
 	$('#togglepwd').click((event) => {
 		event.preventDefault();
 		var input = $('#currentpwd');
-		var icon = $('#togglepwd').querySelector('i');
+		var icon = $('#togglepwd i');
 		if (input.attr('type') === 'password') {
 			input.attr('type', 'text');
 			icon.removeClass('icon-eye').addClass('icon-eye-blocked');
@@ -99,7 +99,6 @@ $(document).ready(() => {
 			icon.removeClass('icon-eye-blocked').addClass('icon-eye');
 		}
 	});
-
 
 	$('.overlay').click(() => {
 		toggleSidebar();
@@ -117,6 +116,25 @@ $(document).ready(() => {
 		toggleSidebar();
 		setContentSpacing();
 	});
+
+	// $(document).on({
+	// 	mouseenter: function() {
+	// 		var trIndex = $(this).index() + 1;
+	// 		$("table.dataTable").each(function(index) {
+	// 			$(this).find("tr:eq(" + trIndex + ")").each(function(index) {
+	// 				$(this).find("td").addClass("hover");
+	// 			});
+	// 		});
+	// 	},
+	// 	mouseleave: function() {
+	// 		var trIndex = $(this).index() + 1;
+	// 		$("table.dataTable").each(function(index) {
+	// 			$(this).find("tr:eq(" + trIndex + ")").each(function(index) {
+	// 				$(this).find("td").removeClass("hover");
+	// 			});
+	// 		});
+	// 	}
+	// }, ".dataTables_wrapper tr");
 
 	$('.select-daterange').change(() => {
 		var last = $('.select-daterange option:last-child');
@@ -412,6 +430,17 @@ $(document).ready(() => {
 		paging: false
 	});
 
+	$('#table-keywords').DataTable({
+		dom: 'rt<"dataTables_bottom"lp>',
+		fixedHeader: true,
+		searching: false,
+		info: false,
+		lengthChange: false,
+		paging: false,
+		scrollCollapse: true,
+		scrollY: 300,
+	});
+
 	$('#across-theweb').DataTable({
 		dom: 'rt<"dataTables_bottom"lp>',
 		fixedHeader: true,
@@ -505,7 +534,7 @@ $(document).ready(() => {
 		rating: 1,
 		percent: 20
 	}];
-	
+
 	const popoverHTML =
 		`${reviewsInfo.map(info => `
         <div class="row align-items-center mb-1">
@@ -532,7 +561,7 @@ $(document).ready(() => {
 		content: popoverHTML,
 		html: true,
 		title: 'Review Ratings',
-		trigger: 'focus',
+		trigger: 'hover',
 		placement: 'left',
 		boundary: 'viewport'
 	});

@@ -24,7 +24,7 @@ $(document).ready(() => {
 				text: 'Sales to Customers'
 			},
 			xAxis: {
-				categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr', '20 Apr']
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May']
 			},
 			yAxis: {
 				min: 0,
@@ -52,19 +52,18 @@ $(document).ready(() => {
 			series: [{
 				name: '3P Sales - MFN',
 				type: 'column',
-				data: [50, 200, 400, 700, 200, 480]
+				data: [105, 0, 35, 35, 0, 140]
 			}, {
 				name: '3P Sales - FBA',
 				type: 'column',
-				data: [100, 300, 500, 400, 600, 500]
+				data: [119, 0, 52, 39, 26, 0]
 			}, {
 				name: 'Amazon Sales',
 				type: 'column',
-				data: [900, 600, 300, 200, 400, 600]
+				data: [25960, 26450, 52480, 30897, 32584, 0]
 			}, {
 				name: 'Amazon COGS',
-				type: 'spline',
-				data: [200, 314, 440, 522, 665, 855]
+				data: [21545, 25443, 48564, 25153, 31544, 0]
 			}],
 			responsive: {
 				rules: [{
@@ -98,7 +97,7 @@ $(document).ready(() => {
 				text: 'Sales to Amazon'
 			},
 			xAxis: {
-				categories: ['18 Mar', '19 Mar', '20 Mar', '21 Mar', '22 Mar']
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May']
 			},
 			yAxis: {
 				min: 0,
@@ -120,10 +119,10 @@ $(document).ready(() => {
 			},
 			series: [{
 				name: 'Amazon PO',
-				data: [500, 300, 400, 700, 200]
+				data: [25960, 26450, 52480, 30897, 32584, 0]
 			}, {
 				name: 'Amazon Shipped - Confirmed PO',
-				data: [280, 250, 304, 20, 10]
+				data: [25450, 24343, 52130, 29765, 31575, 0]
 			}],
 			responsive: {
 				rules: [{
@@ -217,7 +216,7 @@ $(document).ready(() => {
 				text: 'Inventory'
 			},
 			xAxis: [{
-				categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr', '20 Apr'],
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May', '26 May'],
 				crosshair: true
 			}],
 			yAxis: [{ // Primary yAxis
@@ -264,16 +263,14 @@ $(document).ready(() => {
 				type: 'column',
 				color: '#1b66aa',
 				yAxis: 1,
-				data: [1000, 800, 500, 400, 600, 500],
+				data: [2487, 2007, 1865, 2845, 3125, 2508, 3085]
 			}, {
 				name: 'Amazon Back-Ordered',
-				type: 'spline',
 				color: '#25aa1b',
-				data: [100, 90, 98, 123, 144, 89],
+				data: [110, 50, 95, 28, 65, 32, 29]
 			}, {
 				name: 'Amazon Cancelled',
-				type: 'spline',
-				data: [20, 20, 10, 30, 40, 30],
+				data: [12, 23, 27, 29, 21, 51, 5]
 			}]
 		});
 	}
@@ -289,7 +286,7 @@ $(document).ready(() => {
 				text: 'Count of Exceptions'
 			},
 			xAxis: {
-				categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr', '20 Apr'],
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May', '26 May']
 			},
 			yAxis: {
 				min: 0,
@@ -316,42 +313,42 @@ $(document).ready(() => {
 			series: [{
 				name: 'Count of Image Change',
 				type: 'column',
-				data: [500, 200, 100, 80, 120, 60],
+				data: [7, 12, 16, 15, 6, 1, 14]
 			}, {
 				name: 'Count of No A+',
 				type: 'column',
-				data: [400, 200, 100, 50, 25, 25],
+				data: [12, 5, 6, 2, 3, 11, 9]
 			}, {
 				name: 'Count of variation (twister) change',
 				type: 'column',
-				data: [250, 125, 62, 31, 15, 15],
+				data: [12, 24, 10, 9, 19, 15, 6]
 			}, {
 				name: 'Replenishment Code',
 				type: 'column',
-				data: [200, 100, 50, 25, 12, 12],
+				data: [12, 5, 6, 24, 10, 9, 19]
 			}, {
 				name: 'Product Category Changes',
 				type: 'column',
-				data: [300, 150, 75, 37, 16, 30],
+				data: [2, 3, 11, 9, 7, 12, 16]
 			}, {
 				name: 'Products without offer',
 				type: 'column',
-				data: [250, 125, 62, 31, 15, 30],
+				data: [8, 3, 11, 9, 9, 19, 10]
 			}]
 		});
 	}
 
 	/* Advertising: All AMS Advertising Source */
-	if ($('#chart-advertising').length > 0) {
-		Highcharts.chart('chart-advertising', {
+	if ($('#chart-advertising1').length > 0) {
+		Highcharts.chart('chart-advertising1', {
 			chart: {
 				zoomType: 'xy'
 			},
 			title: {
-				text: 'All AMS Advertising'
+				text: ''
 			},
 			xAxis: [{
-				categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr', '20 Apr'],
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May'],
 				crosshair: true
 			}],
 			yAxis: [{ // Primary yAxis
@@ -391,43 +388,221 @@ $(document).ready(() => {
 				x: 0,
 				verticalAlign: 'bottom',
 				y: 0,
-				backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+				backgroundColor: Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'
 			},
 			series: [{
 				name: 'Sales',
 				color: '#ed7d31',
 				type: 'column',
 				yAxis: 1,
-				data: [900, 600, 300, 200, 400, 1100],
+				data: [8360, 2786, 5574, 7365, 4254, 6853]
 			}, {
 				name: 'Impressions',
-				type: 'spline',
+				//        type: 'spline',
 				color: '#4472C4',
-				data: [862, 150, 850, 680, 400, 500],
+				data: [20025, 15921, 23652, 17456, 16854, 23254]
 			}, {
 				name: 'Clicks',
 				color: '#1b66aa',
-				type: 'spline',
+				//        type: 'spline',
 				yAxis: 1,
-				data: [750, 680, 750, 680, 675, 800],
+				data: [28674, 39854, 41654, 24568, 25859, 33529]
 			}, {
 				name: 'CPC',
 				color: '#25aa1b',
-				type: 'spline',
+				//        type: 'spline',
 				yAxis: 1,
-				data: [680, 750, 850, 950, 680, 1050],
+				data: [12150, 10170, 11265, 12856, 9546, 8654]
 			}, {
 				name: 'ACOS',
 				color: '#7cb5ec',
-				type: 'spline',
+				//        type: 'spline',
 				yAxis: 1,
-				data: [700, 157, 235, 687, 845, 900],
+				data: [9, 15, 8, 9, 6, 7]
 			}, {
 				name: 'Live Campaigns',
 				color: '#795548',
-				type: 'spline',
+				//        type: 'spline',
 				yAxis: 1,
-				data: [100, 300, 680, 950, 425, 800],
+				data: [10, 6, 8, 12, 11, 10]
+			}]
+		});
+	}
+	if ($('#chart-advertising2').length > 0) {
+		Highcharts.chart('chart-advertising2', {
+			chart: {
+				zoomType: 'xy'
+			},
+			title: {
+				text: ''
+			},
+			xAxis: [{
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May'],
+				crosshair: true
+			}],
+			yAxis: [{ // Primary yAxis
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				},
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				}
+			}, { // Secondary yAxis
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				opposite: true
+			}],
+			tooltip: {
+				shared: true
+			},
+			legend: {
+				layout: 'horizontal',
+				align: 'center',
+				x: 0,
+				verticalAlign: 'bottom',
+				y: 0,
+				backgroundColor: Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'
+			},
+			series: [{
+				name: 'Sales',
+				color: '#ed7d31',
+				type: 'column',
+				yAxis: 1,
+				data: [4856, 8531, 7489, 7255, 3568, 7452]
+			}, {
+				name: 'Impressions',
+				//        type: 'spline',
+				color: '#4472C4',
+				data: [24075, 22051, 23832, 20546, 19150, 21354]
+			}, {
+				name: 'Clicks',
+				color: '#1b66aa',
+				//        type: 'spline',
+				yAxis: 1,
+				data: [25664, 32371, 38487, 21869, 21745, 31625]
+			}, {
+				name: 'CPC',
+				color: '#25aa1b',
+				//        type: 'spline',
+				yAxis: 1,
+				data: [11450, 9203, 10789, 11875, 7489, 6254]
+			}, {
+				name: 'ACOS',
+				color: '#7cb5ec',
+				//        type: 'spline',
+				yAxis: 1,
+				data: [8, 12, 9, 10, 12, 8]
+			}, {
+				name: 'Live Campaigns',
+				color: '#795548',
+				//        type: 'spline',
+				yAxis: 1,
+				data: [12, 5, 8, 12, 4, 14]
+			}]
+		});
+	}
+	if ($('#chart-advertising3').length > 0) {
+		Highcharts.chart('chart-advertising3', {
+			chart: {
+				zoomType: 'xy'
+			},
+			title: {
+				text: ''
+			},
+			xAxis: [{
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May'],
+				crosshair: true
+			}],
+			yAxis: [{ // Primary yAxis
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				},
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				}
+			}, { // Secondary yAxis
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				opposite: true
+			}],
+			tooltip: {
+				shared: true
+			},
+			legend: {
+				layout: 'horizontal',
+				align: 'center',
+				x: 0,
+				verticalAlign: 'bottom',
+				y: 0,
+				backgroundColor: Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'
+			},
+			series: [{
+				name: 'Sales',
+				color: '#ed7d31',
+				type: 'column',
+				yAxis: 1,
+				data: [9860, 4586, 6874, 7665, 4354, 7053]
+			}, {
+				name: 'Impressions',
+				//        type: 'spline',
+				color: '#4472C4',
+				data: [21025, 17951, 24632, 19446, 18950, 26254]
+			}, {
+				name: 'Clicks',
+				color: '#1b66aa',
+				//        type: 'spline',
+				yAxis: 1,
+				data: [30587, 42927, 44458, 26742, 27121, 35896]
+			}, {
+				name: 'CPC',
+				color: '#25aa1b',
+				//        type: 'spline',
+				yAxis: 1,
+				data: [13456, 9270, 12385, 13856, 10546, 9654]
+			}, {
+				name: 'ACOS',
+				color: '#7cb5ec',
+				//        type: 'spline',
+				yAxis: 1,
+				data: [10, 15, 16, 4, 4, 18]
+			}, {
+				name: 'Live Campaigns',
+				color: '#795548',
+				//        type: 'spline',
+				yAxis: 1,
+				data: [6, 12, 15, 18, 11, 10]
 			}]
 		});
 	}
@@ -506,37 +681,35 @@ $(document).ready(() => {
 	if ($('#chart-product_ranks').length > 0) {
 		Highcharts.chart('chart-product_ranks', {
 			chart: {
-				type: 'column',
 				height: 300
 			},
 			title: {
 				text: 'Daily ranking of all Products'
 			},
 			xAxis: {
-				categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr']
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May', '26 May']
 			},
 			yAxis: {
 				min: 0,
 				title: {
 					text: 'Rank'
-				},
+				}
 			},
 			legend: {
 				align: 'center',
 				x: 0,
 				verticalAlign: 'bottom',
 				y: 0,
-				backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+				backgroundColor: Highcharts.theme && Highcharts.theme.background2 || 'white',
 				shadow: false
 			},
 			tooltip: {
 				headerFormat: '<b>{point.x}</b><br/>',
-				pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+				pointFormat: '{series.name} Rank: {point.y}'
 			},
 			series: [{
 				name: 'All Products',
-				data: [400, 190, 80, 180, 10],
-				type: 'spline',
+				data: [79112, 84907, 53308, 87699, 82817, 85442, 88092]
 			}]
 		});
 	}
@@ -603,7 +776,6 @@ $(document).ready(() => {
 		});
 	}
 
-	/* Buy-box: Buy-box report */
 	if ($('#chart-buy-box').length > 0) {
 		Highcharts.chart('chart-buy-box', {
 			chart: {
@@ -620,13 +792,13 @@ $(document).ready(() => {
 						color: Highcharts.getOptions().colors[1]
 					}
 				},
-				categories: ['4/15/2018', '4/16/2018', '4/17/2018', '4/18/2018', '4/19/2018', '4/20/2018']
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May', '26 May']
 			}],
 			yAxis: {
 				min: 82,
 				max: 100,
 				labels: {
-					formatter: function() {
+					formatter: function formatter() {
 						return this.value + '%';
 					}
 				},
@@ -641,7 +813,7 @@ $(document).ready(() => {
 				name: 'Products',
 				type: 'column',
 				color: '#1b66aa',
-				data: [98, 88, 92, 90, 95, 88],
+				data: [98, 88, 92, 90, 95, 86]
 			}]
 		});
 	}
@@ -656,7 +828,7 @@ $(document).ready(() => {
 				text: 'Chargeback Trends'
 			},
 			xAxis: [{
-				categories: ['April', 'May', 'June', 'July', 'Augest', 'September'],
+				categories: ['January', 'February', 'March', 'April', 'May', 'September'],
 				crosshair: true
 			}],
 			yAxis: [{ // Secondary yAxis
@@ -682,17 +854,17 @@ $(document).ready(() => {
 				x: 0,
 				verticalAlign: 'bottom',
 				y: 0,
-				backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+				backgroundColor: Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'
 			},
 			series: [{
 				name: 'Chargebacks this year',
 				type: 'line',
 				color: '#25aa1b',
-				data: [1200, 900, 600, 500, 700, 500],
+				data: [1200, 900, 600, 500, 700, 500]
 			}, {
 				name: 'Chargebacks last year',
 				type: 'line',
-				data: [1000, 600, 200, 200, 400, 1200],
+				data: [1000, 600, 200, 200, 400, 1200]
 			}]
 		});
 	}

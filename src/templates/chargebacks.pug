@@ -1,185 +1,188 @@
 extends layout
 block link
-  -var selected = 'chargebacks';
+	-var selected = 'chargebacks';
 block content
-  include includes/header
-  include includes/mobile-menu
-  main.content.mt-2.container-fluid
-    .row.mb-4
-      .col-sm-12
-        .border.p-4
-          #chart-chargeback-trend
-    .row.mb-4
-      .col-sm-12
-          table(id='table-charge-back-dispute' class='table m-0' style='width: 100%')
-            thead
-              tr
-                th.text-center Status
-                th.text-center Charged
-                th.text-center Under review
-                th.text-center Reversed
-                th.text-center Dispute under review
-                th.text-center Dispute approved
-                th.text-center Dispute rejected
-                th.text-center Dispute - Needs more information
-                th.text-center Waived
-                th.text-center Waived grace period
-              tr.total
-                th.text-center Total
-                th.text-center 67
-                th.text-center 150
-                th.text-center 260
-                th.text-center 10
-                th.text-center 467
-                th.text-center 150
-                th.text-center 160
-                th.text-center 140
-                th.text-center 675
-            tbody
-              tr
-                td.text-center ASN - On-Time Non-Compliance
-                td.text-center 5
-                td.text-center 25
-                td.text-center 30
-                td.text-center 1
-                td.text-center 130
-                td.text-center 30
-                td.text-center 25
-                td.text-center 15
-                td.text-center 50
-              tr
-                td.text-center ASN Accuracy
-                td.text-center 12
-                td.text-center 10
-                td.text-center 100
-                td.text-center 2
-                td.text-center 75
-                td.text-center 25
-                td.text-center 7
-                td.text-center 7
-                td.text-center 24
-              tr
-                td.text-center No carton/package content label
-                td.text-center 10
-                td.text-center 40
-                td.text-center 40
-                td.text-center 1
-                td.text-center 40
-                td.text-center 40
-                td.text-center 20
-                td.text-center 10
-                td.text-center 42
-              tr
-                td.text-center Oversized Carton
-                td.text-center 2
-                td.text-center 5
-                td.text-center 28
-                td.text-center 1
-                td.text-center 15
-                td.text-center 5
-                td.text-center 18
-                td.text-center 18
-                td.text-center 180
-              tr
-                td.text-center Overweight Carton
-                td.text-center 8
-                td.text-center 18
-                td.text-center 14
-                td.text-center 1
-                td.text-center 38
-                td.text-center 3
-                td.text-center 14
-                td.text-center 14
-                td.text-center 14
-              tr
-                td.text-center PO On-Time Accuracy
-                td.text-center 4
-                td.text-center 14
-                td.text-center 13
-                td.text-center 1
-                td.text-center 19
-                td.text-center 19
-                td.text-center 13
-                td.text-center 13
-                td.text-center 135
-              tr
-                td.text-center Product preparation
-                td.text-center 7
-                td.text-center 8
-                td.text-center 10
-                td.text-center 1
-                td.text-center 120
-                td.text-center 2
-                td.text-center 10
-                td.text-center 10
-                td.text-center 10
-              tr
-                td.text-center Rejected PO Rate
-                td.text-center 14
-                td.text-center 10
-                td.text-center 20
-                td.text-center 1
-                td.text-center 20
-                td.text-center 16
-                td.text-center 30
-                td.text-center 30
-                td.text-center 90
-              tr
-                td.text-center Unfilled by cancel date
-                td.text-center 5
-                td.text-center 20
-                td.text-center 30
-                td.text-center 1
-                td.text-center 10
-                td.text-center 10
-                td.text-center 13
-                td.text-center 13
-                td.text-center 130
-    .row.mb-4
-      .col-sm-12
-          table(id='table-charge-back-status' class='table m-0' style='width: 100%')
-            thead
-              tr
-                th.text-center Chargeback ID
-                th.text-center ASIN
-                th.text-center Type
-                th.text-center Amount
-                th.text-center Status
-                th.text-center Chargeback Date
-            tbody
-              tr
-                td.text-center 1211861691VCBSCB
-                td.text-center AMZ1290838
-                td.text-center Prep-Taping
-                td.text-center $2.64
-                td.text-center Charged
-                td.text-center 5/7/2018
-              tr
-                td.text-center 1211861691VCBSCB
-                td.text-center AMZ1290838
-                td.text-center Prep-Taping
-                td.text-center $5.00
-                td.text-center Charged
-                td.text-center 6/7/2018
-              tr
-                td.text-center 1211861691VCBSCB
-                td.text-center AMZ1290838
-                td.text-center No Cartoon/Package content label
-                td.text-center $2.64
-                td.text-center Charged
-                td.text-center 7/7/2018
-              tr
-                td.text-center 1211861691VCBSCB
-                td.text-center AMZ1290838
-                td.text-center No Cartoon/Package content label
-                td.text-center $5.00
-                td.text-center Charged
-                td.text-center 8/7/2018
-              tr
-                td.text-center 1211861691VCBSCB
-                td.text-center AMZ1290838
-                td.text-center No Cartoon/Package content label
-                td.text-center $5.00
-                td.text-center Charged
-                td.text-center 9/7/2018
-    include includes/footer
+	include includes/header
+	include includes/mobile-menu
+	main.content.mt-2.container-fluid
+		include includes/content-header
+		+content-header('Chargebacks Overview')
+		.row.mb-4
+			.col-sm-12
+				.border.p-4
+					#chart-chargeback-trend
+		.row.mb-4
+			.col-sm-12
+					table(id='table-charge-back-dispute' class='table m-0' style='width: 100%')
+						thead
+							tr
+								th.text-center Status
+								th.text-center Charged
+								th.text-center Under review
+								th.text-center Reversed
+								th.text-center Dispute under review
+								th.text-center Dispute approved
+								th.text-center Dispute rejected
+								th.text-center Dispute - Needs more information
+								th.text-center Waived
+								th.text-center Waived grace period
+							tr.total
+								th.text-center Total
+								th.text-center 67
+								th.text-center 150
+								th.text-center 260
+								th.text-center 10
+								th.text-center 467
+								th.text-center 150
+								th.text-center 160
+								th.text-center 140
+								th.text-center 675
+						tbody
+							tr
+								td.text-center ASN - On-Time Non-Compliance
+								td.text-center 5
+								td.text-center 25
+								td.text-center 30
+								td.text-center 1
+								td.text-center 130
+								td.text-center 30
+								td.text-center 25
+								td.text-center 15
+								td.text-center 50
+							tr
+								td.text-center ASN Accuracy
+								td.text-center 12
+								td.text-center 10
+								td.text-center 100
+								td.text-center 2
+								td.text-center 75
+								td.text-center 25
+								td.text-center 7
+								td.text-center 7
+								td.text-center 24
+							tr
+								td.text-center No carton/package content label
+								td.text-center 10
+								td.text-center 40
+								td.text-center 40
+								td.text-center 1
+								td.text-center 40
+								td.text-center 40
+								td.text-center 20
+								td.text-center 10
+								td.text-center 42
+							tr
+								td.text-center Oversized Carton
+								td.text-center 2
+								td.text-center 5
+								td.text-center 28
+								td.text-center 1
+								td.text-center 15
+								td.text-center 5
+								td.text-center 18
+								td.text-center 18
+								td.text-center 180
+							tr
+								td.text-center Overweight Carton
+								td.text-center 8
+								td.text-center 18
+								td.text-center 14
+								td.text-center 1
+								td.text-center 38
+								td.text-center 3
+								td.text-center 14
+								td.text-center 14
+								td.text-center 14
+							tr
+								td.text-center PO On-Time Accuracy
+								td.text-center 4
+								td.text-center 14
+								td.text-center 13
+								td.text-center 1
+								td.text-center 19
+								td.text-center 19
+								td.text-center 13
+								td.text-center 13
+								td.text-center 135
+							tr
+								td.text-center Product preparation
+								td.text-center 7
+								td.text-center 8
+								td.text-center 10
+								td.text-center 1
+								td.text-center 120
+								td.text-center 2
+								td.text-center 10
+								td.text-center 10
+								td.text-center 10
+							tr
+								td.text-center Rejected PO Rate
+								td.text-center 14
+								td.text-center 10
+								td.text-center 20
+								td.text-center 1
+								td.text-center 20
+								td.text-center 16
+								td.text-center 30
+								td.text-center 30
+								td.text-center 90
+							tr
+								td.text-center Unfilled by cancel date
+								td.text-center 5
+								td.text-center 20
+								td.text-center 30
+								td.text-center 1
+								td.text-center 10
+								td.text-center 10
+								td.text-center 13
+								td.text-center 13
+								td.text-center 130
+		.row.mb-4
+			.col-sm-12
+					table(id='table-charge-back-status' class='table m-0' style='width: 100%')
+						thead
+							tr
+								th.text-center Chargeback ID
+								th.text-center ASIN
+								th.text-center Type
+								th.text-center Amount
+								th.text-center Status
+								th.text-center Chargeback Date
+						tbody
+							tr
+								td.text-center 1211861691VCBSCB
+								td.text-center B001VKO8E2
+								td.text-center Prep-Taping
+								td.text-center $2.64
+								td.text-center Charged
+								td.text-center 5/7/2018
+							tr
+								td.text-center 5897687239NCXPOF
+								td.text-center B001VKS23U
+								td.text-center Prep-Taping
+								td.text-center $5.00
+								td.text-center Charged
+								td.text-center 6/7/2018
+							tr
+								td.text-center 4523112357JKNBYU
+								td.text-center B001VKO8Z6
+								td.text-center No Cartoon/Package content label
+								td.text-center $2.64
+								td.text-center Charged
+								td.text-center 7/7/2018
+							tr
+								td.text-center 8875964526POIMGH
+								td.text-center B001VKT9IW
+								td.text-center No Cartoon/Package content label
+								td.text-center $5.00
+								td.text-center Charged
+								td.text-center 8/7/2018
+							tr
+								td.text-center 7264638419MCRVIK
+								td.text-center B004J64OOO
+								td.text-center No Cartoon/Package content label
+								td.text-center $5.00
+								td.text-center Charged
+								td.text-center 9/7/2018
+
+		include includes/footer

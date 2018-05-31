@@ -1,0 +1,48 @@
+extends layout
+block content
+	include includes/header
+	include includes/mobile-menu
+	main.content.mt-2.container-fluid
+		include includes/content-header
+		+content-header('Settings')
+		.row
+			.col-md-6.col-lg-4
+				.card.border-info.mb-3
+					h4.card-header.text-muted.font-weight-light My Profile
+					.card-body.text-muted
+						form
+							.form-group.mb-4
+								label(for='email') Email address
+								input#email.form-control(type='email', aria-describedby='email', placeholder='Enter email')
+							.form-group.mb-4
+								label(for='firstname') First Name
+								input#firstname.form-control(type='text', placeholder='First Name')
+							.form-group.mb-4
+								label(for='lastname') Last Name
+								input#lastname.form-control(type='text', placeholder='Last Name')
+							.form-group.mb-4
+								label(for='company') Company
+								input#company.form-control(type='text', placeholder='Company')
+							.form-group.mb-4
+								label(for='contactno') Contact Number
+								input#contactno.form-control(type='text', placeholder='Contact Number')
+							button.btn.btn-primary.rounded-0.w-75.d-block.mt-3.mx-auto(type='submit') Save Profile
+			.col-md-6.col-lg-4
+				.card.border-info.mb-3
+					h4.card-header.text-muted.font-weight-light My Password
+					.card-body.text-muted
+						form
+							.form-group.mb-4
+								label(for='currentpwd') Current Password
+								.input-group
+									input#currentpwd.form-control(type='password', placeholder='Current Password', aria-label='Current Password', aria-describedby='togglepwd')
+									.input-group-append
+										span#togglepwd.input-group-text.pointer(title='Toggle Password')
+											i.icon-eye.text-muted
+							.form-group.mb-4
+								label(for='newpwd') New Password
+								input#newpwd.form-control(type='text', placeholder='New Password')
+							.form-group.mb-4
+								label(for='confirmpwd') Confirm Password
+								input#confirmpwd.form-control(type='text', placeholder='Confirm Password')
+							button.btn.btn-primary.rounded-0.w-75.d-block.mt-3.mx-auto(type='submit') Change Password

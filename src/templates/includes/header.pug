@@ -32,7 +32,7 @@ block content
             .form-row.border-left.col.mb-0.ml-md-4.pl-2
               label.d-none.d-md-inline-block.col-3.col-form-label(for="sales-marketplace") Market Place
               .col.col-md-6
-                select.custom-select.form-control.form-control-sm#sales-marketplace
+                select.custom-select.form-control#sales-marketplace
                   option(selected='') Choose Market Place
                   option(value='2') Amazon
                   option(value='1') Best Buy
@@ -44,7 +44,7 @@ block content
               i.rounded.icon-user.text-primary.icon-md.ml-2
             .dropdown-menu(aria-labelledby='user-menu')
               a.dropdown-item(href='settings.html') My Profile
-              a.dropdown-item(href='#') Log out
+              a.dropdown-item(href='login.html') Log out
     .header-nav.mb-2
       include ./dashboard_menu
     // Section: Search Filters  
@@ -64,12 +64,12 @@ block content
           .form-row
             .col
               .input-group
-                input.form-control.input-date(type='text' placeholder='from date' id='daterange-from')
+                input.form-control.input-date(type='text' placeholder='from date' id='daterange-from' data-date-format="MM/DD/Y")
                 span.input-group-append.input-group-addon
                   i.input-group-text.icon-calendar.px-1.px-md-2(style='min-width: auto')
             .col
               .input-group
-                input.form-control.input-date(type='text' placeholder='to date' id="daterange-to")
+                input.form-control.input-date(type='text' placeholder='to date' id="daterange-to" data-date-format="MM/DD/Y")
                 span.input-group-append.input-group-addon
                   i.input-group-text.icon-calendar.px-1.px-md-2(style='min-width: auto')
         .col-3.col-md-auto.mt-md-0
