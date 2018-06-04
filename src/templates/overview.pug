@@ -1,0 +1,138 @@
+extends layout
+block link
+	-var selected = 'overview';
+block content
+	include includes/header
+	include includes/mobile-menu
+	// Section: Main content
+	main.content.mt-2.container-fluid
+		// Section: Overview
+		include includes/content-header
+		+content-header('Overview')
+		.row.mb-4
+			.col-md-6.col-lg-4.overview-top
+				.card.mb-4
+					.card-header.d-flex.bg-secondary.text-white.justify-content-between
+						h5.card-title.mb-0 Sales
+						a.text-white(href='sales.html') View Details
+					.card-body
+						#chart-overview_sales
+				.card.mb-4
+					.card-header.d-flex.bg-secondary.text-white.justify-content-between
+						h5.card-title.mb-0 Inventory
+						a.text-white(href='inventory.html') View Details
+					.card-body
+						#chart-overview_inventory
+			.col-md-6.col-lg-4.overview-top
+				.card.mb-4
+					.card-header.d-flex.bg-secondary.text-white.justify-content-between
+						h5.card-title.mb-0 Advertising
+						a.text-white(href='advertising.html') View Details
+					.card-body
+						#chart-overview_advertising
+				.card.mb-4
+					.card-header.d-flex.bg-secondary.text-white.justify-content-between
+						h5.card-title.mb-0 Product Ranks
+						a.text-white(href='product-ranks.html') View Details
+					.card-body
+						#chart-overview_product_ranks
+			.col-md-6.col-lg-4.overview-top
+				.card.mb-4
+					.card-header.d-flex.bg-secondary.text-white.justify-content-between
+						h5.card-title.mb-0 Buy Box
+						a.text-white(href='buy-box-reports.html') View Details
+					.card-body
+						#chart-overview_buybox
+				.card.mb-4
+					.card-header.d-flex.bg-secondary.text-white.justify-content-between
+						h5.card-title.mb-0 MAP
+						a.text-white(href='map.html') View Details
+					.card-body
+						#chart-overview_map
+		.row
+			h2.h4.col-12 
+				| Action Items
+				small 
+					i.icon-info.icon-sm.ml-1.mt-1(style='color: #ff5e00')
+			.col-md-6.col-lg-4.overview-bottom
+				.row.star-review
+					.col-12
+						.review-content.card
+							.card-header.d-flex.bg-secondary.text-white.justify-content-between
+								.d-inline-flex
+									h5.card-title.mb-0 1 Star
+									ul.rating.ml-2.mb-0.p-0.d-inline-flex
+										li.ml-1
+											i.icon-star.icon-md.text-warning
+										li.ml-1
+											i.icon-star-o.icon-md.text-white
+										li.ml-1
+											i.icon-star-o.icon-md.text-white
+										li.ml-1
+											i.icon-star-o.icon-md.text-white
+										li.ml-1
+											i.icon-star-o.icon-md.text-white
+								a.text-white(href='reviews.html') View Details
+							.card-body.py-2.pl-2.pr-0
+								ul.list-group.p-0
+									li.list-group-item.border
+										h6 Shows the quality plus time. 
+										small By 
+										a.card-link(href='#') viswanadh chandra 
+										small on 10 May 2016
+										p It reflects the amount you put in it. Solid built and no noise anywhere.
+									li.list-group-item.border
+										h6 very classy but too expensive. 
+										small By 
+										a.card-link(href='#') M Srinivas 
+										small on 13 January 2018
+										p very classy but too expensive
+									li.list-group-item.border
+										h6 very classy but too expensive. 
+										small By 
+										a.card-link(href='#') M Srinivas 
+										small on 13 January 2018
+										p very classy but too expensive
+									li.list-group-item.border
+										h6 starsWow product every thing is perfect in this clock. 
+										small By 
+										a.card-link(href='#') yMd.Kamal Ashraf
+										small on 13 January 2018
+										p Good looking and perfect timing.
+									li.list-group-item.border
+										h6 very classy but too expensive. 
+										small By 
+										a.card-link(href='#') M Srinivas 
+										small on 13 January 2018
+										p very classy but too expensive
+									li.list-group-item.border
+										h6 very classy but too expensive. 
+										small By 
+										a.card-link(href='#') M Srinivas 
+										small on 13 January 2018
+										p very classy but too expensive
+			.col-md-6.col-lg-4.overview-bottom
+				.card.mb-4
+					.card-header.d-flex.bg-secondary.text-white.justify-content-between
+						h5.card-title.mb-0 Promotions
+						a.text-white(href='promotions.html') View Details
+					.card-body.p-2
+						table(id='table-recommendations-promotion-count' class='table m-0' style='width: 100%')
+							thead
+								tr
+									th.text-left Promotion
+									th Count
+							tbody
+								tr
+									td.text-left Bulk Buy
+									td.text-center.text-danger 3
+								tr
+									td.text-left Lightning Deal
+									td 12
+								tr
+									td.text-left Bulk Buy
+									td.text-center.text-success 17
+								tr
+									td.text-left Lightning Deal
+									td 15
+	include includes/footer

@@ -1,13 +1,27 @@
--var file = htmlWebpackPlugin.options.downloadFile;
+- var file = htmlWebpackPlugin.options.downloadFile;
 mixin content-header(title)
 	.row.align-items-center.mb-2
 		.col
 			.row.align-items-center
 				h1.col-md-auto.h4.mb-0 #{title}
 				if (file !== undefined)
-					small.col-md-auto.px-md-0.text-muted (From 05/20/2018 To 05/25/2018)
+					if (file !== 'overview')
+						small.col-md-auto.px-md-0.text-muted (From 05/20/2018 To 05/25/2018)
 		if (file !== undefined)
 			.col-auto.ml-auto
-				a.btn.btn-sm.btn-primary.rounded-0.d-inline-flex.align-items-center(href='download_files/' + file + '.xslx' role='button' title='Download' tabindex='1')
+				if (file === 'overview')
+					a.btn.btn-sm.btn-secondary.rounded-0.d-inline-flex.align-items-center.ml-2(title='Customize this dashboard' role='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex='2')
+						i.icon-cog.icon-md.mr-sm-2
+						span.d-none.d-sm-block Customize
+					.dropdown-menu(aria-labelledby='')
+						div.border-bottom(style='max-height: 220px; overflow: auto')
+							each url, item in menu
+								label.dropdown-item.bg-transparent.border-0(role='button') 
+									input(type='checkbox').mr-2
+									| #{item}
+						.dropdown-divider
+						.px-3
+							button.btn.btn-primary.btn-sm(type='button' role='button') Apply
+				a.ml-3.btn.btn-sm.btn-primary.rounded-0.d-inline-flex.align-items-center(href='download_files/' + file + '.xslx' role='button' title='Download' tabindex='1')
 					i.icon-download.icon-md.mr-sm-2
-					span.d-none.d-sm-block Download	
+					span.d-none.d-sm-block Download

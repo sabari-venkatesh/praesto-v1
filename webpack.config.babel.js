@@ -106,6 +106,12 @@ const config = {
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: '' // provide a cdn url if you are hosting your assets there
 	},
+	// resolve: {
+	// 	alias: {
+	// 		'jquery-ui': 'jquery-ui/ui/widgets',
+	// 		'jquery-ui-css': 'jquery-ui/themes/base'
+	// 	}
+	// },
 	plugins: [
 		extractStyles,
 		new webpack.ProvidePlugin({
@@ -141,6 +147,15 @@ const config = {
 			bodyClass: 'page-settings',
 			filename: 'settings.html',
 			template: 'templates/settings.pug',
+			showSearchbar: false
+		}),
+		new HtmlWebpackPlugin({
+			title: 'Overview',
+			bodyClass: 'page-overview',
+			filename: 'overview.html',
+			template: 'templates/overview.pug',
+			downloadFile: 'overview',
+			showSearchbar: false
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Dashboard',
@@ -159,84 +174,96 @@ const config = {
 			bodyClass: 'page-sales',
 			filename: 'sales.html',
 			template: 'templates/sales.pug',
-			downloadFile: 'sales'
+			downloadFile: 'sales',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Inventory',
 			bodyClass: 'page-inventory',
 			filename: 'inventory.html',
 			template: 'templates/inventory.pug',
-			downloadFile: 'inventory'
+			downloadFile: 'inventory',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Exceptions',
 			bodyClass: 'page-exceptions',
 			filename: 'exceptions.html',
 			template: 'templates/exceptions.pug',
-			downloadFile: 'exceptions'
+			downloadFile: 'exceptions',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Advertising',
 			bodyClass: 'page-advertising',
 			filename: 'advertising.html',
 			template: 'templates/advertising.pug',
-			downloadFile: 'advertising'
+			downloadFile: 'advertising',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Product Ranks',
 			bodyClass: 'page-product_ranks',
 			filename: 'product-ranks.html',
 			template: 'templates/product-ranks.pug',
-			downloadFile: 'product_rank'
+			downloadFile: 'product_rank',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Keywords',
 			bodyClass: 'page-keywords',
 			filename: 'keywords.html',
 			template: 'templates/keywords.pug',
-			downloadFile: 'keywords'
+			downloadFile: 'keywords',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Buy-Box Reports',
 			bodyClass: 'page-buy_box_reports',
 			filename: 'buy-box-reports.html',
 			template: 'templates/buy-box-reports.pug',
-			downloadFile: 'buybox'
+			downloadFile: 'buybox',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'MAP',
 			bodyClass: 'page-map',
 			filename: 'map.html',
 			template: 'templates/map.pug',
-			downloadFile: 'map'
+			downloadFile: 'map',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Reviews',
 			bodyClass: 'page-reviews',
 			filename: 'reviews.html',
 			template: 'templates/reviews.pug',
-			downloadFile: 'reviews'
+			downloadFile: 'reviews',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Chargebacks',
 			bodyClass: 'page-chargebacks',
 			filename: 'chargebacks.html',
 			template: 'templates/chargebacks.pug',
-			downloadFile: 'chargeback'
+			downloadFile: 'chargeback',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
-			title: 'Recommendations',
-			bodyClass: 'page-recommendations',
-			filename: 'recommendations.html',
-			template: 'templates/recommendations.pug',
-			downloadFile: 'recommendations'
+			title: 'Promotions',
+			bodyClass: 'page-promotions',
+			filename: 'promotions.html',
+			template: 'templates/promotions.pug',
+			downloadFile: 'promotions',
+			showSearchbar: true
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Forecasting',
 			bodyClass: 'page-forecasting',
 			filename: 'forecasting.html',
 			template: 'templates/forecasting.pug',
-			downloadFile: 'forecasting'
+			downloadFile: 'forecasting',
+			showSearchbar: true
 		}),
 		new CopyWebpackPlugin([{
 			from: './data',

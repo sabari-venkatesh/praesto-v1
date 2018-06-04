@@ -61,10 +61,6 @@
 	}
 }
 
-.text-nowrap {
-	white-space: nowrap;
-}
-
 .btn-group {
 	.btn {
 		@extend .btn-light;
@@ -77,10 +73,6 @@
 
 #table-sales_geography_wrapper tr td:first-child {
 	text-transform: uppercase;
-}
-
-.text-nowrap {
-	white-space: nowrap;
 }
 
 .w-auto {
@@ -105,12 +97,17 @@ strong {
 		font-weight: 400;
 		vertical-align: middle;
 		border-left: 1px solid $table-border-color;
+		text-align: center;
 
 		&.text-danger,
 		&.text-success,
 		.text-danger,
 		.text-success {
 			font-weight: 500;
+		}
+
+		&.cell-amount {
+			text-align: right;
 		}
 	}
 
@@ -631,6 +628,20 @@ tr.total th {
 	text-indent: 20px;
 }
 
+.rating {
+	li {
+		list-style: none;
+
+		.icon-star {
+			color: #ff5e00;
+		}
+
+		.icon-star-o {
+			color: #535558;
+		}
+	}
+}
+
 .star-review {
 	> div {
 		list-style: none;
@@ -645,20 +656,6 @@ tr.total th {
 			.card-header {
 				position: relative;
 				background: #f7f7f7;
-
-				.rating {
-					li {
-						list-style: none;
-
-						.icon-star {
-							color: #ff5e00;
-						}
-
-						.icon-star-o {
-							color: #535558;
-						}
-					}
-				}
 			}
 
 			.card-body {
@@ -753,18 +750,22 @@ tr.total th {
 }
 
 .table-linenowrap {
-  thead, tbody {
-    tr {
-      th, td {
-        white-space: nowrap;
-        text-align: center;
-	  }
-	  td.date-column {
-		color: #1b66aa;
-		.text-muted {
-			display: block;
+	tbody,
+	thead {
+		tr {
+			td,
+			th {
+				white-space: nowrap;
+				text-align: center;
+			}
+
+			td.date-column {
+				color: #1b66aa;
+
+				.text-muted {
+					display: block;
+				}
+			}
 		}
 	}
-    }
-  }
 }

@@ -338,6 +338,30 @@ $(document).ready(() => {
 		});
 	}
 
+	function advchange(val) {
+		if (val == '1') {
+			$(".chart-advertising-1").css("display", "block");
+			$(".chart-advertising-2").css("display", "none");
+			$(".chart-advertising-3").css("display", "none");
+		} else if (val == '2') {
+			$(".chart-advertising-1").css("display", "none");
+			$(".chart-advertising-2").css("display", "block");
+			$(".chart-advertising-3").css("display", "none");
+		} else if (val == '3') {
+			$(".chart-advertising-1").css("display", "none");
+			$(".chart-advertising-2").css("display", "none");
+			$(".chart-advertising-3").css("display", "block");
+		} else {
+			$(".chart-advertising-1").css("display", "block");
+			$(".chart-advertising-2").css("display", "none");
+			$(".chart-advertising-3").css("display", "none");
+		}
+	}
+
+	$('#adv-ams-select').change(function() {
+		advchange($(this).val());
+	});
+
 	/* Advertising: All AMS Advertising Source */
 	if ($('#chart-advertising1').length > 0) {
 		Highcharts.chart('chart-advertising1', {
@@ -1094,4 +1118,372 @@ $(document).ready(() => {
 		}).eq(0).trigger('click');
 	}
 
+
+	/* Overview - Sales */
+	if ($('#chart-overview_sales').length > 0) {
+		Highcharts.chart('chart-overview_sales', {
+			chart: {
+				type: 'column',
+				height: 300
+			},
+			title: {
+				text: 'Sales to Customers'
+			},
+			xAxis: {
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May']
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: 'Sales($)'
+				},
+			},
+			legend: {
+				align: 'left',
+				x: 30,
+				verticalAlign: 'bottom',
+				y: 0,
+				backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+				shadow: false
+			},
+			tooltip: {
+				headerFormat: '<b>{point.x}</b><br/>',
+				pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+			},
+			plotOptions: {
+				column: {
+					stacking: 'normal',
+				}
+			},
+			series: [{
+				name: '3P Sales - MFN',
+				type: 'column',
+				data: [105, 0, 35, 35, 0, 140]
+			}, {
+				name: '3P Sales - FBA',
+				type: 'column',
+				data: [119, 0, 52, 39, 26, 0]
+			}, {
+				name: 'Amazon Sales',
+				type: 'column',
+				data: [25960, 26450, 52480, 30897, 32584, 0]
+			}, {
+				name: 'Amazon COGS',
+				data: [21545, 25443, 48564, 25153, 31544, 0]
+			}],
+			responsive: {
+				rules: [{
+					condition: {
+						maxWidth: 500
+					},
+					chartOptions: {
+						chart: {
+							height: 300
+						},
+						subtitle: {
+							text: null
+						},
+						navigator: {
+							enabled: false
+						}
+					}
+				}]
+			}
+		});
+	}
+
+	if ($('#chart-overview_advertising').length > 0) {
+		Highcharts.chart('chart-overview_advertising', {
+			chart: {
+				height: 300
+			},
+			title: {
+				text: ''
+			},
+			xAxis: [{
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May'],
+				crosshair: true
+			}],
+			yAxis: [{ // Primary yAxis
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				},
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				}
+			}, { // Secondary yAxis
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				opposite: true
+			}],
+			tooltip: {
+				shared: true
+			},
+			legend: {
+				layout: 'horizontal',
+				align: 'center',
+				x: 0,
+				verticalAlign: 'bottom',
+				y: 0,
+				backgroundColor: Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'
+			},
+			series: [{
+				name: 'Sales',
+				color: '#ed7d31',
+				type: 'column',
+				yAxis: 1,
+				data: [8360, 2786, 5574, 7365, 4254, 6853]
+			}, {
+				name: 'Impressions',
+				color: '#4472C4',
+				data: [20025, 15921, 23652, 17456, 16854, 23254]
+			}, {
+				name: 'Clicks',
+				color: '#1b66aa',
+				yAxis: 1,
+				data: [28674, 39854, 41654, 24568, 25859, 33529]
+			}, {
+				name: 'CPC',
+				color: '#25aa1b',
+				yAxis: 1,
+				data: [12150, 10170, 11265, 12856, 9546, 8654]
+			}, {
+				name: 'ACOS',
+				color: '#7cb5ec',
+				yAxis: 1,
+				data: [9, 15, 8, 9, 6, 7]
+			}, {
+				name: 'Live Campaigns',
+				color: '#795548',
+				yAxis: 1,
+				data: [10, 6, 8, 12, 11, 10]
+			}]
+		});
+	}
+
+	if ($('#chart-overview_product_ranks').length > 0) {
+		Highcharts.chart('chart-overview_product_ranks', {
+			chart: {
+				height: 300
+			},
+			title: {
+				text: 'Daily ranking of all Products'
+			},
+			xAxis: {
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May', '26 May']
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: 'Rank'
+				}
+			},
+			legend: {
+				align: 'center',
+				x: 0,
+				verticalAlign: 'bottom',
+				y: 0,
+				backgroundColor: Highcharts.theme && Highcharts.theme.background2 || 'white',
+				shadow: false
+			},
+			tooltip: {
+				headerFormat: '<b>{point.x}</b><br/>',
+				pointFormat: '{series.name} Rank: {point.y}'
+			},
+			series: [{
+				name: 'All Products',
+				data: [79112, 84907, 53308, 87699, 82817, 85442, 88092]
+			}]
+		});
+	}
+
+
+	if ($('#chart-overview_buybox').length > 0) {
+		Highcharts.chart('chart-overview_buybox', {
+			chart: {
+				zoomType: 'xy',
+				height: 300
+			},
+			title: {
+				text: 'All Products - BuyBox'
+			},
+			xAxis: [{
+				title: {
+					text: 'Date',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				},
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May', '26 May']
+			}],
+			yAxis: {
+				min: 82,
+				max: 100,
+				labels: {
+					formatter: function formatter() {
+						return this.value + '%';
+					}
+				},
+				title: {
+					text: 'BuyBox %',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				}
+			},
+			series: [{
+				name: 'Products',
+				type: 'column',
+				color: '#1b66aa',
+				data: [98, 88, 92, 90, 95, 86]
+			}]
+		});
+	}
+
+	if ($('#chart-overview_map').length > 0) {
+		Highcharts.chart('chart-overview_map', {
+			chart: {
+				zoomType: 'xy',
+				height: 300
+			},
+			title: {
+				text: 'Count of Violations'
+			},
+			xAxis: [{
+				categories: ['15 Apr', '16 Apr', '17 Apr', '18 Apr', '19 Apr', '20 Apr'],
+				crosshair: true
+			}],
+			yAxis: [{ // Primary yAxis
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				},
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				}
+			}, { // Secondary yAxis
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				opposite: false
+			}],
+			tooltip: {
+				shared: true
+			},
+			legend: {
+				layout: 'horizontal',
+				align: 'center',
+				x: 0,
+				verticalAlign: 'bottom',
+				y: 0,
+				backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+			},
+			series: [{
+				name: 'Violations',
+				color: '#4472c4',
+				type: 'column',
+				yAxis: 1,
+				data: [900, 600, 300, 200, 400, 1100],
+			}]
+		});
+	}
+
+	if ($('#chart-overview_inventory').length > 0) {
+		Highcharts.chart('chart-overview_inventory', {
+			chart: {
+				zoomType: 'xy',
+				height: 300
+			},
+			title: {
+				text: 'Inventory'
+			},
+			xAxis: [{
+				categories: ['20 May', '21 May', '22 May', '23 May', '24 May', '25 May', '26 May'],
+				crosshair: true
+			}],
+			yAxis: [{ // Primary yAxis
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				},
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[1]
+					}
+				}
+			}, { // Secondary yAxis
+				title: {
+					text: '',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				labels: {
+					format: '{value}',
+					style: {
+						color: Highcharts.getOptions().colors[0]
+					}
+				},
+				opposite: true
+			}],
+			tooltip: {
+				shared: true
+			},
+			legend: {
+				layout: 'horizontal',
+				align: 'center',
+				x: 0,
+				verticalAlign: 'bottom',
+				y: 0,
+				backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+			},
+			series: [{
+				name: 'Amazon On-Hand',
+				type: 'column',
+				color: '#1b66aa',
+				yAxis: 1,
+				data: [2487, 2007, 1865, 2845, 3125, 2508, 3085]
+			}, {
+				name: 'Amazon Back-Ordered',
+				color: '#25aa1b',
+				data: [110, 50, 95, 28, 65, 32, 29]
+			}, {
+				name: 'Amazon Cancelled',
+				data: [12, 23, 27, 29, 21, 51, 5]
+			}]
+		});
+	}
 });

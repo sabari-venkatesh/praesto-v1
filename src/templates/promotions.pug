@@ -1,12 +1,12 @@
 extends layout
 block link
-	-var selected = 'recommendations';
+	-var selected = 'promotions';
 block content
 	include includes/header
 	include includes/mobile-menu
 	main.content.mt-2.container-fluid
 		include includes/content-header
-		+content-header('Recommendations')
+		+content-header('Promotions')
 		.row.mb-4
 			.col-lg-3
 					table(id='table-recommendations-promotion-count' class='table m-0' style='width: 100%')

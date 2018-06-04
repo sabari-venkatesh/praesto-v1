@@ -1,3 +1,4 @@
+- var showSearchbar = htmlWebpackPlugin.options.showSearchbar;
 block content
   - var ranges = [
   - 'Select Date Range', 
@@ -23,9 +24,9 @@ block content
   - 'Apr 01 2018 - Apr 30 2018',
   - 'May 01 2018 - May 31 2018']
   // Section: Header
-  header.header.has-nav.text-muted
+  header.header.has-nav.text-muted(class=(showSearchbar ? 'pb-0' : ''))
     .header-top.container-fluid
-      .row.no-gutters.align-items-center.mb-2
+      .row.no-gutters.align-items-center.mb-2(class=(showSearchbar ? 'mb-0' : ''))
         .header-left.col.col-lg-8.col-xl-6
           .row.align-items-center.no-gutters
             a(href="#").navbar-brand.col-auto.text-center
@@ -47,31 +48,32 @@ block content
               a.dropdown-item(href='login.html') Log out
     .header-nav.mb-2
       include ./dashboard_menu
-    // Section: Search Filters  
-    .container-fluid
-      .form-row.align-items-center
-        .col-md.mb-2.mb-md-0
-          .input-group
-            .input-group-prepend
-              span#search.input-group-text.px-2.px-md-4
-                i.icon-search.icon-md.text-primary
-            input#myInput.form-control(type='text' placeholder='Search by ASIN, Part #, Model #, SKU' aria-label='Search' aria-describedby='search')
-        .col-12.col-md-auto.mb-2.mb-md-0
-          select.custom-select.form-control.select-daterange.rounded-0
-            each range in ranges
-              option(value=range) #{range}
-        .col-9.col-md-auto.mb-md-0.daterange.d-none(id='daterange')
-          .form-row
-            .col
-              .input-group
-                input.form-control.input-date(type='text' placeholder='from date' id='daterange-from' data-date-format="MM/DD/Y")
-                span.input-group-append.input-group-addon
-                  i.input-group-text.icon-calendar.px-1.px-md-2(style='min-width: auto')
-            .col
-              .input-group
-                input.form-control.input-date(type='text' placeholder='to date' id="daterange-to" data-date-format="MM/DD/Y")
-                span.input-group-append.input-group-addon
-                  i.input-group-text.icon-calendar.px-1.px-md-2(style='min-width: auto')
-        .col-3.col-md-auto.mt-md-0
-          button.btn.btn-primary.rounded-0.w-100 Apply
+    // Section: Search Filters
+    if (showSearchbar)
+      .container-fluid
+        .form-row.align-items-center
+          .col-md.mb-2.mb-md-0
+            .input-group
+              .input-group-prepend
+                span#search.input-group-text.px-2.px-md-4
+                  i.icon-search.icon-md.text-primary
+              input#myInput.form-control(type='text' placeholder='Search by ASIN, Part #, Model #, SKU' aria-label='Search' aria-describedby='search')
+          .col-12.col-md-auto.mb-2.mb-md-0
+            select.custom-select.form-control.select-daterange.rounded-0
+              each range in ranges
+                option(value=range) #{range}
+          .col-9.col-md-auto.mb-md-0.daterange.d-none(id='daterange')
+            .form-row
+              .col
+                .input-group
+                  input.form-control.input-date(type='text' placeholder='from date' id='daterange-from' data-date-format="MM/DD/Y")
+                  span.input-group-append.input-group-addon
+                    i.input-group-text.icon-calendar.px-1.px-md-2(style='min-width: auto')
+              .col
+                .input-group
+                  input.form-control.input-date(type='text' placeholder='to date' id="daterange-to" data-date-format="MM/DD/Y")
+                  span.input-group-append.input-group-addon
+                    i.input-group-text.icon-calendar.px-1.px-md-2(style='min-width: auto')
+          .col-3.col-md-auto.mt-md-0
+            button.btn.btn-primary.rounded-0.w-100 Apply
   .overlay        

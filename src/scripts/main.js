@@ -11,6 +11,7 @@ import 'bootstrap4-datetimepicker';
 import AutoComplete from 'devbridge-autocomplete';
 import DataTable from 'datatables.net-bs4';
 import 'datatables.net-fixedcolumns';
+import 'jquery-ui/ui/widgets/sortable';
 import './charts.js';
 
 /* moved swapSelect function as a jQuery plugin */
@@ -85,6 +86,9 @@ $(document).ready(() => {
 	$('.navbar-toggle').click((event) => {
 		event.preventDefault();
 		$('body').toggleClass('is-collapsed');
+		$('body').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
+			$($.fn.dataTable.tables(true)).DataTable().columns.adjust().draw();
+		});
 	});
 
 	$('#togglepwd').click((event) => {
@@ -117,25 +121,6 @@ $(document).ready(() => {
 		setContentSpacing();
 	});
 
-	// $(document).on({
-	// 	mouseenter: function() {
-	// 		var trIndex = $(this).index() + 1;
-	// 		$("table.dataTable").each(function(index) {
-	// 			$(this).find("tr:eq(" + trIndex + ")").each(function(index) {
-	// 				$(this).find("td").addClass("hover");
-	// 			});
-	// 		});
-	// 	},
-	// 	mouseleave: function() {
-	// 		var trIndex = $(this).index() + 1;
-	// 		$("table.dataTable").each(function(index) {
-	// 			$(this).find("tr:eq(" + trIndex + ")").each(function(index) {
-	// 				$(this).find("td").removeClass("hover");
-	// 			});
-	// 		});
-	// 	}
-	// }, ".dataTables_wrapper tr");
-
 	$('.select-daterange').change(() => {
 		var last = $('.select-daterange option:last-child');
 
@@ -148,7 +133,6 @@ $(document).ready(() => {
 	});
 
 	$('.table-filters .badge').click((event) => {
-
 		event.preventDefault();
 		var ele = $(event.target),
 			tableFilters = ele.parent(),
@@ -174,6 +158,8 @@ $(document).ready(() => {
 	/* Plugin calls */
 	$('.btn-group').swapSelect();
 
+	var options = [];
+
 	$('.input-date').datetimepicker({
 		format: 'MMM DD, YYYY',
 		inline: false,
@@ -186,6 +172,20 @@ $(document).ready(() => {
 
 	$("#daterange-to").on("dp.change", function(e) {
 		$('#daterange-from').data("DateTimePicker").maxDate(e.date);
+	});
+
+	$('.overview-top').sortable({
+		connectWith: ".overview-top",
+		handle: ".card-header",
+		cancel: ".portlet-toggle",
+		placeholder: "portlet-placeholder"
+	});
+
+	$('.overview-bottom').sortable({
+		connectWith: ".overview-bottom",
+		handle: ".card-header",
+		cancel: ".portlet-toggle",
+		placeholder: "portlet-placeholder"
 	});
 
 	$('#table-users').DataTable({
@@ -233,11 +233,12 @@ $(document).ready(() => {
 		info: false,
 		columns: [{
 				title: 'State',
-				data: 'code'
+				data: 'code',
 			},
 			{
 				title: 'Sales ($)',
-				data: 'value'
+				data: 'value',
+				className: 'text-right'
 			},
 			{
 				title: 'Units',
@@ -327,7 +328,7 @@ $(document).ready(() => {
 		info: false,
 	});
 
-	$('#table-performing_keywords, #table-performing_products, #table-performing_target, #table-performing_untarget').DataTable({
+	$('#table-performing_keywords').DataTable({
 		dom: 'rt<"dataTables_bottom"lp>',
 		fixedHeader: true,
 		fixedColumns: {
@@ -339,6 +340,51 @@ $(document).ready(() => {
 		scrollY: 500,
 		paging: false
 	});
+
+	$('#table-performing_products').DataTable({
+
+		columnDefs: [{
+			width: 250,
+			targets: 0
+		}],
+		dom: 'rt<"dataTables_bottom"lp>',
+		fixedHeader: true,
+		fixedColumns: {
+			leftColumns: 1
+		},
+		orderCellsTop: true,
+		scrollX: true,
+		scrollCollapse: true,
+		scrollY: 500,
+		paging: false
+	});
+
+	$('#table-performing_target').DataTable({
+		dom: 'rt<"dataTables_bottom"lp>',
+		fixedHeader: true,
+		fixedColumns: {
+			leftColumns: 1
+		},
+		orderCellsTop: true,
+		scrollX: true,
+		scrollCollapse: true,
+		scrollY: 500,
+		paging: false
+	});
+
+	$('#table-performing_untarget').DataTable({
+		dom: 'rt<"dataTables_bottom"lp>',
+		fixedHeader: true,
+		fixedColumns: {
+			leftColumns: 1
+		},
+		orderCellsTop: true,
+		scrollX: true,
+		scrollCollapse: true,
+		scrollY: 500,
+		paging: false
+	});
+
 	$('#table-aap_performance').DataTable({
 		dom: 'rt<"dataTables_bottom"lp>',
 		fixedHeader: true,
