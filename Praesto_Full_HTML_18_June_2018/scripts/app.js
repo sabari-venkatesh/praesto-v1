@@ -605,13 +605,13 @@ $(document).ready(function () {
 	});
 	
 	$('#modal-editproducts').on('show.bs.modal', function (event) {
-	  var button = $(event.relatedTarget);
 	  var modal = $(this);
-	  modal.find('.modal-title').text('Edit ' + rowData[0]);
-	  modal.find('#product-asin').val(rowData[0]);
+    var asin = rowData[0].match(/<a [^>]+>([^<]+)<\/a>/)[1];
+	  modal.find('.modal-title').text('Edit ' + asin);
+	  modal.find('#product-asin').val(asin);
 		modal.find('#product-name').val(rowData[1]);
-		modal.find('#product-map').val(rowData[3]);
-		modal.find('#product-msrp').val(rowData[4]);
+		modal.find('#product-map').val(rowData[3].split('$')[1]);
+		modal.find('#product-msrp').val(rowData[4].split('$')[1]);
 	});
 
 	var reviewsInfo = [{

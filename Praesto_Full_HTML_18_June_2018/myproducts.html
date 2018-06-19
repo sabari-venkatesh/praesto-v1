@@ -26,7 +26,7 @@
                     <option value="2">Walmart</option>
                   </select>
 							</div>
-							<a href="myprofile.html" class="col-auto pl-3">
+							<a href="myproducts.html" class="col-auto pl-3">
                   <i class="icon-shopping-bag mr-2"></i>My Products</a>
 						</div>
 					</div>
@@ -240,44 +240,54 @@
 	</div>
 
 	<div class="modal fade" id="modal-editproducts" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="modal-label">Edit</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+	          <span aria-hidden="true">&times;</span>
+	        </button>
 				</div>
 				<div class="modal-body p-4">
 					<form>
 						<div class="form-group row">
-							<label for="product-asin" class="text-right col-sm-3 col-form-label">ASIN:</label>
+							<label for="product-asin" class="text-sm-right col-sm-3 col-form-label">ASIN:</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" id="product-asin" readonly>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="product-name" class="text-nowrap text-right col-sm-3 col-form-label">Product Name:</label>
+							<label for="product-name" class="text-nowrap text-sm-right col-sm-3 col-form-label">Product Name:</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" id="product-name">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="product-map" class="text-right col-sm-3 col-form-label">MAP</label>
+							<label for="product-map" class="text-sm-right col-sm-3 col-form-label">MAP</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="product-map">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="map-currency">$</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Map" aria-describedby="map-currency" id="product-map">
+                </div>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="product-msrp" class="text-right col-sm-3 col-form-label">MSRP</label>
+							<label for="product-msrp" class="text-sm-right col-sm-3 col-form-label">MSRP</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="product-msrp">
+								<div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="msrp-currency">$</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="MSRP" aria-describedby="msrp-currency" id="product-msrp">
+                </div>
 							</div>
 						</div>
 					</form>
 				</div>
 				<div class="modal-footer px-4 pb-4">
-					<button type="button" class="btn btn-primary rounded-0">Update</button>
+					<button type="button" class="btn btn-primary rounded-0" data-dismiss="modal">Update</button>
 				</div>
 			</div>
 		</div>
