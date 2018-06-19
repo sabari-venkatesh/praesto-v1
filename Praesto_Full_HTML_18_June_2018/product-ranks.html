@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Ranks
+        </title>
+        <link href="css/index.css" rel="stylesheet"></head>
+    <body class="page-product_ranks">
+        <!-- Section: Header-->
+        <header class="header has-nav text-muted">
+            <div class="header-top container-fluid">
+                <div class="row no-gutters align-items-center mb-2">
+                    <div class="header-left col col-lg-8 col-xl-6">
+                        <div class="row align-items-center no-gutters"><a class="navbar-brand col-auto text-center" href="#"></a>
+                            <div class="form-row border-left col mb-0 ml-md-4 pl-2">
+                                <label class="d-none d-md-inline-block col-3 col-form-label" for="sales-marketplace">Market Place</label>
+                                <div class="col col-md-6">
+                                    <select class="custom-select form-control form-control-sm" id="sales-marketplace">
+                                        <option selected="">Choose Market Place</option>
+                                        <option value="2" selected>Amazon</option>
+                                        <option value="1">Best Buy</option>
+                                        <option value="2">Walmart</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right col-auto ml-auto">
+                        <div class="dropdown show text-right"><a class="btn text-muted dropdown-toggle d-inline-flex align-items-center rounded-0" id="user-menu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"><span class="d-none d-inline-md-block">James Walter</span><i class="rounded icon-user text-primary icon-md ml-2"></i></a>
+                            <div class="dropdown-menu" aria-labelledby="user-menu"><a class="dropdown-item" href="settings.html">My Profile</a><a class="dropdown-item" href="login.html">Log out</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav mb-2">
+                <!-- Section: Dashboard menu -->
+                <nav class="navbar navbar-expand navbar-secondary navbar-dark bg-dark py-0">
+                    <button class="d-xl-none btn navbar-toggle text-muted rounded-0"><i class="icon-menu icon-md"></i></button>
+                    <h3 class="text-white ml-2 mb-0 d-xl-none">Product Ranks</h3>
+                    <ul class="navbar-nav py-1 d-none d-xl-inline-flex">
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 active" href="product-ranks.html">Product Ranks</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+                        <li class="nav-item border-right"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+                        <li class="nav-item "><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Section: Search Filters  -->
+            <div class="container-fluid">
+                <div class="form-row align-items-center">
+                    <div class="col-md mb-2 mb-md-0">
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text px-2 px-md-4" id="search"><i class="icon-search icon-md text-primary"></i></span></div>
+                            <input class="form-control" id="myInput" type="text" placeholder="Search by ASIN, Part #, Model #, SKU" aria-label="Search" aria-describedby="search">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-auto mb-2 mb-md-0">
+                        <select class="custom-select form-control select-daterange rounded-0">
+                            <option value="Select Date Range">Select Date Range</option>
+                            <option value="Yesterday">Yesterday</option>
+                            <option value="Week-to-Date">Week-to-Date</option>
+                            <option value="Prior Week">Prior Week</option>
+                            <option value="Month to Date">Month to Date</option>
+                            <option value="Prior Month">Prior Month</option>
+                            <option value="Customized: Enter custom date range">Customized: Enter custom date range</option>
+                        </select>
+                    </div>
+                    <div class="col-9 col-md-auto mb-md-0 daterange d-none" id="daterange">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="input-group">
+                                    <input class="form-control input-date" data-date="" data-date-format="MM/DD/Y" type="text" placeholder="from date" id="daterange-from"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <input class="form-control input-date" data-date="" data-date-format="MM/DD/Y" type="text" placeholder="to date" id="daterange-to"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-md-auto mt-md-0">
+                        <button class="btn btn-primary rounded-0 w-100">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="overlay">       </div>
+        <!-- Section: Dashboard menu-->
+        <aside class="sidebar d-xl-none">
+            <nav class="navbar navbar-expand navbar-secondary navbar-dark navbar-vertical bg-dark">
+                <ul class="navbar-nav py-1 flex-column">
+                    <li class="nav-item"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 active" href="product-ranks.html">Product Ranks</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+                    <li class="nav-item"><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Section: Main content-->
+         <main class="content mt-2 container-fluid">
+            <div class="row align-items-center mb-2">
+              <div class="col">
+                <div class="row align-items-center">
+                  <h1 class="col-md-auto h4 mb-0">Product Ranks Overview</h1><small class="col-md-auto px-md-0 text-muted">(From 05/20/2018 To 05/26/2018)</small>
+                </div>
+              </div>
+              <div class="col-auto ml-auto"><a class="btn btn-sm btn-primary rounded-0 d-inline-flex align-items-center" href="download_files/product_rank.xlsx" role="button" title="Download" tabindex="1"><i class="icon-download icon-md mr-sm-2"></i><span class="d-none d-sm-block">Download	</span></a></div>
+            </div>
+            <div id="chart-product_ranks"></div>
+            <!-- Section: Product Ranking-->
+            <div class="mb-4">
+                <h4 class="mb-2">Product Ranking</h4>
+                <table class="table m-0" id="table-product_ranks" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center" rowspan="2"> <strong>Products</strong></th>
+                            <th class="text-center" colspan="5"><strong>Average</strong></th>
+                        </tr>
+                        <tr>
+                            <th class="text-center">Trailing 7 Days</th>
+                            <th class="text-center">Trailing 14 Days</th>
+                            <th class="text-center">Trailing 30 Days</th>
+                            <th class="text-center">Trailing 6 Months</th>
+                            <th class="text-center">Trailing 12 Months</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">B018E65WW2</td>
+                            <td class="text-center text-success">132274</td>
+                            <td class="text-center text-danger">52366</td>
+                            <td class="text-center text-danger">41712</td>
+                            <td class="text-center text-success">75382</td>
+                            <td class="text-center text-success">61423</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">B01BON4QAQ</td>
+                            <td class="text-center text-danger">110470</td>
+                            <td class="text-center text-success">169553</td>
+                            <td class="text-center text-danger">150734</td>
+                            <td class="text-center text-success">196243</td>
+                            <td class="text-center text-success">165389</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row mb-4">
+                <!-- Section: Top 20 Gainers - By Category - ASIN-->
+                <div class="col-xl-6 mb-4 mb-xl-0">
+                    <h4 class="mb-2">Top 20 Gainers</h4>
+                    <table class="table m-0" id="table-product_gainers" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center"> <strong>Category</strong></th>
+                                <th class="text-center"><strong>ASIN</strong></th>
+                                <th class="text-center"> <strong>Trailing 7 Days</strong></th>
+                                <th class="text-center"> <strong>Trailing 14 Days</strong></th>
+                                <th class="text-center"> <strong>Trailing 30 Days</strong></th>
+                                <th class="text-center"> <strong>Trailing 6 Months</strong></th>
+                                <th class="text-center"> <strong>Trailing 12 Months</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">HPC</td>
+                                <td class="text-center">B018E65WW2</td>
+                                <td class="text-center text-success">15</td>
+                                <td class="text-center text-danger">18</td>
+                                <td class="text-center text-danger">17</td>
+                                <td class="text-center text-success">25</td>
+                                <td class="text-center text-danger">30</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Deals</td>
+                                <td class="text-center">B01BON4QAQ</td>
+                                <td class="text-center text-danger">17</td>
+                                <td class="text-center text-danger">18</td>
+                                <td class="text-center text-danger">30</td>
+                                <td class="text-center text-success">15</td>
+                                <td class="text-center text-success">25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Section: Top 20 Losers - By Category - ASIN-->
+                <div class="col-xl-6">
+                    <h4 class="mb-2">Top 20 Losers</h4>
+                    <table class="table m-0" id="table-product_losers" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center"> <strong>Category</strong></th>
+                                <th class="text-center"><strong>ASIN</strong></th>
+                                <th class="text-center"> <strong>Trailing 7 Days</strong></th>
+                                <th class="text-center"> <strong>Trailing 14 Days</strong></th>
+                                <th class="text-center"> <strong>Trailing 30 Days</strong></th>
+                                <th class="text-center"> <strong>Trailing 6 Months</strong></th>
+                                <th class="text-center"> <strong>Trailing 12 Months</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">Deals</td>
+                                <td class="text-center">B018E65WW2</td>
+                                <td class="text-center text-success">15</td>
+                                <td class="text-center text-danger">18</td>
+                                <td class="text-center text-danger">17</td>
+                                <td class="text-center text-success">25</td>
+                                <td class="text-center text-danger">30</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">HPC</td>
+                                <td class="text-center">B01BON4QAQ</td>
+                                <td class="text-center text-danger">17</td>
+                                <td class="text-center text-danger">18</td>
+                                <td class="text-center text-danger">30</td>
+                                <td class="text-center text-success">15</td>
+                                <td class="text-center text-success">25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Section: Category Analysis-->
+            <div class="row mb-4">
+                <div class="col-auto">
+                    <h4 class="mb-2">Category Analysis</h4>
+                </div>
+                <div class="w-100 mb-2"></div>
+                <div class="col-sm-6"> 
+                    <table class="table m-0" id="table-product_category" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center"><strong>Category Name</strong></th>
+                                <th class="text-center"><strong>Number of Products</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">HPC</td>
+                                <td class="text-center">1</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Deals</td>
+                                <td class="text-center">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <div class="footer p-4 text-center text-muted" style="background: #e1e1e1">
+            <p class="mb-0">Copyrights 2018. Praesto. All Rights Reserved</p>
+        </div>
+        <script type="text/javascript" src="scripts/commons.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+	</body>
+</html>

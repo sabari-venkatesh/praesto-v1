@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews
+    </title>
+  <link href="css/index.css" rel="stylesheet"></head>
+  <body class="page-reviews">
+    <!-- Section: Header-->
+    <header class="header has-nav text-muted">
+      <div class="header-top container-fluid">
+        <div class="row no-gutters align-items-center mb-2">
+          <div class="header-left col col-lg-8 col-xl-6">
+            <div class="row align-items-center no-gutters"><a class="navbar-brand col-auto text-center" href="#"></a>
+              <div class="form-row border-left col mb-0 ml-md-4 pl-2">
+                <label class="d-none d-md-inline-block col-3 col-form-label" for="sales-marketplace">Market Place</label>
+                <div class="col col-md-6">
+                  <select class="custom-select form-control" id="sales-marketplace">
+                    <option selected="">Choose Market Place</option>
+                    <option value="2" selected>Amazon</option>
+                    <option value="1">Best Buy</option>
+                    <option value="2">Walmart</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-right col-auto ml-auto">
+            <div class="dropdown show text-right"><a class="btn text-muted dropdown-toggle d-inline-flex align-items-center rounded-0" id="user-menu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-none d-inline-md-block">James Walter</span><i class="rounded icon-user text-primary icon-md ml-2"></i></a>
+              <div class="dropdown-menu" aria-labelledby="user-menu"><a class="dropdown-item" href="settings.html">My Profile</a><a class="dropdown-item" href="login.html">Log out</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-nav mb-2">
+        <!-- Section: Dashboard menu -->
+        <nav class="navbar navbar-expand navbar-secondary navbar-dark bg-dark py-0">
+          <button class="d-xl-none btn navbar-toggle text-muted rounded-0"><i class="icon-menu icon-md"></i></button>
+          <h3 class="text-white ml-2 mb-0 d-xl-none">Reviews</h3>
+          <ul class="navbar-nav py-1 d-none d-xl-inline-flex">
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 active" href="reviews.html">Reviews</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+            <li class="nav-item "><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Section: Search Filters  -->
+      <div class="container-fluid">
+        <div class="form-row align-items-center">
+          <div class="col-md mb-2 mb-md-0">
+            <div class="input-group">
+              <div class="input-group-prepend"><span class="input-group-text px-2 px-md-4" id="search"><i class="icon-search icon-md text-primary"></i></span></div>
+              <input class="form-control" id="myInput" type="text" placeholder="Search by ASIN, Part #, Model #, SKU" aria-label="Search" aria-describedby="search">
+            </div>
+          </div>
+          <div class="col-12 col-md-auto mb-2 mb-md-0">
+            <select class="custom-select form-control select-daterange rounded-0">
+              <option value="Select Date Range">Select Date Range</option>
+              <option value="Yesterday">Yesterday</option>
+              <option value="Week-to-Date">Week-to-Date</option>
+              <option value="Prior Week">Prior Week</option>
+              <option value="Month to Date">Month to Date</option>
+              <option value="Prior Month">Prior Month</option>
+              <option value="Customized: Enter custom date range">Customized: Enter custom date range</option>
+            </select>
+          </div>
+          <div class="col-9 col-md-auto mb-md-0 daterange d-none" id="daterange">
+            <div class="form-row">
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" type="text" placeholder="from date" id="daterange-from" data-date-format="MM/DD/Y"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" type="text" placeholder="to date" id="daterange-to" data-date-format="MM/DD/Y"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 col-md-auto mt-md-0">
+            <button class="btn btn-primary rounded-0 w-100">Apply</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="overlay">       </div>
+    <!-- Section: Dashboard menu-->
+    <aside class="sidebar d-xl-none">
+      <nav class="navbar navbar-expand navbar-secondary navbar-dark navbar-vertical bg-dark">
+        <ul class="navbar-nav py-1 flex-column">
+          <li class="nav-item"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+          <li class="nav-item"><a class="nav-link py-0 active" href="reviews.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content mt-2 container-fluid">
+            <div class="row align-items-center mb-2">
+              <div class="col">
+                <div class="row align-items-center">
+                  <h1 class="col-md-auto h4 mb-0">Reviews Overview</h1><small class="col-md-auto px-md-0 text-muted">(From 05/20/2018 To 05/25/2018)</small>
+                </div>
+              </div>
+              <div class="col-auto ml-auto"><a class="btn btn-sm btn-primary rounded-0 d-inline-flex align-items-center" href="download_files/reviews.xlsx" role="button" title="Download" tabindex="1"><i class="icon-download icon-md mr-sm-2"></i><span class="d-none d-sm-block">Download	</span></a></div>
+            </div>
+      <div class="row border mb-4">
+        <div class="col-sm-12 col-md-4">
+          <div id="chart-reviews-pie"></div>
+        </div>
+        <div class="col-sm-12 col-md-8">
+          <div id="chart-reviews"></div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <h4 class="mb-2">Review Trends</h4>
+        <table class="table m-0" id="table-reviews_trends" style="width: 100%">
+          <thead>
+            <tr>
+              <th class="text-center" rowspan="2"> <strong>Products</strong></th>
+              <th class="text-center" rowspan="2"><strong>Total</strong></th>
+              <th class="text-center" colspan="2">
+                <div><strong>Past 7 Days</strong></div>
+              </th>
+              <th class="text-center" colspan="2">
+                <div><strong>Past 30 Days</strong></div>
+              </th>
+              <th class="text-center" colspan="2">
+                <div></div><strong>Past 90 Days</strong>
+              </th>
+            </tr>
+            <tr>
+              <th class="text-center">Count</th>
+              <th class="text-center">%</th>
+              <th class="text-center">Count</th>
+              <th class="text-center">%</th>
+              <th class="text-center">Count</th>
+              <th class="text-center">%</th>
+            </tr>
+            <tr class="total">
+              <th class="text-center">All Products</th>
+              <th class="text-center">80</th>
+              <th class="text-center">10</th>
+              <th class="text-center">5%</th>
+              <th class="text-center">18</th>
+              <th class="text-center">8%</th>
+              <th class="text-center">10</th>
+              <th class="text-center">10%    </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center text-highlight">B018E65WW2</td>
+              <td class="text-center">70</td>
+              <td class="text-center">14</td>
+              <td class="text-center">7%</td>
+              <td class="text-center text-success">13</td>
+              <td class="text-center">12%</td>
+              <td class="text-center text-danger">8</td>
+              <td class="text-center">8%</td>
+            </tr>
+            <tr>
+              <td class="text-center text-highlight">B01BON4QAQ</td>
+              <td class="text-center">35</td>
+              <td class="text-center">14</td>
+              <td class="text-center">7%</td>
+              <td class="text-center text-success">8</td>
+              <td class="text-center">12%</td>
+              <td class="text-center">8</td>
+              <td class="text-center">8%</td>
+            </tr>
+            <tr>
+              <td class="text-center text-highlight">B01NBHK5XX</td>
+              <td class="text-center">10</td>
+              <td class="text-center">16</td>
+              <td class="text-center">20%</td>
+              <td class="text-center text-danger">10</td>
+              <td class="text-center">2%</td>
+              <td class="text-center text-danger">8</td>
+              <td class="text-center">6%</td>
+            </tr>
+            <tr>
+              <td class="text-center text-highlight">B01EXS1NA0</td>
+              <td class="text-center">6</td>
+              <td class="text-center text-success">60</td>
+              <td class="text-center">8%</td>
+              <td class="text-center text-danger">25</td>
+              <td class="text-center">20%</td>
+              <td class="text-center">10</td>
+              <td class="text-center">10%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mb-4">
+        <h4 class="mb-2">Latest 6 reviews across Stars</h4>
+        <div class="row star-review justify-content-center">
+          <div class="col-sm-6 col-md-4">
+            <div class="review-content card">
+              <div class="card-header d-flex justify-content-md-between">
+                <h5 class="card-title mb-0">5 Star</h5>
+                <ul class="rating mb-0 p-0 d-inline-flex">
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                </ul>
+              </div>
+              <div class="card-body px-1 py-2">
+                <ul class="list-group">
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>The best caffeine free fat burner. </h6><small>By </small><a class="card-link" href="#">John Green </a><small>on July 25, 2016</small>
+                    <p>The results that I've gotten from Thermo Pure guarantee that caffeine is not needed in a fat burner. Actually, no stimulants are needed in this one at all and it still burns fat. One of the only ingredients that actually burns fat is forksollii and if you take 4 capsules a day, you're getting more than enough for pure fat loss. It also has 5-HTP which is great for reducing cravings and really crushing your appetite. The ingredients are good and there's no proprietary blend and it's made with vegetable capsules. I'm very happy with this purchase.</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>Basically like legal pain pills. </h6><small>By </small><a class="card-link" href="#"> Stephanie </a><small>on July 11, 2016</small>
+                    <p>PAIN-MD is a miracle! I've been using for awhile now and it works like nothing I've ever had before. It has a great all-natural blend of ingredients that help like you would not believe with my back & knee pain. When I run out of the product is when I notice just how much it was really helping me. As I continually take them, they seem to help even more so I try to run out but it has happened before. Each bottle comes with 90 pills and it lasts me about a month.</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>Great product at a fair price. Scosche product support was also very good. Helped me with a couple of installation questions. </h6><small>By </small><a class="card-link" href="#"> Shawn A. Lewis </a><small>on January 23, 2016</small>
+                    <p>Great product at a fair price. Scosche product support was also very good. Helped me with a couple of installation questions.</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>Still love it a year later. </h6><small>By </small><a class="card-link" href="#"> Robin </a><small>on March 11, 2018</small>
+                    <p>Good looking and perfect timing.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="review-content card">
+              <div class="card-header d-flex justify-content-md-between">
+                <h5 class="card-title mb-0">4 Star</h5>
+                <ul class="rating mb-0 p-0 d-inline-flex">
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                </ul>
+              </div>
+              <div class="card-body px-1 py-2">
+                <ul class="list-group">
+                  <li class="ml-1 list-group-item border"> 
+                    <h6> Suppresses appetite. </h6><small>By </small><a class="card-link" href="#"> MM3 </a><small>on April 28, 2016</small>
+                    <p>This is a one month supply of goodness. It does not contain a whole lot of ingredients, and you can easily look what's there and search up every one of them to ensure that what you're consuming is actually safe for you. I did some brief researching and it seemed safe to use. I passed this along to a relative who would make use of it and followed up with him a week later. He told me that the Thermo Pure fat burner has helped suppress his hunger or cravings and he has been eating less. That alone tells me that he is in the right direction towards slimming down. I asked him if there were any side effects that he's noticed, and he basically told me no.</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>Good medicine I would like to bye more. </h6><small>By </small><a class="card-link" href="#"> Doan phan </a><small>on June 4, 2016</small>
+                    <p>Good medicine I would like to bye more. Thanks</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>starsWorks for 2012 Malibu. </h6><small>By </small><a class="card-link" href="#"> Brett B </a><small>on January 23, 2017</small>
+                    <p>Worked great in wifes 2012 Malibu HU upgrade. Everything was there that was needed and a solid install kit</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>Good support. </h6><small>By </small><a class="card-link" href="#"> W &amp; R </a><small>on April 2, 2018</small>
+                    <p>Bought these at BJ's the other day. As for comfort, they are great. BUT, each pillow has a piece inside of it, about 2" square, that is extremely crinkly and crunchy! I can't figure out exactly what it is... Very weird. As long as the crinkle piece is on the bottom, it doesn't pose a problem. Will keep them, as not worth the hassle of exchanging at BJ's.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="review-content card">
+              <div class="card-header d-flex justify-content-md-between">
+                <h5 class="card-title mb-0">3 Star</h5>
+                <ul class="rating mb-0 p-0 d-inline-flex">
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                </ul>
+              </div>
+              <div class="card-body px-1 py-2">
+                <ul class="list-group">
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>Thanks. </h6><small>By </small><a class="card-link" href="#"> Kenneth G </a><small>on August 17, 2016 </small>
+                    <p>Threw away after I saw a capsule that outside looked dirty. Until then they seemed good.</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>Three Stars. </h6><small>By </small><a class="card-link" href="#"> Joseph B </a><small>on October 17, 2016</small>
+                    <p>work like most supplements benefits not realized until taken daily.</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>This one fit into the vehicle nicely, but there was a gap left around the. </h6><small>By </small><a class="card-link" href="#"> Travis Hartman </a><small>on July 4, 2017</small>
+                    <p>Scosche is usually my go to brand for dash kits. This one fit into the vehicle nicely, but there was a gap left around the radio. Only giving it 3 Stars because I had to make some slight modifications to eliminate the gap. Other than that it was an easy install and I will probably buy more scosche products in the future.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="review-content card">
+              <div class="card-header d-flex justify-content-md-between">
+                <h5 class="card-title mb-0">2 Star</h5>
+                <ul class="rating mb-0 p-0 d-inline-flex">
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                </ul>
+              </div>
+              <div class="card-body px-1 py-2">
+                <ul class="list-group">
+                  <li class="ml-1 list-group-item border"> 
+                    <h6> Two Stars. </h6><small>By </small><a class="card-link" href="#">Amazon Customer </a><small> on March 28, 2016 </small>
+                    <p>doesn't seem to be doing anything.</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6> Two Stars. </h6><small>By </small><a class="card-link" href="#"> CKH </a><small>on May 28, 2016</small>
+                    <p> Gave me a headache and nausea. I may be allergic to one of the ingredients. </p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6> Package is not whats listed. </h6><small>By </small><a class="card-link" href="#"> Jon </a><small> on May 14, 2018 </small>
+                    <p> Mounting kit is half decent, but must be forced all the way right to clear the dash trim. Harnesses were ALL wrong, antenna adapter wrong. Listing clearly states through 2016, package on the product states in Bold UP TO 2011. Not sure where they got 2016 from. But it's wrong. Thus, none worked on my 2012. Save your money, buy the correct LAN kit from car toys, or similar </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="review-content card">
+              <div class="card-header d-flex justify-content-md-between">
+                <h5 class="card-title mb-0">1 Star</h5>
+                <ul class="rating mb-0 p-0 d-inline-flex">
+                  <li class="ml-1"><i class="icon-star icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                  <li class="ml-1"><i class="icon-star-o icon-md"></i></li>
+                </ul>
+              </div>
+              <div class="card-body px-1 py-2">
+                <ul class="list-group">
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>almost pin and needle like. </h6><small>By </small><a class="card-link" href="#"> Amazon Customer </a><small>on September 20, 2016</small>
+                    <p>Not very impressed by this product, been taking it every day as described and only noticed sharp off paints around my body, almost pin and needle like.</p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6> does not work may stop buying thing form AMAZON reason. </h6><small>By </small><a class="card-link" href="#"> Thomas S Shelefka </a><small>on July 12, 2016 </small>
+                    <p> does not work may stop buying thing form AMAZON reason this product not work money doun drain. </p>
+                  </li>
+                  <li class="ml-1 list-group-item border"> 
+                    <h6>I hate this pillow and am disappointed that I missed returning ... </h6><small>By </small><a class="card-link" href="#"> Tyra Smith </a><small>on March 8, 2018 </small>
+                    <p> I hate this pillow and am disappointed that I missed returning it by one day. It is not thick enough. The cooling cover is the best thing about it. </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4 align-items-center">
+        <div class="col-auto">
+          <h4 class="mb-0">Review Trends</h4>
+        </div>
+        <div class="col-auto">
+          <label class="toggle has-text d-block text-right">
+            <input type="checkbox" checked><span class="handle" data-on="Trailing 6 Weeks" data-off="Trailing 6 Months"></span>
+          </label>
+        </div>
+        <div class="w-100 mb-4"></div>
+        <div class="col-12">
+          <table class="table m-0" id="table-reviews_weeks" style="width: 100%">
+            <thead>
+              <tr>
+                <th class="text-center" rowspan="2"><strong>Products</strong></th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 1 2018</strong></div><small>08-Apr - 14 Apr</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 2 2018</strong></div><small>15-Apr - 21 Apr</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 3 2018</strong></div><small>22-Apr - 28 Apr</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 4 2018</strong></div><small>29-Apr - 05 May</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 5 2018</strong></div><small>06-May - 12 May</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Week 6 2018</strong></div><small>13-May - 19 May</small>
+                </th>
+                <th class="text-center" colspan="2">
+                  <div><strong>Current Week</strong></div><small>20-May - 26 May</small>
+                </th>
+              </tr>
+              <tr>
+                <th class="text-right">Average Ratings</th>
+                <th class="text-center">Deleted</th>
+                <th class="text-right">Average Ratings</th>
+                <th class="text-center">Deleted</th>
+                <th class="text-right">Average Ratings</th>
+                <th class="text-center">Deleted</th>
+                <th class="text-right">Average Ratings</th>
+                <th class="text-center">Deleted</th>
+                <th class="text-right">Average Ratings</th>
+                <th class="text-center">Deleted</th>
+                <th class="text-right">Average Ratings</th>
+                <th class="text-center">Deleted</th>
+                <th class="text-right">Average Ratings</th>
+                <th class="text-center">Deleted</th>
+              </tr>
+              <tr class="total">
+                <th class="text-center">All Products</th>
+                <th class="text-right">899
+                </th>
+                <th class="text-center">958</th>
+                <th class="text-right">313</th>
+                <th class="text-center">352</th>
+                <th class="text-right">370</th>
+                <th class="text-center">77</th>
+                <th class="text-right">428</th>
+                <th class="text-center">285</th>
+                <th class="text-right">581</th>
+                <th class="text-center">659</th>
+                <th class="text-right">995</th>
+                <th class="text-center">305</th>
+                <th class="text-right">252</th>
+                <th class="text-center">302</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center text-highlight">B018E65WW2</td>
+                <td class="text-right">811
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">87</td>
+                <td class="text-right">798
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">38</td>
+                <td class="text-right">601
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">76</td>
+                <td class="text-right">169
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">460</td>
+                <td class="text-right">549
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">860</td>
+                <td class="text-right">399
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">63</td>
+                <td class="text-right">445
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">28</td>
+              </tr>
+              <tr>
+                <td class="text-center text-highlight">B01BON4QAQ</td>
+                <td class="text-right">760
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">64</td>
+                <td class="text-right">898
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">53</td>
+                <td class="text-right">524
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">98</td>
+                <td class="text-right">534
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">554</td>
+                <td class="text-right">850
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">510</td>
+                <td class="text-right">190
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">10</td>
+                <td class="text-right">216
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">42</td>
+              </tr>
+              <tr>
+                <td class="text-center text-highlight">B01EXS1NA0</td>
+                <td class="text-right">992
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">51</td>
+                <td class="text-right">177
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">6</td>
+                <td class="text-right">263
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">64</td>
+                <td class="text-right">998
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">197</td>
+                <td class="text-right">220
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">186</td>
+                <td class="text-right">545
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">63</td>
+                <td class="text-right">682
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">65</td>
+              </tr>
+              <tr>
+                <td class="text-center text-highlight">B018E65WW10</td>
+                <td class="text-right">121
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">20</td>
+                <td class="text-right">698
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">91</td>
+                <td class="text-right">357
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">38</td>
+                <td class="text-right">902
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">898</td>
+                <td class="text-right">464
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">303</td>
+                <td class="text-right">433
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">9</td>
+                <td class="text-right">715
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">62</td>
+              </tr>
+              
+              <tr>
+                <td class="text-center text-highlight">B018E65WW10</td>
+                <td class="text-right">741
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">13</td>
+                <td class="text-right">142
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">11</td>
+                <td class="text-right">269
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">81</td>
+                <td class="text-right">21
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">6</td>
+                <td class="text-right">486
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">326</td>
+                <td class="text-right">281
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">81</td>
+                <td class="text-right">585
+                  <button class="btn btn-sm btn-link p-0" role="button" tabindex="0" data-toggle="popover"><i class="icon-info"></i></button>
+                </td>
+                <td class="text-center">33</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+<div class="footer p-4 text-center text-muted" style="background: #e1e1e1">
+  <p class="mb-0">Copyrights 2018. Praesto. All Rights Reserved</p>
+</div>
+  <script type="text/javascript" src="scripts/commons.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+  </body>
+</html>

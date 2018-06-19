@@ -16,7 +16,7 @@ let extractStyles = new ExtractTextPlugin({
 const config = {
 	stats: 'errors-only',
 	context: path.resolve(__dirname, 'src'),
-	devtool: 'source-map',
+	//devtool: 'source-map',
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),
 		compress: true,

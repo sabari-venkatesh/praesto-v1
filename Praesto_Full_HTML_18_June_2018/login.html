@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Praesto - Login</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="d-flex align-items-center page-login">
+  <div class="container panel-login">
+    <div class="row">
+      <div class="col-md-6 offset-md-6 d-flex align-items-center justify-content-center py-5">
+        <div class="form-login mx-auto w-75">
+          <img src="images/logo_praesto.png" alt="Praesto" class="mb-5 d-block mx-auto">
+          <form class="w-75 mx-auto">
+              <span style="color: red;display:none;" id="error"></span><br>
+            <div class="input-group mb-5">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="username">
+                    <i class="icon-user text-primary"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="username" id="usern">
+            </div>
+            <div class="input-group mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="password">
+                    <i class="icon-lock-closed text-primary"></i>
+                </span>
+              </div>
+
+              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password"  id="passw">
+            </div>
+            <label class="toggle d-block text-right">
+              <input type="checkbox">
+              <span class="handle"></span>
+              Remember me
+            </label>
+              <a href="overview.html" role="button" class="btn btn-primary mx-auto d-block w-50 my-4">LOGIN</a>
+<!--            <input type="submit" role="button" class="btn btn-primary mx-auto d-block w-50 my-4" onclick="return FormValidation();" value="LOGIN">-->
+
+
+            <a href="forgot-password.html" class="d-block text-center text-dark">Forgot Password?</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script type="text/javascript">
+        function FormValidation() {
+            var errorusername = 0;
+            var errorpassword = 0;
+            var username = document.getElementById("usern").value;
+            var password = document.getElementById("passw").value;
+                if (username == '') {
+                    errorusername = 1; 
+                    
+                }
+                if (password == '') {
+                    errorpassword = 1; 
+                }
+                if(errorusername == 1 && errorpassword == 1){
+                    document.getElementById("error").style.display='block';
+                    document.getElementById("error").innerHTML  ='Please enter username and password';
+                    return false;
+                }else if(errorusername == 1 && errorpassword == 0){
+                    document.getElementById("error").style.display='block';
+                   document.getElementById("error").innerHTML  ='Please enter username'; 
+                   return false;
+                }else if(errorusername == 0 && errorpassword == 1){
+                    document.getElementById("error").style.display='block';
+                   document.getElementById("error").innerHTML  ='Please enter password'; 
+                   return false;
+                }else if(errorusername == 0 && errorpassword == 0){
+                    document.getElementById("error").style.display='none';
+                    return true;
+                }else{
+                    document.getElementById("error").style.display='none';
+                    return true;
+                }
+            }
+        </script>
+</body>
+
+</html>

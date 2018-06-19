@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertising
+    </title>
+  <link href="css/index.css" rel="stylesheet"></head>
+  <body class="page-advertising">
+    <!-- Section: Header-->
+    <header class="header has-nav text-muted pb-0">
+      <div class="header-top container-fluid">
+        <div class="row no-gutters align-items-center mb-2 mb-0">
+          <div class="header-left col col-lg-8 col-xl-6">
+            <div class="row align-items-center no-gutters"><a class="navbar-brand col-auto text-center" href="#"></a>
+              <div class="form-row border-left col mb-0 ml-md-4 pl-2">
+                <label class="d-none d-md-inline-block col-3 col-form-label" for="sales-marketplace">Market Place</label>
+                <div class="col col-md-6">
+                  <select class="custom-select form-control" id="sales-marketplace">
+                    <option selected="">Choose Market Place</option>
+                    <option value="2">Amazon</option>
+                    <option value="1">Best Buy</option>
+                    <option value="2">Walmart</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-right col-auto ml-auto">
+            <div class="dropdown show text-right"><a class="btn text-muted dropdown-toggle d-inline-flex align-items-center rounded-0" id="user-menu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-none d-inline-md-block">James Walter</span><i class="rounded icon-user text-primary icon-md ml-2"></i></a>
+              <div class="dropdown-menu" aria-labelledby="user-menu"><a class="dropdown-item" href="settings.html">My Profile</a><a class="dropdown-item" href="login.html">Log out</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-nav mb-2">
+        <!-- Section: Dashboard menu -->
+        <nav class="navbar navbar-expand navbar-secondary navbar-dark bg-dark py-0">
+          <button class="d-xl-none btn navbar-toggle text-muted rounded-0"><i class="icon-menu icon-md"></i></button>
+          <h3 class="text-white ml-2 mb-0 d-xl-none">Advertising</h3>
+          <ul class="navbar-nav py-1 d-none d-xl-inline-flex">
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 active" href="advertising.html">Advertising</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+            <li class="nav-item "><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Section: Search Filters-->
+      <div class="container-fluid">
+        <div class="form-row align-items-center">
+          <div class="col-md mb-2 mb-md-0">
+            <div class="input-group">
+              <div class="input-group-prepend"><span class="input-group-text px-2 px-md-4" id="search"><i class="icon-search icon-md text-primary"></i></span></div>
+              <input class="form-control" id="myInput" type="text" placeholder="Search by ASIN, Part #, Model #, SKU" aria-label="Search" aria-describedby="search">
+            </div>
+          </div>
+          <div class="col-12 col-md-auto mb-2 mb-md-0">
+            <select class="custom-select form-control select-daterange rounded-0">
+              <option value="Select Date Range">Select Date Range</option>
+              <option value="Yesterday">Yesterday</option>
+              <option value="Week-to-Date">Week-to-Date</option>
+              <option value="Prior Week">Prior Week</option>
+              <option value="Month to Date">Month to Date</option>
+              <option value="Prior Month">Prior Month</option>
+              <option value="Customized: Enter custom date range">Customized: Enter custom date range</option>
+            </select>
+          </div>
+          <div class="col-9 col-md-auto mb-md-0 daterange d-none" id="daterange">
+            <div class="form-row">
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" type="text" placeholder="from date" id="daterange-from" data-date-format="MM/DD/Y"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" type="text" placeholder="to date" id="daterange-to" data-date-format="MM/DD/Y"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 col-md-auto mt-md-0">
+            <button class="btn btn-primary rounded-0 w-100">Apply</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="overlay">       </div>
+    <!-- Section: Dashboard menu-->
+    <aside class="sidebar d-xl-none">
+      <nav class="navbar navbar-expand navbar-secondary navbar-dark navbar-vertical bg-dark">
+        <ul class="navbar-nav py-1 flex-column">
+          <li class="nav-item"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+          <li class="nav-item"><a class="nav-link py-0 active" href="advertising.html">Advertising</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content mt-2 container-fluid">
+            <div class="row align-items-center mb-2">
+              <div class="col">
+                <div class="row align-items-center">
+                  <h1 class="col-md-auto h4 mb-0">Advertising Overview</h1><small class="col-md-auto px-md-0 text-muted">(From 05/20/2018 To 05/25/2018)</small>
+                </div>
+              </div>
+              <div class="col-auto ml-auto"><a class="ml-3 btn btn-sm btn-primary rounded-0 d-inline-flex align-items-center" href="download_files/advertising.xslx" role="button" title="Download" tabindex="1"><i class="icon-download icon-md mr-sm-2"></i><span class="d-none d-sm-block">Download</span></a>
+              </div>
+            </div>
+      <div class="row">
+        <div class="col-12">
+          <ul class="nav nav-tabs" id="tab-sales_trends" role="tablist">
+            <li class="nav-item text-uppercase"><a class="nav-link active" id="tab-products" data-toggle="tab" href="#tab-products-body" role="tab" aria-controls="products" aria-selected="true">AMS Advertising</a></li>
+            <li class="nav-item text-uppercase"><a class="nav-link" id="tab-customer" data-toggle="tab" href="#tab-customer-body" role="tab" aria-controls="customers" aria-selected="false">AAP Advertising</a></li>
+          </ul>
+          <div class="tab-content border" id="tab-sales_trends-body">
+            <!-- Section: Products tab-->
+            <div class="container-fluid tab-pane fade show active" id="tab-products-body" role="tabpanel" aria-labelledby="tab-products-body">
+              <div class="row py-4">
+                <div class="col-md-4 col-lg-2">
+                  <select class="custom-select form-control form-control-sm" id="adv-ams-select">
+                    <option value="1">Sponsored Products</option>
+                    <option value="2">Headline Search</option>
+                    <option value="3">Product Display</option>
+                  </select>
+                  <ul class="chart-info-list row">
+                    <li class="info-sales col-6 col-sm-4 col-md-12"><small class="text-muted">Sales</small>
+                      <h4 class="mb-0">$60,155</h4>
+                    </li>
+                    <li class="info-impressions col-6 col-sm-4 col-md-12"><small class="text-muted">Impressions</small>
+                      <h4 class="mb-0">$12,00,155</h4>
+                    </li>
+                    <li class="info-clicks col-6 col-sm-4 col-md-12"><small class="text-muted">Clicks</small>
+                      <h4 class="mb-0">$20,11,255</h4>
+                    </li>
+                    <li class="info-cpc col-6 col-sm-4 col-md-12"><small class="text-muted">CPC</small>
+                      <h4 class="mb-0">$600,10,25</h4>
+                    </li>
+                    <li class="info-acos col-6 col-sm-4 col-md-12"><small class="text-muted">ACOS</small>
+                      <h4 class="mb-0">$600,155</h4>
+                    </li>
+                    <li class="info-live col-6 col-sm-4 col-md-12"><small class="text-muted">Live Campaigns</small>
+                      <h4 class="mb-0">$50,10,055</h4>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-8 col-lg-10">
+                  <div class="chart-advertising-1" id="chart-advertising1"></div>
+                  <div class="chart-advertising-2" id="chart-advertising2" style="display: none;"></div>
+                  <div class="chart-advertising-3" id="chart-advertising3" style="display: none;"></div>
+                </div>
+              </div>
+              <!-- Section:  Performing Keywords-->
+              <div class="row">
+                <div class="col-auto">
+                  <h2 class="h4 mb-0">Top 20 Performing Keywords</h2><small class="text-muted">By Ad Type</small>
+                </div>
+                <div class="w-100 mb-4"></div>
+                <div class="col-12">
+                  <table class="table m-0 border-0" id="table-performing_keywords" style="width: 100%">
+                    <thead>
+                      <tr>
+                        <th class="text-left" rowspan="2"> <strong>Keywords</strong></th>
+                        <th colspan="5"><strong>Sponsored Products</strong></th>
+                        <th colspan="5"><strong>Headline Search</strong></th>
+                        <th colspan="5"><strong>Product Display</strong></th>
+                      </tr>
+                      <tr>
+                        <th>Impressions</th>
+                        <th>Clicks</th>
+                        <th class="cell-amount">CPC</th>
+                        <th>Sales</th>
+                        <th>ACOS</th>
+                        <th>Impressions</th>
+                        <th>Clicks</th>
+                        <th class="cell-amount">CPC</th>
+                        <th>Sales</th>
+                        <th>ACOS</th>
+                        <th>Impressions</th>
+                        <th>Clicks</th>
+                        <th class="cell-amount">CPC</th>
+                        <th>Sales</th>
+                        <th>ACOS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-nowrap text-left">tape quiet</td>
+                        <td>545</td>
+                        <td>3</td>
+                        <td class="cell-amount">$0.53</td>
+                        <td class="cell-amount">$20.65</td>
+                        <td>7.6998%</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td class="cell-amount">$0.57</td>
+                        <td class="cell-amount">$20.65</td>
+                        <td>2.7603%</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td class="cell-amount">$0.57</td>
+                        <td class="cell-amount">$20.65</td>
+                        <td>2.7603%</td>
+                      </tr>
+                      <tr>
+                        <td class="text-nowrap text-left">automotive masking tape</td>
+                        <td>440</td>
+                        <td>3</td>
+                        <td class="cell-amount">$0.24</td>
+                        <td class="cell-amount">$16.65</td>
+                        <td>4.521%</td>
+                        <td>83</td>
+                        <td>1</td>
+                        <td class="cell-amount">$0.56</td>
+                        <td class="cell-amount">$10.65</td>
+                        <td>1.1813%</td>
+                        <td>84</td>
+                        <td>2</td>
+                        <td class="cell-amount">$0.09</td>
+                        <td class="cell-amount">$14.58</td>
+                        <td>0.8205%</td>
+                      </tr>
+                      <tr>
+                        <td class="text-nowrap text-left">car insulation</td>
+                        <td>25</td>
+                        <td>1</td>
+                        <td class="cell-amount">$0.15</td>
+                        <td class="cell-amount">$9.65</td>
+                        <td>1.521%</td>
+                        <td>43</td>
+                        <td>1</td>
+                        <td class="cell-amount">$0.36</td>
+                        <td class="cell-amount">$5.65</td>
+                        <td>0.1128%</td>
+                        <td>549</td>
+                        <td>3</td>
+                        <td class="cell-amount">$0.46</td>
+                        <td class="cell-amount">$10.58</td>
+                        <td>0.4205%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- Section:  Performing Products-->
+              <div class="w-100 mb-4"></div>
+              <div class="row">
+                <div class="col-auto">
+                  <h2 class="h4 mb-0">Top 20 Performing Products</h2><small class="text-muted">By Product Advertised</small>
+                </div>
+                <div class="w-100 mb-4"></div>
+                <div class="col-12">
+                  <table class="table m-0 border-0" id="table-performing_products">
+                    <thead>
+                      <tr>
+                        <th class="text-left" rowspan="2"> <strong>Products</strong></th>
+                        <th colspan="5"><strong>Sponsored Products</strong></th>
+                        <th colspan="5"><strong>Headline Search</strong></th>
+                        <th colspan="5"><strong>Product Display</strong></th>
+                      </tr>
+                      <tr>
+                        <th>Impressions</th>
+                        <th>Clicks</th>
+                        <th class="cell-amount">CPC</th>
+                        <th class="cell-amount">Sales</th>
+                        <th>ACOS</th>
+                        <th>Impressions</th>
+                        <th>Clicks</th>
+                        <th class="cell-amount">CPC</th>
+                        <th class="cell-amount">Sales</th>
+                        <th>ACOS</th>
+                        <th>Impressions</th>
+                        <th>Clicks</th>
+                        <th class="cell-amount">CPC</th>
+                        <th class="cell-amount">Sales</th>
+                        <th>ACOS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-left">HushMat 10200 Ultra Black Foil Door Kit with Damping Pad - 10 Piece</td>
+                        <td>45,709</td>
+                        <td>510</td>
+                        <td class="cell-amount">$0.34</td>
+                        <td class="cell-amount">$3,127.03</td>
+                        <td>5.51%</td>
+                        <td>87</td>
+                        <td>1</td>
+                        <td class="cell-amount">$1.63</td>
+                        <td class="cell-amount">$23.85</td>
+                        <td>3.2675%</td>
+                        <td>628</td>
+                        <td>3</td>
+                        <td class="cell-amount">$0.46</td>
+                        <td class="cell-amount">$23.52</td>
+                        <td>4.7603%</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left">HushMat HSM30300 1&quot; x 20&apos; Quiet Tape Shop Roll</td>
+                        <td>115,595</td>
+                        <td>346</td>
+                        <td class="cell-amount">$0.55</td>
+                        <td class="cell-amount">$416.59</td>
+                        <td>45.67%</td>
+                        <td>68</td>
+                        <td>1</td>
+                        <td class="cell-amount">$0.85</td>
+                        <td class="cell-amount">$18.85</td>
+                        <td>2.5481%</td>
+                        <td>514</td>
+                        <td>2</td>
+                        <td class="cell-amount">$0.51</td>
+                        <td class="cell-amount">$18.52</td>
+                        <td>3.8762%</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left">HushMat 10400 Ultra Black Foil Floor Kit with Damping Pad - 20 Piece</td>
+                        <td>5,470</td>
+                        <td>57</td>
+                        <td class="cell-amount">$0.42</td>
+                        <td class="cell-amount">$544.21</td>
+                        <td>4.36%</td>
+                        <td>41</td>
+                        <td>1</td>
+                        <td class="cell-amount">$0.36</td>
+                        <td class="cell-amount">$13.52</td>
+                        <td>1.8562%</td>
+                        <td>246</td>
+                        <td>1</td>
+                        <td class="cell-amount">$0.41</td>
+                        <td class="cell-amount">$11.52</td>
+                        <td>1.0236%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Section: Customers tab  -->
+            <div class="container-fluid tab-pane fade" id="tab-customer-body" role="tabpanel" aria-labelledby="tab-customer-body">
+              <div class="row py-4">
+                <div class="col-12">
+                  <div class="card border rounded-0">
+                    <div class="card-header rounded-0 d-flex justify-content-between bg-white px-2 py-4 border-bottom">
+                      <h2 class="h4 mb-0">Advertiser: Old school Labs</h2>
+                    </div>
+                    <div class="card-body text-center p-2">
+                      <div class="form-row text-muted text-nowrap justify-content-center">
+                        <div class="col-3 col-md text-primary border-right mb-2 mb-md-0">
+                          <h5 class="mb-0">5</h5><small>Orders</small>
+                        </div>
+                        <div class="col-3 col-md border-right mb-2 mb-md-0">
+                          <h5 class="mb-0">136</h5><small>Line items</small>
+                        </div>
+                        <div class="col-3 col-md border-right mb-2 mb-md-0">
+                          <h5 class="mb-0">392</h5><small>Creatives</small>
+                        </div>
+                        <div class="col-3 col-md border-right mb-2 mb-md-0">
+                          <h5 class="mb-0">$242,051.30</h5><small>Total cost</small>
+                        </div>
+                        <div class="col-3 col-md border-right mb-2 mb-md-0">
+                          <h5 class="mb-0">18,626</h5><small>Click-throughs</small>
+                        </div>
+                        <div class="col-3 col-md mb-2 mb-md-0">
+                          <h5 class="mb-0">0.0628%</h5><small>Average CTR</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-12">
+                  <div class="btn-group" role="group" aria-label="Sales to Customers Chart">
+                    <button class="btn rounded-0" type="button">Overview</button>
+                    <button class="btn rounded-0" type="button">Order</button>
+                    <button class="btn rounded-0" type="button">Line item</button>
+                    <button class="btn rounded-0" type="button">Creative</button>
+                    <button class="btn rounded-0" type="button">Site  </button>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-4 col-lg-2">
+                  <ul class="chart-info-list row">
+                    <li class="info-sales col-6 col-sm-4 col-md-12"><small class="text-muted">Total Cost</small>
+                      <h4 class="mb-0">$60,729.69</h4><small class="text-muted">Total</small>
+                    </li>
+                    <li class="info-cpc col-6 col-sm-4 col-md-12"><small class="text-muted">CTR</small>
+                      <h4 class="mb-0">0.0477%</h4><small class="text-muted">Total</small>
+                    </li>
+                    <li class="info-clicks col-6 col-sm-4 col-md-12"><small class="text-muted">Impressions</small>
+                      <h4 class="mb-0">$20,11,255</h4><small class="text-muted">Total</small>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-8 col-lg-10">
+                  <div class="p-4">
+                    <div id="chart-aap-advertising"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <table class="table m-0 border-0 table-linenowrap" id="table-aap_performance" style="width: 100%">
+                    <thead>
+                      <tr>
+                        <th class="text-left"><strong>Interval</strong></th>
+                        <th class="text-left"><strong>Order</strong></th>
+                        <th class="cell-amount"><strong>Agency fee</strong></th>
+                        <th class="cell-amount"><strong>Total cost</strong></th>
+                        <th><strong>Impression</strong></th>
+                        <th class="cell-amount"><strong>eCPM</strong></th>
+                        <th><strong>Cumulative reach</strong></th>
+                        <th><strong>Click throughs</strong></th>
+                        <th><strong>CTR</strong></th>
+                        <th><strong>DPV</strong></th>
+                        <th><strong>DPVR</strong></th>
+                        <th><strong>ATC</strong></th>
+                        <th><strong>ATCR</strong></th>
+                        <th><strong>SnSS</strong></th>
+                        <th><strong>SnSSR</strong></th>
+                        <th><strong>Total units sold</strong></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-left"> </td>
+                        <td class="text-left"> </td>
+                        <td class="cell-amount">$9,109.45</td>
+                        <td class="cell-amount">$60,729.69</td>
+                        <td>11,021,504</td>
+                        <td class="cell-amount">$5.51</td>
+                        <td>-</td>
+                        <td>5.256</td>
+                        <td>0.0477%</td>
+                        <td>19.134</td>
+                        <td>0.1736%</td>
+                        <td>3.547</td>
+                        <td>0.0322%</td>
+                        <td>61</td>
+                        <td>0.006%</td>
+                        <td>2.218</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left date-column">Apr 1 2018 - Apr-24 2018</td>
+                        <td class="text-left date-column">OSL_Apr_2018<small class="text-muted">ID: 481067330701</small></td>
+                        <td class="cell-amount">$9,109.45</td>
+                        <td class="cell-amount">$60,729.69</td>
+                        <td>11,021,504</td>
+                        <td class="cell-amount">$5.51</td>
+                        <td>-</td>
+                        <td>5.256</td>
+                        <td>0.0477%</td>
+                        <td>19.134</td>
+                        <td>0.1736%</td>
+                        <td>3.547</td>
+                        <td>0.0322%</td>
+                        <td>61</td>
+                        <td>0.006%</td>
+                        <td>2.218</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left"> </td>
+                        <td class="text-left"> </td>
+                        <td class="cell-amount">$9,109.45</td>
+                        <td class="cell-amount">$60,729.69</td>
+                        <td>11,021,504</td>
+                        <td class="cell-amount">$5.51</td>
+                        <td>-</td>
+                        <td>5.256</td>
+                        <td>0.0477%</td>
+                        <td>19.134</td>
+                        <td>0.1736%</td>
+                        <td>3.547</td>
+                        <td>0.0322%</td>
+                        <td>61</td>
+                        <td>0.006%</td>
+                        <td>2.218 </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--Section:  Brand Store Metrics-->
+              <div class="w-100 mb-4"></div>
+              <div class="row mb-4">
+                <div class="col-auto">
+                  <h2 class="h4 mb-0">Top 20 Performing Products</h2><small class="text-muted">Audience Insights</small>
+                </div>
+                <div class="w-100 mb-4"></div>
+                <div class="col-md-6">
+                  <h3 class="h5">Top Targeted Segments</h3>
+                  <table class="table m-0 border-0 table-linenowrap" id="table-performing_target" style="width: 100%">
+                    <thead>
+                      <tr>
+                        <th class="text-left"><strong>Segment Name</strong></th>
+                        <th><strong>Impressions</strong></th>
+                        <th class="cell-amount"><strong>Purchase Rate</strong></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-left">Hushmat</td>
+                        <td>50,000</td>
+                        <td class="cell-amount">$4000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-md-6">
+                  <h3 class="h5">Top Un-Targeted Segments</h3>
+                  <table class="table m-0 border-0 table-linenowrap" id="table-performing_untarget" style="width: 100%">
+                    <thead>
+                      <tr>
+                        <th class="text-left"><strong>Segment Name</strong></th>
+                        <th><strong>Impressions</strong></th>
+                        <th class="cell-amount"><strong>Purchase Rate</strong></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-left">THERMO PURE</td>
+                        <td>20,000</td>
+                        <td class="cell-amount">$1500</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+<div class="footer p-4 text-center text-muted" style="background: #e1e1e1">
+  <p class="mb-0">Copyrights 2018. Praesto. All Rights Reserved</p>
+</div>
+  <script type="text/javascript" src="scripts/commons.js"></script><script type="text/javascript" src="scripts/app.js"></script></body>
+</html>

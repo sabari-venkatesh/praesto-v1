@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Products
+	</title>
+	<link href="css/index.css" rel="stylesheet">
+</head>
+
+<body class="page-myprofile">
+	<!-- Section: Header-->
+	<header class="header has-nav text-muted">
+		<div class="header-top container-fluid">
+			<div class="row no-gutters align-items-center mb-2">
+				<div class="header-left col col-lg-8 col-xl-6">
+					<div class="row align-items-center no-gutters"><a class="navbar-brand col-auto text-center" href="#"></a>
+						<div class="form-row border-left col mb-0 ml-md-4 pl-2 align-items-center">
+							<label class="d-none d-md-inline-block col-3 col-form-label" for="sales-marketplace">Market Place</label>
+							<div class="col col-md-5">
+								<select class="custom-select form-control" id="sales-marketplace">
+                    <option selected="">Choose Market Place</option>
+                    <option value="2" selected>Amazon</option>
+                    <option value="1">Best Buy</option>
+                    <option value="2">Walmart</option>
+                  </select>
+							</div>
+							<a href="myprofile.html" class="col-auto pl-3">
+                  <i class="icon-shopping-bag mr-2"></i>My Products</a>
+						</div>
+					</div>
+				</div>
+				<div class="header-right col-auto ml-auto">
+					<div class="dropdown show text-right"><a class="btn text-muted dropdown-toggle d-inline-flex align-items-center rounded-0" id="user-menu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-none d-inline-md-block">James Walter</span><i class="rounded icon-user text-primary icon-md ml-2"></i></a>
+						<div class="dropdown-menu" aria-labelledby="user-menu"><a class="dropdown-item" href="settings.html">My Profile</a><a class="dropdown-item" href="login.html">Log out</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-nav mb-2">
+			<!-- Section: Dashboard menu -->
+			<nav class="navbar navbar-expand navbar-secondary navbar-dark bg-dark py-0">
+				<button class="d-xl-none btn navbar-toggle text-muted rounded-0"><i class="icon-menu icon-md"></i></button>
+				<h3 class="text-white ml-2 mb-0 d-xl-none">My Profile</h3>
+				<ul class="navbar-nav py-1 d-none d-xl-inline-flex">
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 active" href="sales.html">Sales</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+					<li class="nav-item border-right"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+					<li class="nav-item "><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!-- Section: Search Filters  -->
+		<div class="container-fluid">
+			<div class="form-row align-items-center">
+				<div class="col-md mb-2 mb-md-0">
+					<div class="input-group">
+						<div class="input-group-prepend"><span class="input-group-text px-2 px-md-4" id="search"><i class="icon-search icon-md text-primary"></i></span></div>
+						<input class="form-control" id="myInput" type="text" placeholder="Search by ASIN, Part #, Model #, SKU" aria-label="Search" aria-describedby="search">
+					</div>
+				</div>
+				<div class="col-12 col-md-auto mb-2 mb-md-0">
+					<select class="custom-select form-control select-daterange rounded-0">
+              <option value="Select Date Range">Select Date Range</option>
+              <option value="Yesterday">Yesterday</option>
+              <option value="Week-to-Date">Week-to-Date</option>
+              <option value="Prior Week">Prior Week</option>
+              <option value="Month to Date">Month to Date</option>
+              <option value="Prior Month">Prior Month</option>
+              <option value="Customized: Enter custom date range">Customized: Enter custom date range</option>
+            </select>
+				</div>
+				<div class="col-9 col-md-auto mb-md-0 daterange d-none" id="daterange">
+					<div class="form-row">
+						<div class="col">
+							<div class="input-group">
+								<input class="form-control input-date" type="text" placeholder="from date" id="daterange-from" data-date-format="MM/DD/Y"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+							</div>
+						</div>
+						<div class="col">
+							<div class="input-group">
+								<input class="form-control input-date" type="text" placeholder="to date" id="daterange-to" data-date-format="MM/DD/Y"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 col-md-auto mt-md-0">
+					<button class="btn btn-primary rounded-0 w-100">Apply</button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="overlay"> </div>
+	<!-- Section: Dashboard menu-->
+	<aside class="sidebar d-xl-none">
+		<nav class="navbar navbar-expand navbar-secondary navbar-dark navbar-vertical bg-dark">
+			<ul class="navbar-nav py-1 flex-column">
+				<li class="nav-item"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+				<li class="nav-item"><a class="nav-link py-0 active" href="sales.html">Sales</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="chargebacks.html">Chargebacks</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+				<li class="nav-item"><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+			</ul>
+		</nav>
+	</aside>
+	<!-- Section: Main content-->
+	<main class="content mt-2 container-fluid">
+		<!-- Section: Overview-->
+
+		<div class="row align-items-center mb-2">
+			<div class="col">
+				<div class="row align-items-center">
+					<h1 class="col-md-auto h4 mb-0">My Products</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-4 align-items-center">
+			<div class="col-12">
+				<div class="border p-4">
+					<table class="table m-0" id="table-myproducts" style="width: 100%">
+						<thead>
+							<tr>
+								<th>
+									<strong>ASIN</strong>
+								</th>
+								<th class="text-left">
+									<strong>Product Name</strong>
+								</th>
+								<th>
+									<strong>Product From</strong>
+								</th>
+								<th class="text-right">
+									<strong>MAP</strong>
+								</th>
+								<th class="text-right">
+									<strong>MSRP</strong>
+								</th>
+								<th class="text-right">
+									<strong>Keywords Count</strong>
+								</th>
+								<th class="text-center">
+									<strong>Action</strong>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="text-center"><a href="http://www.amazon.com/dp/B018E65WW2" target="_blank">B018E65WW2</a></td>
+								<td class="text-left">THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet</td>
+								<td>Seller</td>
+								<td class="text-right">$67.40</td>
+								<td class="text-right">$65.00</td>
+								<td class="text-right">9</td>
+								<td>
+
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center"><a href="http://www.amazon.com/dp/B01BON4QAQ" target="_blank">B01BON4QAQ</a></td>
+								<td class="text-left">THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet</td>
+								<td>Seller</td>
+								<td class="text-right">$67.40</td>
+								<td class="text-right">$65.00</td>
+								<td class="text-right">9</td>
+								<td>
+
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center"><a href="http://www.amazon.com/dp/B00B5H5BGA" target="_blank">B00B5H5BGA</a></td>
+								<td class="text-left">NatureWise Pure Garcinia Cambogia,100% Natural HCA Extract Supports Weight Loss and Curbs Appetite, Superior Absorption,180 count</td>
+								<td>Seller</td>
+								<td class="text-right">$20.89</td>
+								<td class="text-right">$61.00</td>
+								<td class="text-right">10</td>
+								<td>
+
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center"><a href="http://www.amazon.com/dp/B00GB85MZI" target="_blank">B00GB85MZI</a></td>
+								<td class="text-left">NatureWise CLA 1250, High Potency, Natural Weight Loss Exercise Enhancement</td>
+								<td>Vendor</td>
+								<td class="text-right">$21.99</td>
+								<td class="text-right">$42.00</td>
+								<td class="text-right">8</td>
+								<td>
+
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center"><a href="http://www.amazon.com/dp/B00LGSXBC4" target="_blank">B00LGSXBC4</a></td>
+								<td class="text-left">Pure Forskolin Extract for Weight Loss, Metabolism Booster and Belly Fat Burner</td>
+								<td>Seller</td>
+								<td class="text-right">$20.87</td>
+								<td class="text-right">$52.48</td>
+								<td class="text-right">5</td>
+								<td>
+
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center"><a href="http://www.amazon.com/dp/B0001VTXBA" target="_blank">B0001VTXBA</a></td>
+								<td class="text-left">SOURCE NATURALS Relora 250 Mg Tablet, 90 Count</td>
+								<td>Seller</td>
+								<td class="text-right">$14.99</td>
+								<td class="text-right">$22.28</td>
+								<td class="text-right">15</td>
+								<td>
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div class="footer p-4 text-center text-muted" style="background: #e1e1e1">
+		<p>Copyrights 2018. Praesto. All Rights Reserved</p>
+	</div>
+
+	<div class="modal fade" id="modal-editproducts" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal-label">Edit</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+				</div>
+				<div class="modal-body p-4">
+					<form>
+						<div class="form-group row">
+							<label for="product-asin" class="text-right col-sm-3 col-form-label">ASIN:</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="product-asin" readonly>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="product-name" class="text-nowrap text-right col-sm-3 col-form-label">Product Name:</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="product-name">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="product-map" class="text-right col-sm-3 col-form-label">MAP</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="product-map">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="product-msrp" class="text-right col-sm-3 col-form-label">MSRP</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="product-msrp">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer px-4 pb-4">
+					<button type="button" class="btn btn-primary rounded-0">Update</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="scripts/commons.js"></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+</body>
+
+</html>

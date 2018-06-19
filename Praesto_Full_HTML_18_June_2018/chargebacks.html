@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chargebacks
+    </title>
+  <link href="css/index.css" rel="stylesheet"></head>
+  <body class="page-chargebacks">
+    <!-- Section: Header-->
+    <header class="header has-nav text-muted">
+      <div class="header-top container-fluid">
+        <div class="row no-gutters align-items-center mb-2">
+          <div class="header-left col col-lg-8 col-xl-6">
+            <div class="row align-items-center no-gutters"><a class="navbar-brand col-auto text-center" href="#"></a>
+              <div class="form-row border-left col mb-0 ml-md-4 pl-2">
+                <label class="d-none d-md-inline-block col-3 col-form-label" for="sales-marketplace">Market Place</label>
+                <div class="col col-md-6">
+                  <select class="custom-select form-control form-control-sm" id="sales-marketplace">
+                    <option selected="">Choose Market Place</option>
+                    <option value="2" selected>Amazon</option>
+                    <option value="1">Best Buy</option>
+                    <option value="2">Walmart</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-right col-auto ml-auto">
+            <div class="dropdown show text-right"><a class="btn text-muted dropdown-toggle d-inline-flex align-items-center rounded-0" id="user-menu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-none d-inline-md-block">James Walter</span><i class="rounded icon-user text-primary icon-md ml-2"></i></a>
+              <div class="dropdown-menu" aria-labelledby="user-menu"><a class="dropdown-item" href="settings.html">My Profile</a><a class="dropdown-item" href="login.html">Log out</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-nav mb-2">
+        <!-- Section: Dashboard menu -->
+        <nav class="navbar navbar-expand navbar-secondary navbar-dark bg-dark py-0">
+          <button class="d-xl-none btn navbar-toggle text-muted rounded-0"><i class="icon-menu icon-md"></i></button>
+          <h3 class="text-white ml-2 mb-0 d-xl-none">Chargebacks</h3>
+          <ul class="navbar-nav py-1 d-none d-xl-inline-flex">
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 active" href="chargebacks.html">Chargebacks</a></li>
+            <li class="nav-item border-right"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+            <li class="nav-item "><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Section: Search Filters  -->
+      <div class="container-fluid">
+        <div class="form-row align-items-center">
+          <div class="col-md mb-2 mb-md-0">
+            <div class="input-group">
+              <div class="input-group-prepend"><span class="input-group-text px-2 px-md-4" id="search"><i class="icon-search icon-md text-primary"></i></span></div>
+              <input class="form-control" id="myInput" type="text" placeholder="Search by ASIN, Part #, Model #, SKU" aria-label="Search" aria-describedby="search">
+            </div>
+          </div>
+          <div class="col-12 col-md-auto mb-2 mb-md-0">
+            <select class="custom-select form-control select-daterange rounded-0">
+              <option value="Select Date Range">Select Date Range</option>
+              <option value="Yesterday">Yesterday</option>
+              <option value="Week-to-Date">Week-to-Date</option>
+              <option value="Prior Week">Prior Week</option>
+              <option value="Month to Date">Month to Date</option>
+              <option value="Prior Month">Prior Month</option>
+              <option value="Customized: Enter custom date range">Customized: Enter custom date range</option>
+            </select>
+          </div>
+          <div class="col-9 col-md-auto mb-md-0 daterange d-none" id="daterange">
+            <div class="form-row">
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" data-date="" data-date-format="MM/DD/Y" type="text" placeholder="from date" id="daterange-from"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                  <input class="form-control input-date" data-date="" data-date-format="MM/DD/Y" type="text" placeholder="to date" id="daterange-to"><span class="input-group-append input-group-addon"><i class="input-group-text icon-calendar px-1 px-md-2" style="min-width: auto"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 col-md-auto mt-md-0">
+            <button class="btn btn-primary rounded-0 w-100">Apply</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="overlay">       </div>
+    <!-- Section: Dashboard menu-->
+    <aside class="sidebar d-xl-none">
+      <nav class="navbar navbar-expand navbar-secondary navbar-dark navbar-vertical bg-dark">
+        <ul class="navbar-nav py-1 flex-column">
+          <li class="nav-item"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="sales.html">Sales</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="inventory.html">Inventory</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="exceptions.html">Exceptions</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="advertising.html">Advertising</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="product-ranks.html">Product Ranks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="keywords.html">Keywords</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="buy-box-reports.html">Buy Box Reports</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="map.html">MAP</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="reviews.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link py-0 active" href="chargebacks.html">Chargebacks</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="forecasting.html">Forecasting</a></li>
+          <li class="nav-item"><a class="nav-link py-0 " href="promotions.html">Promotions</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content mt-2 container-fluid">
+            <div class="row align-items-center mb-2">
+              <div class="col">
+                <div class="row align-items-center">
+                  <h1 class="col-md-auto h4 mb-0">Chargebacks Overview</h1><small class="col-md-auto px-md-0 text-muted">(From 05/20/2018 To 05/25/2018)</small>
+                </div>
+              </div>
+              <div class="col-auto ml-auto"><a class="btn btn-sm btn-primary rounded-0 d-inline-flex align-items-center" href="download_files/chargeback.xlsx" role="button" title="Download" tabindex="1"><i class="icon-download icon-md mr-sm-2"></i><span class="d-none d-sm-block">Download	</span></a></div>
+            </div>
+      <div class="border p-4 mb-4">
+        <div id="chart-chargeback-trend"></div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-sm-12">
+          <table class="table m-0" id="table-charge-back-dispute" style="width: 100%">
+            <thead>
+              <tr>
+                <th class="text-center">Status</th>
+                <th class="text-center">Charged</th>
+                <th class="text-center">Under review</th>
+                <th class="text-center">Reversed</th>
+                <th class="text-center">Dispute under review</th>
+                <th class="text-center">Dispute approved</th>
+                <th class="text-center">Dispute rejected</th>
+                <th class="text-center">Dispute - Needs more information</th>
+                <th class="text-center">Waived</th>
+                <th class="text-center">Waived grace period</th>
+              </tr>
+              <tr class="total">
+                <th class="text-center">Total</th>
+                <th class="text-center">67</th>
+                <th class="text-center">150</th>
+                <th class="text-center">285</th>
+                <th class="text-center">10</th>
+                <th class="text-center">440</th>
+                <th class="text-center">126</th>
+                <th class="text-center">194</th>
+                <th class="text-center">146</th>
+                <th class="text-center">701</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">ASN - On-Time Non-Compliance</td>
+                <td class="text-center">5</td>
+                <td class="text-center">25</td>
+                <td class="text-center">30</td>
+                <td class="text-center">1</td>
+                <td class="text-center">125</td>
+                <td class="text-center">6</td>
+                <td class="text-center">23</td>
+                <td class="text-center">10</td>
+                <td class="text-center">176</td>
+              </tr>
+              <tr>
+                <td class="text-center">ASN Accuracy</td>
+                <td class="text-center">12</td>
+                <td class="text-center">10</td>
+                <td class="text-center">100</td>
+                <td class="text-center">2</td>
+                <td class="text-center">23</td>
+                <td class="text-center">16</td>
+                <td class="text-center">19</td>
+                <td class="text-center">11</td>
+                <td class="text-center">94</td>
+              </tr>
+              <tr>
+                <td class="text-center">No carton/package content label</td>
+                <td class="text-center">10</td>
+                <td class="text-center">40</td>
+                <td class="text-center">40</td>
+                <td class="text-center">1</td>
+                <td class="text-center">15</td>
+                <td class="text-center">12</td>
+                <td class="text-center">21</td>
+                <td class="text-center">8</td>
+                <td class="text-center">75</td>
+              </tr>
+              <tr>
+                <td class="text-center">Oversized Carton</td>
+                <td class="text-center">2</td>
+                <td class="text-center">5</td>
+                <td class="text-center">28</td>
+                <td class="text-center">1</td>
+                <td class="text-center">114</td>
+                <td class="text-center">14</td>
+                <td class="text-center">38</td>
+                <td class="text-center">9</td>
+                <td class="text-center">69</td>
+              </tr>
+              <tr>
+                <td class="text-center">Overweight Carton</td>
+                <td class="text-center">8</td>
+                <td class="text-center">18</td>
+                <td class="text-center">14</td>
+                <td class="text-center">1</td>
+                <td class="text-center">58</td>
+                <td class="text-center">25</td>
+                <td class="text-center">15</td>
+                <td class="text-center">25</td>
+                <td class="text-center">75</td>
+              </tr>
+              <tr>
+                <td class="text-center">PO On-Time Accuracy</td>
+                <td class="text-center">4</td>
+                <td class="text-center">14</td>
+                <td class="text-center">13</td>
+                <td class="text-center">1</td>
+                <td class="text-center">63</td>
+                <td class="text-center">15</td>
+                <td class="text-center">19</td>
+                <td class="text-center">12</td>
+                <td class="text-center">63</td>
+              </tr>
+              <tr>
+                <td class="text-center">Product preparation</td>
+                <td class="text-center">7</td>
+                <td class="text-center">8</td>
+                <td class="text-center">10</td>
+                <td class="text-center">1</td>
+                <td class="text-center">15</td>
+                <td class="text-center">19</td>
+                <td class="text-center">17</td>
+                <td class="text-center">31</td>
+                <td class="text-center">80</td>
+              </tr>
+              <tr>
+                <td class="text-center">Rejected PO Rate</td>
+                <td class="text-center">14</td>
+                <td class="text-center">10</td>
+                <td class="text-center">20</td>
+                <td class="text-center">1</td>
+                <td class="text-center">18</td>
+                <td class="text-center">17</td>
+                <td class="text-center">20</td>
+                <td class="text-center">22</td>
+                <td class="text-center">25</td>
+              </tr>
+              <tr>
+                <td class="text-center">Unfilled by cancel date</td>
+                <td class="text-center">5</td>
+                <td class="text-center">20</td>
+                <td class="text-center">30</td>
+                <td class="text-center">1</td>
+                <td class="text-center">9</td>
+                <td class="text-center">2</td>
+                <td class="text-center">22</td>
+                <td class="text-center">18</td>
+                <td class="text-center">44</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-sm-12">
+          <table class="table m-0" id="table-charge-back-status" style="width: 100%">
+            <thead>
+              <tr>
+                <th class="text-center">Chargeback ID</th>
+                <th class="text-center">ASIN</th>
+                <th class="text-center">Type</th>
+                <th class="text-center">Amount</th>
+                <th class="text-center">Status</th>
+                <th class="text-center">Chargeback Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">1211861691VCBSCB</td>
+                <td class="text-center">B001VKO8E2</td>
+                <td class="text-center">Prep-Taping</td>
+                <td class="text-center">$2.64</td>
+                <td class="text-center">Charged</td>
+                <td class="text-center">5/7/2018</td>
+              </tr>
+              <tr>
+                <td class="text-center">5897687239NCXPOF</td>
+                <td class="text-center">B001VKS23U</td>
+                <td class="text-center">Prep-Taping</td>
+                <td class="text-center">$5.00</td>
+                <td class="text-center">Charged</td>
+                <td class="text-center">6/7/2018</td>
+              </tr>
+              <tr>
+                <td class="text-center">4523112357JKNBYU</td>
+                <td class="text-center">B001VKO8Z6</td>
+                <td class="text-center">No Cartoon/Package content label</td>
+                <td class="text-center">$2.64</td>
+                <td class="text-center">Charged</td>
+                <td class="text-center">7/7/2018</td>
+              </tr>
+              <tr>
+                <td class="text-center">8875964526POIMGH</td>
+                <td class="text-center">B001VKT9IW</td>
+                <td class="text-center">No Cartoon/Package content label</td>
+                <td class="text-center">$5.00</td>
+                <td class="text-center">Charged</td>
+                <td class="text-center">8/7/2018</td>
+              </tr>
+              <tr>
+                <td class="text-center">7264638419MCRVIK</td>
+                <td class="text-center">B004J64OOO</td>
+                <td class="text-center">No Cartoon/Package content label</td>
+                <td class="text-center">$5.00</td>
+                <td class="text-center">Charged</td>
+                <td class="text-center">9/7/2018</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+<div class="footer p-4 text-center text-muted" style="background: #e1e1e1">
+  <p class="mb-0">Copyrights 2018. Praesto. All Rights Reserved</p>
+</div>
+    </main>
+  <script type="text/javascript" src="scripts/commons.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+  </body>
+</html>
