@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Products
+	<title>Edit Keyword
 	</title>
 	<link href="css/index.css" rel="stylesheet">
 </head>
@@ -26,8 +26,8 @@
                     <option value="2">Walmart</option>
                   </select>
 							</div>
-							<a href="myproducts.html" class="text-warning bg-dark col-auto p-2 ml-2">
-                <i class="icon-shopping-bag mr-2"></i>My Products</a>
+							<a href="myproducts.html" class="col-auto pl-3">
+                  <i class="icon-shopping-bag mr-2"></i>My Products</a>
 						</div>
 					</div>
 				</div>
@@ -42,7 +42,7 @@
 			<!-- Section: Dashboard menu -->
 			<nav class="navbar navbar-expand navbar-secondary navbar-dark bg-dark py-0">
 				<button class="d-xl-none btn navbar-toggle text-muted rounded-0"><i class="icon-menu icon-md"></i></button>
-				<h3 class="text-white ml-2 mb-0 d-xl-none">My Products</h3>
+				<h3 class="text-white ml-2 mb-0 d-xl-none">My Profile</h3>
 				<ul class="navbar-nav py-1 d-none d-xl-inline-flex">
 					<li class="nav-item border-right"><a class="nav-link py-0 " href="overview.html">Overview</a></li>
 					<li class="nav-item border-right"><a class="nav-link py-0" href="sales.html">Sales</a></li>
@@ -126,129 +126,43 @@
 		<!-- Section: Overview-->
 
 		<div class="row align-items-center mb-2">
-			<div class="col">
+			<div class="col-8">
 				<div class="row align-items-center">
-					<h1 class="col-md-auto h4 mb-0">My Products</h1>
+					<h1 class="col-md-auto h4 mb-0">Edit Keyword</h1>
 				</div>
 			</div>
+			<div class="col-4 text-right">
+				<a href="" class="btn btn-primary rounded-0"  data-toggle="modal" data-target="#modal-bulk-upload"><i class="icon-upload mr-2"></i> Bulk upload </a>
+			</div>
 		</div>
-
-		<div class="row mb-4 align-items-center">
-			<div class="col-12">
-				<div class="border p-4">
-					<table class="table m-0" id="table-myproducts">
-						<thead>
-							<tr>
-								<th>
-									<strong>ASIN</strong>
-								</th>
-								<th class="text-left">
-									<strong>Product Name</strong>
-								</th>
-								<th>
-									<strong>Product From</strong>
-								</th>
-								<th class="text-right">
-									<strong>MAP</strong>
-								</th>
-								<th class="text-right">
-									<strong>MSRP</strong>
-								</th>
-								<th class="text-right">
-									<strong>Keywords Count</strong>
-								</th>
-								<th class="text-center">
-									<strong>Action</strong>
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="text-center"><a href="http://www.amazon.com/dp/B018E65WW2" target="_blank">B018E65WW2</a></td>
-								<td class="text-left">THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet</td>
-								<td>Seller</td>
-								<td class="text-right">$67.40</td>
-								<td class="text-right">$65.00</td>
-								<td class="text-right">9</td>
-								<td>
-									<span class="btn text-dark border-0 rounded-0 edit-keywords" title="Edit Product Details" data-toggle="tooltip">
-	<span data-toggle="modal" data-target="#modal-editproducts" class="icon-pencil mx-1"></span></span>
-									<a href="product-keywords.html" data-toggle="tooltip" title="Edit keywords" class="btn text-dark border-0 rounded-0 edit-tags"><i class="icon-tags mx-1"></i>
-</a>
-								</td>
-							</tr>
-							<tr>
-								<td class="text-center"><a href="http://www.amazon.com/dp/B01BON4QAQ" target="_blank">B01BON4QAQ</a></td>
-								<td class="text-left">THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet</td>
-								<td>Seller</td>
-								<td class="text-right">$67.40</td>
-								<td class="text-right">$65.00</td>
-								<td class="text-right">9</td>
-								<td>
-									<span class="btn text-dark border-0 rounded-0 edit-keywords" title="Edit Product Details" data-toggle="tooltip">
-										<span data-toggle="modal" data-target="#modal-editproducts" class="icon-pencil mx-1"></span></span>
-									<a href="product-keywords.html" data-toggle="tooltip" title="Edit keywords" class="btn text-dark border-0 rounded-0 edit-tags"><i class="icon-tags mx-1"></i>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td class="text-center"><a href="http://www.amazon.com/dp/B00B5H5BGA" target="_blank">B00B5H5BGA</a></td>
-								<td class="text-left">NatureWise Pure Garcinia Cambogia,100% Natural HCA Extract Supports Weight Loss and Curbs Appetite, Superior Absorption,180 count</td>
-								<td>Seller</td>
-								<td class="text-right">$20.89</td>
-								<td class="text-right">$61.00</td>
-								<td class="text-right">10</td>
-								<td>
-									<span class="btn text-dark border-0 rounded-0 edit-keywords" title="Edit Product Details" data-toggle="tooltip">
-	<span data-toggle="modal" data-target="#modal-editproducts" class="icon-pencil mx-1"></span></span>
-									<a href="product-keywords.html" data-toggle="tooltip" title="Edit keywords" class="btn text-dark border-0 rounded-0 edit-tags"><i class="icon-tags mx-1"></i>
-</a>
-								</td>
-							</tr>
-							<tr>
-								<td class="text-center"><a href="http://www.amazon.com/dp/B00GB85MZI" target="_blank">B00GB85MZI</a></td>
-								<td class="text-left">NatureWise CLA 1250, High Potency, Natural Weight Loss Exercise Enhancement</td>
-								<td>Vendor</td>
-								<td class="text-right">$21.99</td>
-								<td class="text-right">$42.00</td>
-								<td class="text-right">8</td>
-								<td>
-									<span class="btn text-dark border-0 rounded-0 edit-keywords" title="Edit Product Details" data-toggle="tooltip">
-	<span data-toggle="modal" data-target="#modal-editproducts" class="icon-pencil mx-1"></span></span>
-									<a href="product-keywords.html" data-toggle="tooltip" title="Edit keywords" class="btn text-dark border-0 rounded-0 edit-tags"><i class="icon-tags mx-1"></i>
-</a>
-								</td>
-							</tr>
-							<tr>
-								<td class="text-center"><a href="http://www.amazon.com/dp/B00LGSXBC4" target="_blank">B00LGSXBC4</a></td>
-								<td class="text-left">Pure Forskolin Extract for Weight Loss, Metabolism Booster and Belly Fat Burner</td>
-								<td>Seller</td>
-								<td class="text-right">$20.87</td>
-								<td class="text-right">$52.48</td>
-								<td class="text-right">5</td>
-								<td>
-									<span class="btn text-dark border-0 rounded-0 edit-keywords" title="Edit Product Details" data-toggle="tooltip">
-	<span data-toggle="modal" data-target="#modal-editproducts" class="icon-pencil mx-1"></span></span>
-									<a href="product-keywords.html" data-toggle="tooltip" title="Edit keywords" class="btn text-dark border-0 rounded-0 edit-tags"><i class="icon-tags mx-1"></i>
-</a>
-								</td>
-							</tr>
-							<tr>
-								<td class="text-center"><a href="http://www.amazon.com/dp/B0001VTXBA" target="_blank">B0001VTXBA</a></td>
-								<td class="text-left">SOURCE NATURALS Relora 250 Mg Tablet, 90 Count</td>
-								<td>Seller</td>
-								<td class="text-right">$14.99</td>
-								<td class="text-right">$22.28</td>
-								<td class="text-right">15</td>
-								<td>
-									<span class="btn text-dark border-0 rounded-0 edit-keywords" title="Edit Product Details" data-toggle="tooltip">
-	<span data-toggle="modal" data-target="#modal-editproducts" class="icon-pencil mx-1"></span></span>
-									<a href="product-keywords.html" data-toggle="tooltip" title="Edit keywords" class="btn text-dark border-0 rounded-0 edit-tags"><i class="icon-tags mx-1"></i>
-</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+		
+		<div class="container-fluid border py-4">
+			<div class="row justify-content-center">
+				<div class="col-sm-6">
+					<div class="form-group row">
+						<label for="product-asin" class="text-md-right col-md-3 col-form-label">ASIN:</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" id="edit-keyword-asin" value="B018E65WW2" readonly>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="product-name" class="text-nowrap text-md-right col-md-3 col-form-label">Product Name:</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" id="edit-keyword-name" value="THERMO PURE Natural Fat Burner Caffeine Free Weight Loss Pills and Healthy Appet" readonly>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="product-map" class="text-md-right col-md-3 col-form-label">Keywords</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control mtag" id="edit-keyword" value="">
+						</div>
+					</div>
+					<div class="row text-center justify-content-end">
+						<div class="col-auto">
+							<button class="btn btn-primary rounded-0 mr-2">Save</button>
+							<button class="btn btn-secondary rounded-0">Reset</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -257,11 +171,11 @@
 		<p>Copyrights 2018. Praesto. All Rights Reserved</p>
 	</div>
 
-	<div class="modal fade" id="modal-editproducts" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+	<div class="modal fade" id="modal-bulk-upload" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="modal-label">Edit</h5>
+					<h5 class="modal-title" id="modal-label">Bulk Upload</h5>
 					<button type="button" role="button" class="btn btn-lg border-0 rounded-0 close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true" class="icon-close"></span>
 	        </button>
@@ -269,49 +183,27 @@
 				<div class="modal-body p-4">
 					<form>
 						<div class="form-group row">
-							<label for="product-asin" class="text-sm-right col-sm-3 col-form-label">ASIN:</label>
+							<label for="product-asin" class="text-sm-right col-sm-3 col-form-label">Upload file:</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="product-asin" readonly>
+								<input type="file" class="form-control" id="product-asin" readonly>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="product-name" class="text-nowrap text-sm-right col-sm-3 col-form-label">Product Name:</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" id="product-name">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="product-map" class="text-sm-right col-sm-3 col-form-label">MAP</label>
-							<div class="col-sm-9">
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="map-currency">$</span>
-									</div>
-									<input type="text" class="form-control" aria-label="Map" aria-describedby="map-currency" id="product-map">
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="product-msrp" class="text-sm-right col-sm-3 col-form-label">MSRP</label>
-							<div class="col-sm-9">
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="msrp-currency">$</span>
-									</div>
-									<input type="text" class="form-control" aria-label="MSRP" aria-describedby="msrp-currency" id="product-msrp">
-								</div>
+							<div class="col-sm-9 offset-sm-3">
+								<a href="#">Download sample format file link</a>
 							</div>
 						</div>
 					</form>
 				</div>
 				<div class="modal-footer px-4 pb-4">
-					<button type="button" class="btn btn-primary rounded-0" data-dismiss="modal">Update</button>
+					<button type="button" class="btn btn-primary rounded-0" data-dismiss="modal">Upload</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="scripts/commons.js"></script>
 	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="scripts/tagsinput.js"></script>
 </body>
 
 </html>

@@ -54,15 +54,166 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		init();
 		return this;
 	};
-})(jQuery); // import styles
-//require('datatables.net-bs4/css/dataTables.bootstrap4.css');
+})(jQuery);
 
+
+var mtag = {
+	addboxstring : '<div class="input-group"><input type="text" class="form-control addtext" value="" placeholder="add a keyword and hit enter"/><button role="button" type="button" class="btn btn-sm btn-primary additem rounded-0"><i class="icon-plus"><i></button></div>',
+	init : function() {
+		$(".mtag").each(function(){
+			mtag.build(this);
+		});
+		mtag.eventsetup();
+	},
+	build : function(elem) {
+		var thisid = "box_" + $(elem).attr("id"),
+		listtype = ($(elem).hasClass("list")) ? "bulletlist" : "taglist"; 
+		$(elem).change(function(){ mtag.addboxes(this,"box_" + this.id,true) }).hide();
+		$(elem).before('<div class="tagbox ' + listtype + '" id="' + thisid + '"></div>');
+		mtag.addboxes(elem,thisid);
+	},
+	addboxes : function(elem,thisid,indi) {
+		$("#" + thisid).empty();
+		var thislist = $(elem).val().split(";");
+		for (var i=0;i<thislist.length;i++) {
+			if ($.trim(thislist[i]) != "") {
+				$("#" + thisid).append(mtag.structure(thislist[i]));
+			}
+		}
+		$("#" + thisid).append(mtag.addboxstring);
+		mtag.addrels($("#" + thisid));
+		if (indi) {
+			mtag.eventsetup();
+		}
+	},
+	addrels : function(elem) {
+		var childnum = $(elem).children(".supertag").length;
+		for (var i=0;i<childnum;i++) {
+			$(elem).children(".supertag:eq(" + i + ")").attr("rel",i);
+		}
+	},
+	structure : function(val) {
+		var val = val.replace("<","&lt;");
+		return '<span class="d-inline-block rounded-0 supertag py-1 px-3 mr-2 mb-2 border"><span class="supertagval d-inline-block mr-2">' + $.trim(val) + '</span><i class="supertagbutton edit icon-pencil mr-2" title="Edit this entry."></i><i class="supertagbutton remove icon-bin" title="Remove this entry."></i></span>';
+	},
+	eventsetup : function() {
+		$(".supertagbutton").unbind("click").click(function(){
+			if ($(this).parent().hasClass("editing")) {
+				if ($(this).hasClass("edit")) {
+					mtag.finishedit($(this).parent(),"finish");
+				} else if ($(this).hasClass("remove")) {
+					mtag.finishedit($(this).parent(),"cancel");
+				}
+			} else {
+				if ($(this).hasClass("edit")) {
+					mtag.startedit($(this).parent());
+				} else if ($(this).hasClass("remove")) {
+					mtag.startremove($(this).parent());
+				}
+			}
+		});
+		$(".additem").unbind("click").click(function() {
+			mtag.additem($(this).closest('.tagbox')); 
+		});
+		$(".addtext").unbind("keydown").bind("keydown",function(e){
+			if (e.keyCode == 13) {
+				$(this).next().click();
+				return false;
+			}
+		}); 
+	},
+	startedit : function(elem) {
+		if ($("#editingbox").length > 0) {
+			mtag.finishedit($("#editingbox").parent().parent(),"cancel");
+		}
+		var curwidth = parseInt($(elem).css("width")) - 55;
+		$(elem).addClass("editing");
+		mtag.renamebuttons(elem,"toedit");
+		var gettext = $(elem).children(".supertagval").html();
+		$(elem).children(".supertagval").attr("rel",gettext);
+		var inclass = $(elem).parent().hasClass("bulletlist");
+		if (gettext.length > 128 || inclass) {
+			$(elem).children(".supertagval").html('<span id="editingbox"><textarea id="newval" style="width:' + (curwidth+5) + 'px">' + gettext + '</textarea></span>');
+		} else {
+			$(elem).children(".supertagval").html('<span id="editingbox"><input id="newval" type="text" class="form-control" value="' + gettext + '" /></span>');
+		}
+		$("#newval").unbind("keydown").bind('keydown',function(e){
+			if (e.keyCode == 13) {
+				$(this).parent().parent().next().click();
+				return false;
+			}
+		});
+		$("#editingbox").children("input").focus();
+	},
+	finishedit : function(elem,action) {
+		$(elem).removeClass("editing").removeAttr("style");
+		mtag.renamebuttons(elem,"unedit");
+		var newtext = (action == "finish") ? $("#editingbox").children("#newval").val() : $(elem).children(".supertagval").attr("rel");
+		mtag.boxio($(elem).attr("rel"),"#"+$(elem).parent().attr("id").substr(4),newtext);
+		$(elem).children(".supertagval").html(newtext);
+		$("#editingbox").remove();
+	},
+	startremove : function(elem) {
+		$(elem).fadeOut(400,function(){ mtag.killnode(this,$(this).parent()); });
+	},
+	killnode : function(elem,parent) {
+		var thisindex = $(elem).attr("rel"); 
+		$(elem).remove();
+		mtag.boxio(thisindex,"#"+$(parent).attr("id").substr(4),"");
+		mtag.addrels($(parent));
+	},
+	boxio : function(thisindex,getid,newstring,mode) {
+		var rawval = $(getid).val();
+		if (rawval.charAt(rawval.length-1) != ";") {
+			rawval = rawval + ";";
+		}
+		var curval = rawval.split(";");
+		if (thisindex != "add") {
+			curval.splice(thisindex,1,newstring);
+		} else {
+			curval.splice(curval.length-1,1,newstring);
+		}
+		var newstring = "";
+		for (var i=0;i<curval.length;i++) {
+			if ($.trim(curval[i]) != "") {
+				newstring += $.trim(curval[i]) + ";";
+			}
+		}
+		$(getid).val(newstring);
+	},
+	additem : function(elem) {
+		var addrel = parseInt($(elem).children(".supertag").length),
+		addtext = $(elem).find(".addtext").val().split(";"),
+		addtextstring = "";
+		for (var i=0;i<addtext.length;i++) {
+			if ($.trim(addtext[i]) != "") {
+				$(elem).children(".input-group").before(mtag.structure(addtext[i]));
+				addtextstring+=addtext[i]+";";
+			}
+		}
+		mtag.boxio("add","#"+$(elem).attr("id").substr(4),addtextstring.substr(0,addtextstring.length-1));
+		$(elem).find(".addtext").val("");
+		mtag.eventsetup();
+		mtag.addrels(elem);
+	},
+	renamebuttons : function(elem,direc) {
+		if (direc == "toedit") {
+			var editbutton = "Confirm this change.";
+			var removebutton = "Cancel this change.";
+		} else {
+			var editbutton = "Edit this entry.";
+			var removebutton = "Remove this entry.";
+		}
+		$(elem).children(".supertagbutton.edit").attr("title",editbutton);
+		$(elem).children(".supertagbutton.remove").attr("title",removebutton);
+	}
+}
 
 $(document).ready(function () {
 
 	/* declare variables here */
 	var headerNav = $('header.has-nav');
-
+	mtag.init();
 	/* declare the functions here */
 	var toggleSidebar = function toggleSidebar() {
 		var breakpoint = 768;
@@ -93,6 +244,8 @@ $(document).ready(function () {
 		value: 'B01EXS1NA0',
 		data: 'New Domaine Shredded Latex Cooling pillow- Queen'
 	}];
+  
+  //mtag.init();
 
 	$('#myInput').autocomplete({
 		lookup: asin,
@@ -588,15 +741,12 @@ $(document).ready(function () {
 	
 	var table_myProducts = $('#table-myproducts').DataTable({
 		columnDefs: [
-			{ width: '20%' ,targets: [-1, 1]},
-			{ targets: -1, data: null,
-		defaultContent: "<button data-toggle=\"tooltip\" title=\"Edit Product Details\" class=\"btn text-dark border-0 rounded-0 edit-keywords\">\n<i class=\"icon-pencil mx-1\" data-toggle=\"modal\" data-target=\"#modal-editproducts\" ></i>\t\n</button>\n<a href=\"product-keywords.html\" data-toggle=\"tooltip\" title=\"Edit keywords\" class=\"btn text-dark border-0 rounded-0 edit-tags\">\n<i class=\"icon-tags mx-1\"></i>\n</a>"}
+			{ width: '20%' ,targets: [-1, 1]}
 		],
 		dom: 'rt<"dataTables_bottom"lp>',
 		fixedHeader: true,
-		scrollX: true,
 		scrollCollapse: true,
-		scrollY: 250
+		scrollY: 300,
 	}), rowData = {};
 	
 	$('#table-myproducts tbody').on('click', '.edit-keywords', function (e) {

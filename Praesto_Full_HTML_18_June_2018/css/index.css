@@ -125,6 +125,9 @@ html {
 .icon-envelope:before {
   content: "\F0E0"; }
 
+.icon-upload:before {
+  content: "\f093"; }
+  
 .icon-meter:before {
   content: "\F0E4"; }
 
@@ -7397,7 +7400,7 @@ strong {
   position: absolute;
   text-transform: uppercase;
   color: #fff;
-  top: -1.5rem;
+  top: -2.5rem;
   right: 0; }
 
 .form-group-wrap {
@@ -7857,4 +7860,14 @@ tr.total th {
 .card-body .text-muted.form-row > .col, .card-body .text-muted.form-row > [class*="col-"] {
 	padding-right: 3px;
 	padding-left: 3px;
+}
+
+.editing .edit:before {
+ content: "\F00C";
+ color: #28a745;
+}
+
+.editing .remove:before {
+  content: "\F00D";
+  color: #dc3545;
 }
